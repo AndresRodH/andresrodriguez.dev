@@ -12,3 +12,12 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.fa {
+    font-size: 27px;
+    padding-right: 5px;
+}
+
+.fa:hover {
+    color: #4dd0e1;
+}
