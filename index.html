@@ -9,9 +9,38 @@
     <link rel="stylesheet" href="./css/materialize.min.css">
 </head>
 <body>
-    <!-- Materialize -->
-    <script src="./js/materialize.min.js"></script>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+    </ul>
+    <nav class="grey darken-4 hide-on-large-only">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo left"><img class="AR" src="./img/ARC.png"></a>
+            <ul class="right">
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">three</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="grey darken-4 hide-on-med-and-down">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center"><img class="AR" src="./img/ARC.png"></a>
+            <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="dropdown1"><i class="material-icons">menu</i></a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- jQuery -->
     <script src="./js/jquery-3.2.1.min.js"></script>
+    <!-- Materialize -->
+    <script src="./js/materialize.min.js"></script>
+    <!-- index.js -->
+    <script scr"./js/index.js"></script>
 </body>
 </html>
