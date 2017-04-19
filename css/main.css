@@ -21,8 +21,8 @@ main {
 .fa {
     font-size: 27px;
     padding-right: 15px;
-    -webkit-transition: font-size .1s, color .1s;
-    transition: font-size .1s, color .1s;
+    -webkit-transition: color .3s;
+    transition: color .3s;
 }
 
 section {
@@ -35,16 +35,9 @@ section {
     font-family: 'Montserrat', sans-serif;
 }
 
-.fa:hover {
-    font-size: 28px;
-    color: #26a69a;
-}
-
-.line {
-    color: #26a69a;
-}
+.fa:hover,
+.line,
 .social-link:hover {
-    font-size: 16px;
     color: #26a69a;
 }
 
@@ -56,6 +49,6 @@ section {
 .social-link {
     color: #eeeeee;
     font-weight: 500;
-    -webkit-transition: font-size .1s, color .1s;
-    transition: font-size .1s, color .1s;
+    -webkit-transition: color .3s;
+    transition: color .3s;
 }
