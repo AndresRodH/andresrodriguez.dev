@@ -19,31 +19,39 @@
 <body>
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content grey darken-4">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li><a href="#!">three</a></li>
+        <li><a href="#!">About</a></li>
+        <li><a href="#!">Education</a></li>
+        <li><a href="#!">Experience</a></li>
     </ul>
 
     <!-- Navbar -->
-    <nav class="grey darken-4 hide-on-large-only">
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo left"><img class="AR" src="./img/ARC.png"></a>
-            <ul class="right">
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li><a href="#!">three</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav class="grey darken-4 hide-on-med-and-down">
-        <div class="nav-wrapper">
-            <img class="AR brand-logo center" src="./img/ARC.png">
-            <ul class="right hide-on-med-and-down">
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="dropdown1"><i class="material-icons">menu</i></a></li>
-            </ul>
-        </div>
-    </nav> <!-- Navbar -->
+    <div class="navbar-fixed">
+        <nav class="grey darken-4 hide-on-large-only">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo left">
+                    <img class="AR" src="./img/ARC.png">
+                </a>
+                <ul class="right">
+                    <li><a href="#!">About</a></li>
+                    <li><a href="#!">Education</a></li>
+                    <li><a href="#!">Experience</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="grey darken-4 hide-on-med-and-down">
+            <div class="nav-wrapper">
+                <img class="AR brand-logo center" src="./img/ARC.png">
+                <ul class="right hide-on-med-and-down">
+                    <!-- Dropdown Trigger -->
+                    <li>
+                        <a class="dropdown-button" data-belowOrigin="true" data-alignment="center" data-hover="true" href="#!" data-activates="dropdown1">
+                            <i class="material-icons">menu</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div><!-- Navbar -->
     <main>
         <section class="container center-align about">
             <h6 class="section-title">ABOUT</h6>
