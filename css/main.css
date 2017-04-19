@@ -13,15 +13,38 @@ main {
     flex: 1 0 auto;
 }
 
-.nav {
+.nav,
+#dropdown1 {
     opacity: 0.7;
 }
 
 .fa {
     font-size: 27px;
-    padding-right: 5px;
+    padding-right: 15px;
 }
 
-.fa:hover {
-    color: #4dd0e1;
+section {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.section-title, {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fa:hover,
+.line,
+.social-link:hover {
+    color: #26a69a;
+}
+
+.footer-content {
+    color: #bdbdbd;
+    font-weight: 300;
+}
+
+.social-link {
+    color: #eeeeee;
+    font-weight: 500;
 }
