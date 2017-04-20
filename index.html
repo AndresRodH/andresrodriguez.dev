@@ -24,27 +24,29 @@
         <li><a class="white-text center" href="#about">About</a></li>
         <li><a class="white-text center" href="#education">Education</a></li>
         <li><a class="white-text center" href="#xp">Experience</a></li>
-        <li><a class="white-text center" href="#resume">R&eacute;sum&eacute;</a></li>
+        <li><a class="white-text center" href="#resume">Resum&eacute;</a></li>
     </ul>
 
     <!-- Navbar -->
     <div class="navbar-fixed">
-        <nav class="grey darken-4 hide-on-large-only z-depth-0">
+        <nav class="grey darken-4 hide-on-large-only z-depth-0 v">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo left">
+                <a href="#top" class="brand-logo left valign-wrapper">
                     <img class="AR" src="./img/logoS.png">
                 </a>
                 <ul class="right">
-                    <li><a id="scroll-about" href="#about">About</a></li>
-                    <li><a id="scroll-education" href="#education">Education</a></li>
-                    <li><a id="scroll-xp" href="#xp">Experience</a></li>
-                    <li><a id="scroll-resume" href="#resume">R&eacute;sum&eacute;</a></li>
+                    <li><a class="scroll valign-wrapper" href="#about">About</a></li>
+                    <li><a class="scroll valign-wrapper" href="#education">Education</a></li>
+                    <li><a class="scroll valign-wrapper" href="#xp">Experience</a></li>
+                    <li><a class="scroll valign-wrapper" href="#resume">Resum&eacute;</a></li>
                 </ul>
             </div>
         </nav>
         <nav class="grey darken-4 hide-on-med-and-down z-depth-0">
             <div class="nav-wrapper">
-                <img class="AR brand-logo center" src="./img/logoL.png">
+                <a href="#top" class="brand-logo center valign-wrapper">
+                    <img class="AR" src="./img/logoL.png">
+                </a>
                 <ul class="right hide-on-med-and-down">
                     <!-- Dropdown Trigger -->
                     <li>
@@ -58,19 +60,24 @@
     </div><!-- Navbar -->
     <main>
         <!-- Header -->
-        <div class="header-container grey darken-4 white-text center">
+        <div id="top" class="header-container grey darken-4 white-text center">
             <div class="row container">
                 <h1 class="header">Full-Stack Web Developer</h1>
                 <p class="subhead">Learn2CodePlz</p>
             </div>
         </div>
         <!-- About -->
-        <div id="about">
-            <div class="section light-blue darken-2 white-text">
-                <div class="row container">
-                    <h2>ABOUT</h2>
-                    <p>Acelkt</p>
-                </div>
+        <div id="about" class="section light-blue darken-2 white-text">
+            <div class="row container">
+                <h2>ABOUT</h2>
+                <p>Acelkt</p>
+            </div>
+        </div>
+        <!-- Education -->
+        <div id="education" class="section white">
+            <div class="row container">
+                <h2>Education</h2>
+                <p>Lindenwoodz</p>
             </div>
         </div>
         <!-- Experience -->
@@ -80,18 +87,11 @@
                 <p>*Level-up*</p>
             </div>
         </div>
-        <!-- Education -->
-        <div id="education" class="section grey darken-4 white-text">
-            <div class="row container">
-                <h2>Education</h2>
-                <p>Lindenwoodz</p>
-            </div>
-        </div>
         <!-- Resume -->
         <div id="resume" class="section teal darken-2 white-text">
             <div class="row container">
-                <h3 class="section-title">Grab a copy of my r&eacute;sum&eacute;</h3>
-                <p class="section-content">Currently looking for a position involving Full-Stack web development</p>
+                <h3 class="section-title">Grab a copy of my resum&eacute;</h3>
+                <p class="section-content">Currently looking for a position involving Web Development</p>
                 <a href="./AndresResume.pdf" target="_blank" class="waves-effect waves-light btn white teal-text"><i class="material-icons right">file_download</i>Dowload</a>
             </div>
         </div>
@@ -101,7 +101,7 @@
         <div class="container footer-content">
             <div class="row">
                 <div class="col l6 s12">
-                    <p>Passionate Full-Stack Developer and undergrad of Computer Science B.S. I have over 5 years of experience in both Back-end & Front-end. Constantly evolving on the job, always open to learn new things</p>
+                    <p>Passionate Full-Stack Web Developer and undergrad of Computer Science B.S. I have over 5 years of experience in both Back-end & Front-end. Constantly evolving on the job, always open to learn new things</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <ul>
@@ -137,8 +137,6 @@
     <script src="./js/materialize.min.js"></script>
     <!-- index.js -->
     <script src="./js/index.js"></script>
-    <!-- Scrollspy -->
-    <script src="./js/scrollspy.js"></script>
 </body>
 
 </html>

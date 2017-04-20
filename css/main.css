@@ -55,3 +55,10 @@ main {
     -webkit-transition: color .3s;
     transition: color .3s;
 }
+
+nav,
+.navbar-wrapper,
+.scroll,
+.navbar-fixed {
+    height: 64px !important;
+}
