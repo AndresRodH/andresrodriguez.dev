@@ -14,11 +14,6 @@ main {
     flex: 1 0 auto;
 }
 
-.nav,
-#dropdown1 {
-    opacity: 0.7;
-}
-
 .fa {
     font-size: 27px;
     padding-right: 15px;
@@ -26,14 +21,21 @@ main {
     transition: color .3s;
 }
 
-section {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 100%;
+.header-container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
-.section-title, {
-    font-family: 'Montserrat', sans-serif;
+.header {
+    font-weight: 400;
+}
+
+.subhead {
+    font-weight: 100;
+}
+
+.section-title {
+    font-weight: 300;
 }
 
 .fa:hover,
