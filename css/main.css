@@ -1,6 +1,7 @@
 .AR {
-    height: 100%;
-    width: 160px;
+    margin-top: 3px;
+    height: 90%;
+    width: auto;
 }
 
 body {
