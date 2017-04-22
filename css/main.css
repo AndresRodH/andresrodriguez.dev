@@ -21,6 +21,20 @@ main {
     transition: color .3s;
 }
 
+.fa-briefcase {
+    font-size: 23px;
+}
+
+.btn {
+    -webkit-transition: color .1s;
+    transition: color .1s;
+}
+
+.btn:hover {
+    background-color: #eceff1 !important;
+    color: #40c4ff !important;
+}
+
 .header-container {
     padding-top: 4rem;
     padding-bottom: 4rem;
