@@ -10,6 +10,11 @@ body {
     flex-direction: column;
 }
 
+.special {
+    font-weight: 900;
+    color: #cc00ff;
+}
+
 .section-content {
     text-indent: 1rem;
 }
@@ -52,14 +57,25 @@ main {
     font-weight: 400;
 }
 
+.skillset,
+.vig {
+    font-weight: 900;
+}
+
 .subhead,
 .btn {
     font-size: 20;
     font-weight: 100;
 }
 
-.element {
+.element,
+.email,
+.vig {
     color: #4db6ac;
+}
+
+#xp li {
+    padding-bottom: 10px;
 }
 
 .section-title {

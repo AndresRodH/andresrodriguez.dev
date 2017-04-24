@@ -32,4 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
         cursorChar: "<span style=\"color: #cc00ff; font-weight: 900\">_</span>",
         loop: true,
     });
+    Typed.new('.email', {
+        strings: [ "andrese<span style=\"color: #cc00ff; font-weight: 900;\">.</span>rodriguezh<span style=\"color: #cc00ff;\">@</span>gmail<span style=\"color: #cc00ff; font-weight: 900;\">.</span>com" ],
+        typeSpeed: 0.5,
+        backDelay: 5000,
+        cursorChar: "<span style=\"color: #cc00ff; font-weight: 900;\">_</span>",
+        loop: true,
+    });
 });
