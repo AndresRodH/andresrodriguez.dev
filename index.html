@@ -2,16 +2,18 @@
 <html>
 
 <head>
-    <title>Portfolio</title>
+    <title>Andr&eacute;s Rodr&iacute;guez</title>
     <!-- Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <!-- FontAwesome -->
     <script src="https://use.fontawesome.com/2e75ffc143.js"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css"/>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./css/main.css" />
     <!-- Materialize -->
     <link rel="stylesheet" href="./css/materialize.min.css">
     <!-- Icon -->
@@ -22,7 +24,7 @@
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content grey darken-4 white-text">
         <li><a class="white-text center" href="#about">About</a></li>
-        <li><a class="white-text center" href="#education">Education</a></li>
+        <li><a class="white-text center" href="#projects">Projects</a></li>
         <li><a class="white-text center" href="#xp">Experience</a></li>
     </ul>
 
@@ -35,7 +37,7 @@
                 </a>
                 <ul class="right">
                     <li><a class="scroll valign-wrapper" href="#about">About</a></li>
-                    <li><a class="scroll valign-wrapper" href="#education">Education</a></li>
+                    <li><a class="scroll valign-wrapper" href="#projects">Projects</a></li>
                     <li><a class="scroll valign-wrapper" href="#xp">Experience</a></li>
                 </ul>
             </div>
@@ -55,45 +57,75 @@
                 </ul>
             </div>
         </nav>
-    </div><!-- Navbar -->
+    </div>
+    <!-- Navbar -->
     <main>
         <!-- Header -->
         <div id="top" class="header-container grey darken-4 white-text center">
-            <div class="row container">
+            <div class="row container center">
                 <h1 class="header">Andr&eacute;s Rodr&iacute;guez</h1>
-                <p class="subhead">Learn2CodePlz</p>
+                <div class="row center">
+                    <div class="subhead">
+                        I am <span class="element"></span>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- About -->
-        <div id="about" class="section light-blue darken-2 white-text">
+        <div id="about" class="section white black-text flow-text">
             <div class="row container">
-                <h3 class="section-title center">About</h3>
-            </div>
-            <div class="row container">
-                 <p class="section-content flow-text">
-                    Full Stack Web Developer with a Bachelor's Degree in Computer Science. With over five years of experience with code I found my true passion in Web Development, driven by the constantly-changing world of the Web technologies and my thirst to stay up to date with the latest improvements.
-                </p>
-                <h4 class="section-title">Skills</h4>
-                <p class="section-content flow-text">
-                    I have experience in both Front-end and Back-end. My experience as a freelancer has been leading me on my journey of learning new trends, helping me overcome unexpected obstacles in the road of building something cool for my client.
-                </p>
+                <div class="col s12">
+                    <h3 class="section-title">About</h3>
+                    <p class="section-content">
+                        Developer with a Bachelor's Degree in Computer Science. With over five years of experience with code I found my true passion in Web Development, driven by the constantly-changing world of the Web technologies and my thirst to stay up to date with the latest improvements.
+                    </p>
+                </div>
             </div>
             <!-- Resume -->
             <div class="section center">
-                <a href="./AndresResume.pdf" target="_blank" class="waves-effect waves-light btn white light-blue-text center"><i class="material-icons right">file_download</i>Dowload resum&eacute;</a>
+                <a href="./AndresResume.pdf" target="_blank" class="btn waves-effect waves-light center"><i class="material-icons right">file_download</i>Dowload resum&eacute;</a>
             </div>
         </div>
-        
-        <!-- Education -->
-        <div id="education" class="section white">
+        <div class="divider"></div>
+        <!-- Projects -->
+        <div id="projects" class="section white">
             <div class="row container">
-                <h3 class="section-title">Education</h3>
-                <p>Lindenwood University</p>
-                <hr>
+                <h3 class="section-title">Projects</h3>
+                <div class="row">
+                    <!-- LionBlock -->
+                    <div class="col s12 m6">
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <span class="card-title grey-text">LionBlock</span> <br>
+                                <p>
+                                    Chrome extension for Lindenwood University. LionBlock has the solely purpose to block pesky ads so teachers and students can enjoy a safe browsing experience.
+                                </p>
+                            </div>
+                            <div class="card-action center">
+                                <a href="#" class="teal-text">Check the repo</a>
+                            </div>
+                        </div>  
+                    </div>
+                    <!-- School Projects -->
+                    <div class="col s12 m6">
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <span class="card-title grey-text">School Projects</span> <br>
+                                <p>
+                                    I have some of my favorite projects from when I was a student in Lindenwood University. They are written in many languages, but for most of them I used Java.
+                                </p>
+                            </div>
+                            <div class="card-action center">
+                                <a href="#" class="teal-text">Check the repo</a>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="divider"></div>
         <!-- Experience -->
-        <div id="xp" class="section blue-grey darken-1 white-text">
+        <div id="xp" class="section white">
             <div class="row container">
                 <h3 class="section-title">XP</h3>
                 <p>*Level-up*</p>
@@ -104,11 +136,13 @@
     <footer class="page-footer grey darken-4">
         <div class="container footer-content">
             <div class="row">
-                
+
             </div>
             <div class="row">
                 <div class="col l6 s12">
-                    <p>Passionate Full-Stack Web Developer and undergrad of Computer Science B.S. I have over five years of experience in both Back-end & Front-end. Constantly evolving on the job, always open to learn new things</p>
+                    <p>Passionate Full-Stack Web Developer and undergrad of Computer Science B.S. I have over five years of
+                        experience in both Back-end & Front-end. Constantly evolving on the job, always open to learn new
+                        things</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <ul>
@@ -117,7 +151,7 @@
                                 <i class="fa fa-github" aria-hidden="true"></i>
                             </a>
                             <p>
-                                Visit <a class="social-link" target="_blank" href="https://github.com/AndresRodH">@AndresRodH</a> on GitHub to check my personal projects
+                                Visit <a class="social-link" target="_blank" href="https://github.com/AndresRodH">@AndresRodH</a>                                on GitHub to check my personal projects
                             </p>
                         </li>
                         <li>
@@ -125,11 +159,11 @@
                                 <i class="fa fa-linkedin" aria-hidden="true"></i>
                             </a>
                             <p>
-                                View my <a class="social-link" target="_blank" href="https://linkedin.com/in/AndresRodH">LinkedIn profile</a> or add me to your network
+                                View my <a class="social-link" target="_blank" href="https://linkedin.com/in/AndresRodH">LinkedIn profile</a>                                or add me to your network
                             </p>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3 left" target="_blank" href="https://linkedin.com/in/AndresRodH">
+                            <a class="grey-text text-lighten-3 left" target="_blank" href="./AndresResume.pdf">
                                 <i class="fa fa-briefcase" aria-hidden="true"></i>
                             </a>
                             <p>
@@ -145,13 +179,16 @@
                 Andr&eacute;s Rodr&iacute;guez <span class="line">&#124;</span> Computer Science B.S.
             </div>
         </div>
-    </footer> <!-- Footer -->
+    </footer>
+    <!-- Footer -->
     <!-- jQuery -->
     <script src="./js/jquery-3.2.1.min.js"></script>
     <!-- Materialize -->
     <script src="./js/materialize.min.js"></script>
     <!-- index.js -->
     <script src="./js/index.js"></script>
+    <!-- Typed.js -->
+    <script src="./js/typed.min.js"></script>
 </body>
 
 </html>

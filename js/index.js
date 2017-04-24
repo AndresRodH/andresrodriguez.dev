@@ -23,3 +23,13 @@ $(document).ready(function () {
         } // End if
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    Typed.new('.element', {
+        strings: [ "a Software Developer", "a Web Developer", "innovative", "creative", "a quick learner" ],
+        typeSpeed: 0.5,
+        backDelay: 2000,
+        cursorChar: "<span style=\"color: #cc00ff; font-weight: 900\">_</span>",
+        loop: true,
+    });
+});

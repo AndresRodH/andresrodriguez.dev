@@ -10,8 +10,13 @@ body {
     flex-direction: column;
 }
 
+.section-content {
+    text-indent: 1rem;
+}
+
 main {
     flex: 1 0 auto;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .fa {
@@ -26,18 +31,21 @@ main {
 }
 
 .btn {
-    -webkit-transition: color .1s;
-    transition: color .1s;
+    -webkit-transition: color .05s;
+    transition: color .05s;
+    font-family: 'Roboto', sans-serif;
 }
 
 .btn:hover {
-    background-color: #eceff1 !important;
-    color: #40c4ff !important;
+    background-color: #f5f5f5 !important;
+    color: #00897b !important;
 }
 
 .header-container {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    font-family: "Courier New", Courier, monospace;
+    margin-top: -64px;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 .header {
@@ -45,11 +53,17 @@ main {
 }
 
 .subhead {
+    font-size: 20;
     font-weight: 100;
+}
+
+.element {
+    color: #4db6ac;
 }
 
 .section-title {
     font-weight: 400;
+    color: #4db6ac;
 }
 
 .fa:hover,
@@ -75,4 +89,26 @@ nav,
 .scroll,
 .navbar-fixed {
     height: 64px !important;
+}
+
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
