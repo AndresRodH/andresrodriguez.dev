@@ -52,7 +52,8 @@ main {
     font-weight: 400;
 }
 
-.subhead {
+.subhead,
+.btn {
     font-size: 20;
     font-weight: 100;
 }
@@ -97,16 +98,19 @@ nav,
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
+
 @keyframes blink {
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
 }
+
 @-webkit-keyframes blink {
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
 }
+
 @-moz-keyframes blink {
     0% { opacity:1; }
     50% { opacity:0; }
