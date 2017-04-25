@@ -132,3 +132,9 @@ nav,
     50% { opacity:0; }
     100% { opacity:1; }
 }
+
+@media (max-width: 600px) {
+  .btn {
+    font-weight: 300;
+  }
+}
