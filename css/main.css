@@ -12,7 +12,8 @@ body {
     flex-direction: column;
 }
 
-.special {
+.special,
+.xp-link {
     font-weight: 900;
     color: #cc00ff;
 }
@@ -64,15 +65,15 @@ main {
     font-weight: 900;
 }
 
-.subhead,
-.btn {
+.subhead {
     font-size: 20;
     font-weight: 100;
 }
 
 .element,
 .email,
-.vig {
+.vig,
+.location {
     color: #4db6ac;
 }
 
