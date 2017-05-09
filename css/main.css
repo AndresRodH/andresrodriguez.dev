@@ -19,8 +19,8 @@ body {
 }
 
 .section-content,
-p {
-    text-indent: 1rem;
+{
+    text-indent: 1rem !important;
 }
 
 main {
