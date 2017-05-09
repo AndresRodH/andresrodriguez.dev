@@ -18,7 +18,8 @@ body {
     color: #cc00ff;
 }
 
-.section-content {
+.section-content,
+p {
     text-indent: 1rem;
 }
 
@@ -75,6 +76,10 @@ main {
 .vig,
 .location {
     color: #4db6ac;
+}
+
+.btn-link {
+    width: 100%;
 }
 
 .item {
