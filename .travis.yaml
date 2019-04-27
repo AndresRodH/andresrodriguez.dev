@@ -1,0 +1,12 @@
+language: node_js
+node_js: node
+cache: yarn
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  repo: https://github.com/andresrodh/andresrodh.github.io.git
+  local_dir: public
+  on:
+    branch: master
