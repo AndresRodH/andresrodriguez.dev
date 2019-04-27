@@ -1,9 +1,6 @@
 language: node_js
-node_js:
-  - "stable"
-cache:
-  directories:
-    - node_modules
+node_js: node
+cache: yarn
 deploy:
   provider: pages
   skip-cleanup: true
@@ -13,8 +10,3 @@ deploy:
   repo: https://github.com/andresrodh/andresrodh.github.io.git
   on:
     branch: master
-before_script:
-  - "yarn global add gatsby"
-  - "yarn"
-after_success:
-  - "yarn deploy"

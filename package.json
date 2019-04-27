@@ -11,7 +11,8 @@
     "serve": "gatsby serve",
     "type-check": "tsc",
     "predeploy": "yarn build",
-    "deploy": "node ./scripts/deploy"
+    "deploy": "node ./scripts/deploy",
+    "test": "echo \"TODO\""
   },
   "dependencies": {
     "gatsby": "^2.3.31",
