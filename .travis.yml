@@ -7,7 +7,6 @@ deploy:
   github-token: $GITHUB_TOKEN
   local_dir: public
   keep-history: true
-  repo: https://github.com/andresrodh/andresrodh.github.io.git
   on:
     branch: master
 script:
