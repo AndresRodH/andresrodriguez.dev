@@ -10,3 +10,7 @@ deploy:
   repo: https://github.com/andresrodh/andresrodh.github.io.git
   on:
     branch: master
+script:
+  - "npm run test"
+after_success:
+  - "npm run deploy"
