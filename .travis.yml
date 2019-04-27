@@ -2,14 +2,9 @@ language: node_js
 node_js: node
 cache: yarn
 deploy:
-  provider: pages
+  provider: script
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  local_dir: public
   keep-history: true
+  script: yarn deploy
   on:
     branch: master
-script:
-  - "npm run test"
-after_success:
-  - "npm run deploy"
