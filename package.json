@@ -16,11 +16,14 @@
     "gatsby-plugin-typography": "^2.2.13",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-spring": "^8.0.19",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
     "@types/typography": "^0.16.2",
@@ -34,6 +37,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "gatsby-plugin-emotion": "^4.0.6",
     "husky": "^2.1.0",
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
