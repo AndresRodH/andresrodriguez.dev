@@ -7,7 +7,7 @@ deploy:
   github-token: $GITHUB_TOKEN
   local_dir: public
   keep-history: true
-  repo: https://github.com/andresrodh/andresrodh.github.io.git
+  repo: andresrodh.github.io.git
   name: AndresRodH
   email: andrese.rodriguezh@gmail.com
   on:
