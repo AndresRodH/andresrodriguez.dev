@@ -3,12 +3,15 @@
   "private": true,
   "description": "Personal website",
   "version": "0.1.0",
+  "homepage": "https://andresrodh.github.io",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "predeploy": "yarn build",
+    "deploy": "node ./scripts/deploy"
   },
   "dependencies": {
     "gatsby": "^2.3.31",
@@ -38,6 +41,7 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
     "gatsby-plugin-emotion": "^4.0.6",
+    "gh-pages": "^2.0.1",
     "husky": "^2.1.0",
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
