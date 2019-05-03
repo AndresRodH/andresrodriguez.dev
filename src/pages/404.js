@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import BaseLayout from "../layouts/BaseLayout"
+import BaseLayout from "../layouts/WIPLayout"
 
 export default function NotFound() {
   return (

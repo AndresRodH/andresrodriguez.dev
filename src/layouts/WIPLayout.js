@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "@emotion/styled"
+import styled from "styled-components"
 import Card from "../components/Card"
 import { animated, useSpring, config } from "react-spring"
 
@@ -23,7 +23,7 @@ const StyledCard = styled(Card)`
 
 const AnimatedCard = animated(StyledCard)
 
-const BaseLayout: React.FC = ({ children }) => {
+function WIPLayout({ children }) {
   const props = useSpring({
     opacity: 1,
     config: config.slow,
@@ -36,4 +36,4 @@ const BaseLayout: React.FC = ({ children }) => {
   )
 }
 
-export default BaseLayout
+export default WIPLayout
