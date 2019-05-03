@@ -16,23 +16,16 @@
   },
   "dependencies": {
     "gatsby": "^2.3.31",
-    "gatsby-plugin-typescript": "^2.0.13",
-    "gatsby-plugin-typography": "^2.2.13",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
     "react-spring": "^8.0.19",
     "react-typography": "^0.16.19",
+    "styled-components": "^4.2.0",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.10",
-    "@types/react": "^16.8.14",
-    "@types/react-dom": "^16.8.4",
-    "@types/typography": "^0.16.2",
-    "@typescript-eslint/eslint-plugin": "^1.7.0",
-    "@typescript-eslint/parser": "^1.7.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.0",
@@ -42,11 +35,13 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
     "gatsby-plugin-emotion": "^4.0.6",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-typography": "^2.2.13",
     "gh-pages": "^2.0.1",
     "husky": "^2.1.0",
     "lint-staged": "^8.1.5",
-    "prettier": "^1.17.0",
-    "typescript": "^3.4.5"
+    "prettier": "^1.17.0"
   },
   "repository": {
     "type": "git",
@@ -57,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn type-check && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

@@ -1,11 +1,21 @@
 module.exports = {
+  siteMetadata: {
+    title: "Andrés Rodríguez",
+    author: "Andrés Rodríguez",
+    description: "Personal website",
+    // TODO: move away from github pages
+    siteUrl: "http://andresrodh.github.io",
+    social: {
+      twitter: "@andrexish",
+    },
+  },
   plugins: [
-    "gatsby-plugin-typescript",
-    "gatsby-plugin-emotion",
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: "src/utils/typography",
       },
     },
   ],
