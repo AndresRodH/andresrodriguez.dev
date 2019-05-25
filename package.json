@@ -9,9 +9,7 @@
     "develop": "gatsby develop",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "type-check": "tsc",
     "predeploy": "yarn build",
-    "deploy": "node ./scripts/deploy",
     "test": "echo \"TODO\""
   },
   "dependencies": {
@@ -38,7 +36,6 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-typography": "^2.2.13",
-    "gh-pages": "^2.0.1",
     "husky": "^2.1.0",
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0"
