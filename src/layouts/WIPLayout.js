@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Card from "../components/Card"
-import { animated, useSpring, config } from "react-spring"
 
 const Container = styled.div`
   display: flex;
@@ -21,17 +20,10 @@ const StyledCard = styled(Card)`
   flex-direction: column;
 `
 
-const AnimatedCard = animated(StyledCard)
-
 function WIPLayout({ children }) {
-  const props = useSpring({
-    opacity: 1,
-    config: config.slow,
-    from: { opacity: 0 },
-  })
   return (
     <Container>
-      <AnimatedCard style={props}>{children}</AnimatedCard>
+      <StyledCard>{children}</StyledCard>
     </Container>
   )
 }

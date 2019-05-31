@@ -1,13 +1,49 @@
 import React from "react"
-import BaseLayout from "../layouts/WIPLayout"
+import { graphql, Link } from "gatsby"
+import styled from "styled-components"
+import Header from "../components/Header"
 
-export default function Default() {
+const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+function BlogLayout({ data }) {
+  const { edges } = data.allMarkdownRemark
+
   return (
-    <BaseLayout>
-      <span style={{ flex: 1, paddingBottom: 16 }}>WORK IN PROGRESS!</span>
-      <span role="img" aria-label="work-in-progress">
-        👨🏻‍🏭
-      </span>
-    </BaseLayout>
+    <div>
+      <Header />
+      {edges.map(edge => {
+        const { frontmatter } = edge.node
+        return (
+          <LinksContainer key={frontmatter.path}>
+            <Link to={frontmatter.path}>{frontmatter.title}</Link>
+          </LinksContainer>
+        )
+      })}
+      <div>
+        <Link to="/tags">Browse by Tag</Link>
+      </div>
+    </div>
   )
 }
+
+export const query = graphql`
+  query HomePageQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+            date
+          }
+        }
+      }
+    }
+  }
+`
+
+export default BlogLayout
