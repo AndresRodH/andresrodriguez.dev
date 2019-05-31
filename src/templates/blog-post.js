@@ -1,15 +1,17 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import SEO from "../components/SEO"
 
 function BlogPostTemplate({ data, pageContext }) {
   const { next, prev } = pageContext
-  const { html, frontmatter } = data.markdownRemark
-  const { title, excerpt } = frontmatter
+  const { html, frontmatter, excerpt } = data.markdownRemark
+  const { title, description } = frontmatter
 
   return (
     <div>
+      <SEO title={title} description={description || excerpt} />
       <h1>{title}</h1>
-      <h2>{excerpt}</h2>
+      <h2>{description}</h2>
       <div dangerouslySetInnerHTML={{ __html: html }} />
       {next && <Link to={next.frontmatter.path}>Next</Link>}
       {prev && <Link to={prev.frontmatter.path}>Previous</Link>}
@@ -21,9 +23,10 @@ export const query = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { path: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
-        excerpt
+        description
       }
     }
   }

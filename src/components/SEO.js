@@ -1,27 +1,69 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import useSiteMetadata from "../hooks/useSiteMetadata"
 
-function SEO() {
-  const { title, description, siteUrl, social } = useSiteMetadata()
+function SEO({ description, lang, meta, title }) {
+  const siteMetadata = useSiteMetadata()
+
+  const metaDescription = description || siteMetadata.description
+
   return (
-    <Helmet>
-      {/* General tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-
-      {/* OpenGraph tags */}
-      <meta property="og:url" content={siteUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-
-      {/* Twitter Card tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={social.twitter} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-    </Helmet>
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={`%s | ${siteMetadata.title}`}
+      meta={[
+        {
+          name: "description",
+          content: metaDescription,
+        },
+        {
+          property: "og:title",
+          content: title,
+        },
+        {
+          property: "og:description",
+          content: metaDescription,
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          name: "twitter:card",
+          content: "summary",
+        },
+        {
+          name: "twitter:creator",
+          content: siteMetadata.author,
+        },
+        {
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          name: "twitter:description",
+          content: metaDescription,
+        },
+      ].concat(meta)}
+    />
   )
+}
+
+SEO.defaultProps = {
+  lang: "en",
+  meta: [],
+  description: "",
+}
+
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
 }
 
 export default SEO
