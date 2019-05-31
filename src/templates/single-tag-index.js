@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 
-function SingleTagTemplate({ data, pageContext }) {
+function SingleTagTemplate({ pageContext }) {
   const { posts, tagName } = pageContext
   return (
     <div>
@@ -13,7 +13,9 @@ function SingleTagTemplate({ data, pageContext }) {
           {posts.map((post, index) => {
             return (
               <li key={index}>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+                <Link to={"/blog".concat(post.frontmatter.path)}>
+                  {post.frontmatter.title}
+                </Link>
               </li>
             )
           })}

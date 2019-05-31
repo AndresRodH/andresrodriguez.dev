@@ -23,7 +23,7 @@ function createTagPages(createPage, posts) {
   const tags = Object.keys(postsByTag)
 
   createPage({
-    path: "/tags",
+    path: "/blog/tags",
     component: allTagsIndexTemplate,
     context: {
       tags: tags.sort(),
@@ -34,7 +34,7 @@ function createTagPages(createPage, posts) {
     const posts = postsByTag[tagName]
 
     createPage({
-      path: `/tags/${tagName}`,
+      path: `/blog/tags/${tagName}`,
       component: singleTagIndexTemplate,
       context: {
         posts,
@@ -76,7 +76,7 @@ exports.createPages = ({ graphql, actions }) => {
           const { path } = node.frontmatter
 
           createPage({
-            path,
+            path: "/blog".concat(path),
             component: blogPostTemplate,
             context: {
               slug: path,

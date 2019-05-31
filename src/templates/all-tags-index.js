@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 
-function AllTagsTemplate({ data, pageContext }) {
+function AllTagsTemplate({ pageContext }) {
   const { tags } = pageContext
 
   return (
@@ -10,7 +10,7 @@ function AllTagsTemplate({ data, pageContext }) {
         <ul>
           {tags.map((tagName, index) => (
             <li key={index}>
-              <Link to={`/tags/${tagName}`}>{tagName}</Link>
+              <Link to={`/blog/tags/${tagName}`}>{tagName}</Link>
             </li>
           ))}
         </ul>
