@@ -7,3 +7,10 @@ description: "Second time's the charm"
 ---
 
 Yoooo!
+
+`js~const inline = 'inline'`
+
+```jsx
+<div>Code</div>
+<span>something</span> //highlight-line
+```
