@@ -10,6 +10,14 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
     "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",

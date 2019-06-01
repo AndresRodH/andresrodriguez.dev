@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import SEO from "../components/SEO"
+import Layout from "../layouts/Layout"
 
 function BlogPostTemplate({ data, pageContext }) {
   const { next, prev } = pageContext
@@ -8,14 +9,14 @@ function BlogPostTemplate({ data, pageContext }) {
   const { title, description } = frontmatter
 
   return (
-    <div>
+    <Layout>
       <SEO title={title} description={description || excerpt} />
       <h1>{title}</h1>
       <h2>{description}</h2>
       <div dangerouslySetInnerHTML={{ __html: html }} />
       {next && <Link to={`/blog/${next.frontmatter.path}`}>Next</Link>}
       {prev && <Link to={`/blog/${prev.frontmatter.path}`}>Previous</Link>}
-    </div>
+    </Layout>
   )
 }
 
