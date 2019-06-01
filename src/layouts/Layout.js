@@ -12,7 +12,7 @@ function Layout({ children }) {
       style={{ display: "flex", minHeight: "100vh" }}
     >
       <Nav />
-      <div className="layout-content">{children}</div>
+      <Flex.Item flex={2}>{children}</Flex.Item>
       <Footer />
     </Flex>
   )
