@@ -3,7 +3,6 @@ module.exports = {
     title: "Andrés Rodríguez",
     author: "Andrés Rodríguez",
     description: "Personal website",
-    // TODO: move away from github pages
     siteUrl: "http://andresrodriguez.netlify.com",
     social: {
       twitter: "@andrexish",
