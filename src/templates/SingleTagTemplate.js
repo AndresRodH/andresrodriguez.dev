@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import Layout from "../layouts/Layout"
 
 function SingleTagTemplate({ pageContext }) {
   const { posts, tagName } = pageContext
   return (
-    <div>
+    <Layout title={`Posts about ${tagName}`}>
       <div>
         Posts about <b>{`${tagName}`}</b>
       </div>
@@ -21,7 +22,7 @@ function SingleTagTemplate({ pageContext }) {
           })}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 

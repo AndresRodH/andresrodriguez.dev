@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import Header from "../components/Header"
+import Layout from "../layouts/Layout"
 
 const LinksContainer = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ function BlogLayout({ data }) {
   const { edges } = data.allMarkdownRemark
 
   return (
-    <div>
+    <Layout title="Blog" description="Personal Blog">
       <Header />
       {edges.map(edge => {
         const { frontmatter } = edge.node
@@ -28,7 +29,7 @@ function BlogLayout({ data }) {
       <div>
         <Link to="/blog/tags">Browse by Tag</Link>
       </div>
-    </div>
+    </Layout>
   )
 }
 

@@ -9,8 +9,7 @@ function BlogPostTemplate({ data, pageContext }) {
   const { title, description } = frontmatter
 
   return (
-    <Layout>
-      <SEO title={title} description={description || excerpt} />
+    <Layout title={title} description={description || excerpt}>
       <h1>{title}</h1>
       <h2>{description}</h2>
       <div dangerouslySetInnerHTML={{ __html: html }} />

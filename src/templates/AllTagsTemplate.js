@@ -1,11 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
+import Layout from "../layouts/Layout"
 
 function AllTagsTemplate({ pageContext }) {
   const { tags } = pageContext
 
   return (
-    <div>
+    <Layout title="Blog Tags">
       <div>
         <ul>
           {tags.map((tagName, index) => (
@@ -15,7 +16,7 @@ function AllTagsTemplate({ pageContext }) {
           ))}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 
