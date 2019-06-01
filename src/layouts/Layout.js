@@ -1,21 +1,39 @@
 import React from "react"
+import { node } from "prop-types"
 import Flex from "../components/Flex"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
-import "../utils/global.css"
+import { createGlobalStyle } from "styled-components"
+import SEO from "../components/SEO"
 
-function Layout({ children }) {
+const GlobalCSS = createGlobalStyle`
+  html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+`
+
+function Layout({ children, ...seoProps }) {
   return (
-    <Flex
-      minHeight="100vh"
-      flexDirection="column"
-      style={{ display: "flex", minHeight: "100vh" }}
-    >
-      <Nav />
-      <Flex.Item flex={2}>{children}</Flex.Item>
-      <Footer />
-    </Flex>
+    <>
+      <SEO {...seoProps} />
+      <GlobalCSS />
+      <Flex minHeight="100vh" flexDirection="column">
+        <Nav />
+        <Flex.Item flex={2}>{children}</Flex.Item>
+        <Footer />
+      </Flex>
+    </>
   )
+}
+
+Layout.propTypes = {
+  ...SEO.propTypes,
+  children: node,
 }
 
 export default Layout
