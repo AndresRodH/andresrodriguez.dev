@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import Header from "../components/Header"
 import Layout from "../layouts/Layout"
 
 const LinksContainer = styled.div`
@@ -15,7 +14,6 @@ function BlogLayout({ data }) {
 
   return (
     <Layout title="Blog" description="Personal Blog">
-      <Header />
       {edges.map(edge => {
         const { frontmatter } = edge.node
         return (

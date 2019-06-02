@@ -1,8 +1,20 @@
 import React from "react"
-import { navigate } from "gatsby"
+import { navigate, Link } from "gatsby"
 import Flex from "./Flex"
 import Logo from "./Logo.inline.svg"
 import { rhythm } from "../utils/typography"
+import styled from "styled-components"
+
+const NavLink = styled(Link).attrs({
+  activeStyle: {
+    borderBottom: "2px solid white",
+  },
+  partiallyActive: true,
+})`
+  border-bottom: 2px solid transparent;
+  color: white;
+  text-decoration: none;
+`
 
 function Nav() {
   return (
@@ -23,7 +35,9 @@ function Nav() {
           }}
         />
 
-        <Flex.Item justifySelf="flex-end">Hai</Flex.Item>
+        <Flex.Item justifySelf="flex-end">
+          <NavLink to="/blog">Blog</NavLink>
+        </Flex.Item>
       </Flex>
     </nav>
   )
