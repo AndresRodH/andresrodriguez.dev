@@ -10,7 +10,7 @@ Yoooo!
 
 `js~const inline = 'inline'`
 
-```jsx
+```jsx{numberLines: true}
 <div>Code</div>
 <span>something</span> //highlight-line
 ```

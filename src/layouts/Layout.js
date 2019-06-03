@@ -10,7 +10,7 @@ import SEO from "../components/SEO"
 // * Move this
 // * Customize PrismJS styles
 const GlobalCSS = createGlobalStyle`
-  html {
+html {
   height: 100%;
 }
 
@@ -20,13 +20,13 @@ body {
 }
 
 .gatsby-highlight-code-line {
-  background-color: #feb;
+  background-color: hsla(207, 95%, 15%, 1);
   display: block;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
+  border-left: 0.25em solid rgb(199, 146, 234);;
 }
 
 /**
@@ -34,8 +34,7 @@ body {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background-color: #fdf6e3;
-  border-radius: 0.3em;
+  background-color: #011627;
   margin: 0.5em 0;
   padding: 1em;
   overflow: auto;
@@ -55,11 +54,6 @@ body {
   overflow: initial;
   float: left; /* 1 */
   min-width: 100%; /* 2 */
-}
-
-/* Adjust the position of the line numbers */
-.gatsby-highlight pre[class*="language-"].line-numbers {
-  padding-left: 2.8em;
 }
 `
 
