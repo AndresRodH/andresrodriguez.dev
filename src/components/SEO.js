@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import useSiteMetadata from "../hooks/useSiteMetadata"
+import favicon64 from "../../static/favicon.png"
 
 function SEO({ description, lang, meta, title }) {
   const siteMetadata = useSiteMetadata()
@@ -15,6 +16,15 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={`${siteMetadata.title} | %s`}
+      link={[
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "64x64",
+          href: `${favicon64}`,
+        },
+        { rel: "shortcut icon", type: "image/png", href: `${favicon64}` },
+      ]}
       meta={[
         {
           name: "description",
