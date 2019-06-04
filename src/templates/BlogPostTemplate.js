@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import SEO from "../components/SEO"
 import Base from "../layouts/Base"
 
 function BlogPostTemplate({ data, pageContext }) {
