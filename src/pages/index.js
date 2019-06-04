@@ -1,13 +1,13 @@
 import React from "react"
-import Layout from "../layouts/Layout"
+import Base from "../layouts/Base"
 import Header from "../components/Header"
 
 function Home() {
   return (
-    <Layout title="Home">
+    <Base title="Home">
       <Header />
       Home
-    </Layout>
+    </Base>
   )
 }
 
