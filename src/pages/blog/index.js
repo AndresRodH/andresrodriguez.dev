@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import Base from "../layouts/Base"
+import Base from "../../layouts/Base"
+import TagsMenu from "./TagsMenu"
 
 const LinksContainer = styled.div`
   display: flex;
@@ -10,38 +11,44 @@ const LinksContainer = styled.div`
 `
 
 function BlogLayout({ data }) {
-  const { edges } = data.allMarkdownRemark
+  const { posts, tags } = data
 
   return (
     <Base title="Blog" description="Personal Blog">
-      {edges.map(edge => {
-        const { frontmatter } = edge.node
+      {posts.edges.map(edge => {
+        const { path, title } = edge.node.frontmatter
+
         return (
-          <LinksContainer key={frontmatter.path}>
-            <Link to={"/blog".concat(frontmatter.path)}>
-              {frontmatter.title}
-            </Link>
+          <LinksContainer key={path}>
+            <Link to={"/blog".concat(path)}>{title}</Link>
           </LinksContainer>
         )
       })}
-      <div>
-        <Link to="/blog/tags">Browse by Tag</Link>
-      </div>
+      <TagsMenu tags={tags.group} />
     </Base>
   )
 }
 
 export const query = graphql`
   query BlogPageQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    posts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           frontmatter {
             title
             path
             date
+            tags
           }
         }
+      }
+    }
+    tags: allMarkdownRemark {
+      group(field: frontmatter___tags) {
+        name: fieldValue
+        count: totalCount
       }
     }
   }
