@@ -1,39 +1,29 @@
 import React from "react"
+import { useActiveTagsDispatch, useActiveTags } from "./ActiveTags"
 
 type Tag = {
   name: string
   count: number
 }
 
-type Props = {
-  tags: Tag[]
-  activeTagNames: string[]
-  pushActiveTagName: (name: string) => void
-  removeActiveTagName: (name: string) => void
-  clearActiveTags: () => void
-}
+function TagsMenu({ tags }: { tags: Tag[] }) {
+  const activeTags = useActiveTags()
+  const dispatch = useActiveTagsDispatch()
 
-function TagsMenu({
-  tags,
-  activeTagNames,
-  pushActiveTagName,
-  removeActiveTagName,
-  clearActiveTags,
-}: Props) {
   return (
     <div>
-      {Boolean(activeTagNames.length) && (
+      {Boolean(activeTags.length) && (
         <>
           ActiveTags:{" "}
           <span
             style={{ textDecoration: "underline", cursor: "pointer" }}
-            onClick={() => clearActiveTags()}
+            onClick={() => dispatch({ type: "clear" })}
           >
             Clear
           </span>
           <ul>
-            {activeTagNames.map(name => (
-              <li key={name} onClick={() => removeActiveTagName(name)}>
+            {activeTags.map(name => (
+              <li key={name} onClick={() => dispatch({ type: "remove", name })}>
                 {name}
               </li>
             ))}
@@ -42,9 +32,9 @@ function TagsMenu({
       )}
       <ul>
         {tags
-          .filter(({ name }) => !activeTagNames.includes(name))
+          .filter(({ name }) => !activeTags.includes(name))
           .map(({ name, count }) => (
-            <li key={name} onClick={() => pushActiveTagName(name)}>
+            <li key={name} onClick={() => dispatch({ type: "add", name })}>
               {name} {count}
             </li>
           ))}
