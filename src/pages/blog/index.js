@@ -10,8 +10,13 @@ const LinksContainer = styled.div`
   align-items: center;
 `
 
-function BlogLayout({ data }) {
+function BlogLayout({ data, location }) {
   const { posts, tags } = data
+  const [activeTagNames, setactiveTagNames] = React.useState([])
+
+  const pushTagName = name => setactiveTagNames(tags => tags.concat(name))
+  const removeTagName = name =>
+    setactiveTagNames(tags => tags.filter(tag => !(tag === name)))
 
   return (
     <Base title="Blog" description="Personal Blog">
@@ -24,7 +29,13 @@ function BlogLayout({ data }) {
           </LinksContainer>
         )
       })}
-      <TagsMenu tags={tags.group} />
+
+      <TagsMenu
+        pushTagName={pushTagName}
+        removeTagName={removeTagName}
+        activeTagNames={activeTagNames}
+        tags={tags.group}
+      />
     </Base>
   )
 }
