@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import Flex from "../../components/Flex"
 import Nav from "../../components/Nav"
 import Footer from "../../components/Footer"
