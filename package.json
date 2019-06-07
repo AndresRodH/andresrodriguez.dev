@@ -11,7 +11,8 @@
     "serve": "gatsby serve",
     "predeploy": "yarn build",
     "type-check": "tsc",
-    "test": "echo \"TODO\""
+    "test": "echo \"TODO\"",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "gatsby": "^2.3.31",
@@ -34,6 +35,9 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.2.0",
+    "@graphql-codegen/typescript": "1.2.0",
+    "@graphql-codegen/typescript-operations": "1.2.0",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",

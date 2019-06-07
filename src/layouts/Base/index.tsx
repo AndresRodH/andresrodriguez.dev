@@ -1,16 +1,15 @@
-import React from "react"
-import { node } from "prop-types"
+import * as React from "react"
 import Flex from "../../components/Flex"
 import Nav from "../../components/Nav"
 import Footer from "../../components/Footer"
-import SEO from "../../components/SEO"
-import GlobalCSS from "./GlobalStyles"
+import SEO, { SEOProps } from "../../components/SEO"
+import BaseCSS from "./BaseCSS"
 
-function Base({ children, ...seo }) {
+export const Base: React.FC<SEOProps> = ({ children, ...seo }) => {
   return (
     <>
       <SEO {...seo} />
-      <GlobalCSS />
+      <BaseCSS />
       <Flex minHeight="100vh" flexDirection="column">
         <Nav />
         <Flex.Item flex={2}>{children}</Flex.Item>
@@ -18,11 +17,6 @@ function Base({ children, ...seo }) {
       </Flex>
     </>
   )
-}
-
-Base.propTypes = {
-  ...SEO.propTypes,
-  children: node,
 }
 
 export default Base

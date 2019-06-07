@@ -1,8 +1,29 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Base from "../layouts/Base"
+import { BlogPostQuery } from "../generated"
 
-function BlogPostTemplate({ data, pageContext }) {
+type PostFrontmatter = {
+  path: string
+  title: string
+}
+
+type PostNode = {
+  frontmatter: PostFrontmatter
+}
+
+type BlogPostPageContext = {
+  slug: string
+  prev: PostNode | null
+  next: PostNode | null
+}
+
+type Props = {
+  data: BlogPostQuery
+  pageContext: BlogPostPageContext
+}
+
+function BlogPostTemplate({ data, pageContext }: Props) {
   const { next, prev } = pageContext
   const { html, frontmatter, excerpt } = data.markdownRemark
   const { title, description } = frontmatter
@@ -19,7 +40,7 @@ function BlogPostTemplate({ data, pageContext }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query BlogPost($slug: String!) {
     markdownRemark(frontmatter: { path: { eq: $slug } }) {
       html
       excerpt

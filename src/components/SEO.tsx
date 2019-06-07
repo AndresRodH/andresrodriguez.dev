@@ -1,10 +1,16 @@
 import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import Helmet, { HelmetProps } from "react-helmet"
 import useSiteMetadata from "../hooks/useSiteMetadata"
 import favicon64 from "../../static/favicon.png"
 
-function SEO({ description, lang, meta, title }) {
+export type SEOProps = {
+  description?: string
+  lang?: string
+  title: string
+  meta?: HelmetProps["meta"]
+}
+
+function SEO({ description, lang, meta, title }: SEOProps) {
   const siteMetadata = useSiteMetadata()
 
   const metaDescription = description || siteMetadata.description
@@ -58,7 +64,8 @@ function SEO({ description, lang, meta, title }) {
           name: "twitter:description",
           content: metaDescription,
         },
-      ].concat(meta)}
+        ...meta,
+      ]}
     />
   )
 }
@@ -67,13 +74,6 @@ SEO.defaultProps = {
   lang: "en",
   meta: [],
   description: "",
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO

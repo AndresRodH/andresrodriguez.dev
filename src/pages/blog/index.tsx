@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import Base from "../../layouts/Base"
 import TagsMenu from "./TagsMenu"
+import { BlogPageQuery } from "../../generated"
 
 const LinksContainer = styled.div`
   display: flex;
@@ -10,12 +11,13 @@ const LinksContainer = styled.div`
   align-items: center;
 `
 
-function BlogLayout({ data, location }) {
+function BlogLayout({ data }: { data: BlogPageQuery }) {
   const { posts, tags } = data
-  const [activeTagNames, setactiveTagNames] = React.useState([])
+  const [activeTagNames, setactiveTagNames] = React.useState<string[]>([])
 
-  const pushTagName = name => setactiveTagNames(tags => tags.concat(name))
-  const removeTagName = name =>
+  const pushTagName = (name: string) =>
+    setactiveTagNames(tags => tags.concat(name))
+  const removeTagName = (name: string) =>
     setactiveTagNames(tags => tags.filter(tag => !(tag === name)))
 
   return (
@@ -41,7 +43,7 @@ function BlogLayout({ data, location }) {
 }
 
 export const query = graphql`
-  query BlogPageQuery {
+  query BlogPage {
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
