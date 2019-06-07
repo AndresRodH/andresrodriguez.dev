@@ -5,6 +5,9 @@ documents:
   - "./node_modules/gatsby-*/**/*.js"
 generates:
   src/generated.ts:
+    config:
+      namingConvention:
+        enumValues: keep
     plugins:
       - "typescript"
       - "typescript-operations"
