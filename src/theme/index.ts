@@ -1,4 +1,4 @@
-import { black, chateauGreen, white } from "./colors"
+import { chateauGreen, white } from "./colors"
 import { DefaultTheme } from "styled-components"
 
 const theme: DefaultTheme = {
