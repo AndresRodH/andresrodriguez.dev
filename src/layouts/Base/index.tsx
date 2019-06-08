@@ -6,6 +6,7 @@ import Footer from "../../components/Footer"
 import SEO, { SEOProps } from "../../components/SEO"
 import BaseCSS from "./BaseCSS"
 import theme from "../../theme"
+import LocalStorage from "../../utils/LocalStorage"
 
 const Content = styled(Flex)`
   min-height: 100vh;
@@ -14,13 +15,19 @@ const Content = styled(Flex)`
 `
 
 export const Base: React.FC<SEOProps> = ({ children, ...seo }) => {
+  const [selectedTheme, setSelectedTheme] = React.useState<"light" | "dark">(
+    LocalStorage.getTheme()
+  )
+
+  const toggleTheme = () => setSelectedTheme(LocalStorage.toggleTheme())
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme[selectedTheme]}>
       <>
         <SEO {...seo} />
         <BaseCSS />
         <Content>
-          <Nav />
+          <Nav toggleTheme={toggleTheme} />
           <Flex.Item flex={2}>{children}</Flex.Item>
           <Footer />
         </Content>

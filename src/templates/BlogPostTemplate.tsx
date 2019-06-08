@@ -33,8 +33,8 @@ function BlogPostTemplate({ data, pageContext }: Props) {
       <h1>{title}</h1>
       <h2>{description}</h2>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-      {next && <Link to={`/blog/${next.frontmatter.path}`}>Next</Link>}
-      {prev && <Link to={`/blog/${prev.frontmatter.path}`}>Previous</Link>}
+      {next && <Link to={"/blog".concat(next.frontmatter.path)}>Next</Link>}
+      {prev && <Link to={"/blog".concat(prev.frontmatter.path)}>Previous</Link>}
     </Base>
   )
 }

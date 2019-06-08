@@ -22,7 +22,7 @@ const NavLink = styled(Link).attrs({
   }
 `
 
-function Nav() {
+function Nav({ toggleTheme }: { toggleTheme: () => void }) {
   return (
     <Toolbar as="nav">
       <Logo
@@ -36,6 +36,7 @@ function Nav() {
       />
 
       <Flex.Item justifySelf="flex-end">
+        <button onClick={toggleTheme}>toggle</button>
         <NavLink to="/blog">Blog</NavLink>
       </Flex.Item>
     </Toolbar>

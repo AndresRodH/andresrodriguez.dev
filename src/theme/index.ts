@@ -1,11 +1,20 @@
-import { chateauGreen, white } from "./colors"
 import { DefaultTheme } from "styled-components"
 
-const theme: DefaultTheme = {
-  text: white,
-  primary: chateauGreen,
+export const dark: DefaultTheme = {
+  text: "#fff",
+  primary: "#65CCB8",
   backgroundDark: "#121212",
   background: "#1f1f1f",
 }
 
-export default theme
+export const light: DefaultTheme = {
+  text: "000",
+  primary: "#3B945E",
+  backgroundDark: "#f2f2f2",
+  background: "#fff",
+}
+
+export default {
+  light,
+  dark,
+}
