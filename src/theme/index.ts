@@ -8,7 +8,7 @@ export const dark: DefaultTheme = {
 }
 
 export const light: DefaultTheme = {
-  text: "000",
+  text: "#000",
   primary: "#3B945E",
   backgroundDark: "#f2f2f2",
   background: "#fff",

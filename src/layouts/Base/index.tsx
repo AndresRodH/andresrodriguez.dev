@@ -15,19 +15,19 @@ const Content = styled(Flex)`
 `
 
 export const Base: React.FC<SEOProps> = ({ children, ...seo }) => {
-  const [selectedTheme, setSelectedTheme] = React.useState<"light" | "dark">(
+  const [activeTheme, setActiveTheme] = React.useState<"light" | "dark">(
     LocalStorage.getTheme()
   )
 
-  const toggleTheme = () => setSelectedTheme(LocalStorage.toggleTheme())
+  const toggleTheme = () => setActiveTheme(LocalStorage.toggleTheme())
 
   return (
-    <ThemeProvider theme={theme[selectedTheme]}>
+    <ThemeProvider theme={theme[activeTheme]}>
       <>
         <SEO {...seo} />
         <BaseCSS />
         <Content>
-          <Nav toggleTheme={toggleTheme} />
+          <Nav activeTheme={activeTheme} toggleTheme={toggleTheme} />
           <Flex.Item flex={2}>{children}</Flex.Item>
           <Footer />
         </Content>

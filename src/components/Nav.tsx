@@ -2,9 +2,19 @@ import React from "react"
 import { navigate, Link } from "gatsby"
 import Flex from "./Flex"
 import Logo from "./Logo.inline.svg"
+import SunSVG from "./Sun.inline.svg"
+import MoonSVG from "./Moon.inline.svg"
 import { rhythm } from "../utils/typography"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import Toolbar from "./Toolbar"
+
+const navItemCSS = css`
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+`
 
 const NavLink = styled(Link).attrs({
   activeStyle: {
@@ -13,16 +23,29 @@ const NavLink = styled(Link).attrs({
   partiallyActive: true,
 })`
   color: ${props => props.theme.text};
-  border-bottom: 2px solid transparent;
   text-decoration: none;
-  opacity: 0.7;
-
-  &:hover {
-    opacity: 1;
-  }
+  margin-left: ${rhythm(0.5)};
+  ${navItemCSS}
 `
 
-function Nav({ toggleTheme }: { toggleTheme: () => void }) {
+const Sun = styled(SunSVG)`
+  cursor: pointer;
+  ${navItemCSS}
+`
+const Moon = Sun.withComponent(MoonSVG)
+
+type Props = {
+  activeTheme: "light" | "dark"
+  toggleTheme: () => void
+}
+function Nav({ toggleTheme, activeTheme }: Props) {
+  const ToggleButton =
+    activeTheme === "light" ? (
+      <Moon onClick={toggleTheme} />
+    ) : (
+      <Sun onClick={toggleTheme} />
+    )
+
   return (
     <Toolbar as="nav">
       <Logo
@@ -36,8 +59,10 @@ function Nav({ toggleTheme }: { toggleTheme: () => void }) {
       />
 
       <Flex.Item justifySelf="flex-end">
-        <button onClick={toggleTheme}>toggle</button>
-        <NavLink to="/blog">Blog</NavLink>
+        <Flex alignItems="center">
+          {ToggleButton}
+          <NavLink to="/blog">Blog</NavLink>
+        </Flex>
       </Flex.Item>
     </Toolbar>
   )
