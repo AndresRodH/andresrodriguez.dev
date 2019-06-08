@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import Box from "./Box"
+import { boxShadow } from "../utils/styles"
 
-const Card = styled(Box)({
-  borderRadius: "6",
-  boxShadow: "0 2px 4px rgba(0, 0, 0, .125)",
-})
+const Card = styled(Box)`
+  border-radius: 6px;
+  ${boxShadow}
+`
 
 export default Card

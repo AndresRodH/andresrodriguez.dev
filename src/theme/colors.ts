@@ -1,3 +1,5 @@
+export const black = "#000"
+export const white = "#fff"
 export const mirage = "#182628"
 export const downy = "#65CCB8"
 export const silverTree = "#57BA98"

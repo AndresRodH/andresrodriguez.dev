@@ -4,27 +4,27 @@ import Flex from "./Flex"
 import Logo from "./Logo.inline.svg"
 import { rhythm } from "../utils/typography"
 import styled from "styled-components"
+import Toolbar from "./Toolbar"
 
 const NavLink = styled(Link).attrs({
   activeStyle: {
-    borderBottom: "2px solid white",
+    opacity: 1,
   },
   partiallyActive: true,
 })`
+  color: ${props => props.theme.text};
   border-bottom: 2px solid transparent;
-  color: white;
   text-decoration: none;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
 `
 
 function Nav() {
   return (
-    <Flex
-      as="nav"
-      backgroundColor="palevioletred"
-      justifyContent="space-between"
-      alignItems="center"
-      p={`0 ${rhythm(0.5)} 0 0`}
-    >
+    <Toolbar as="nav">
       <Logo
         onClick={() => navigate("/")}
         style={{
@@ -38,7 +38,7 @@ function Nav() {
       <Flex.Item justifySelf="flex-end">
         <NavLink to="/blog">Blog</NavLink>
       </Flex.Item>
-    </Flex>
+    </Toolbar>
   )
 }
 
