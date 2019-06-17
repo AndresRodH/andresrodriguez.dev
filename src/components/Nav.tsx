@@ -10,6 +10,7 @@ import Toolbar from "./Toolbar"
 
 const navItemCSS = css`
   opacity: 0.7;
+  cursor: pointer;
 
   &:hover {
     opacity: 1;
@@ -29,7 +30,6 @@ const NavLink = styled(Link).attrs({
 `
 
 const Sun = styled(SunSVG)`
-  cursor: pointer;
   ${navItemCSS}
 `
 const Moon = Sun.withComponent(MoonSVG)

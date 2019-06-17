@@ -57,6 +57,20 @@ export type FlexItemProps = ss.FlexProps &
   ss.AlignSelfProps &
   ss.OrderProps
 
+export const GRID = listCompose([
+  "gridTemplateColumns",
+  "gridTemplateRows",
+  "gridTemplateAreas",
+  "gridGap",
+])
+export type GridProps = ss.GridTemplateColumnsProps &
+  ss.GridTemplateRowsProps &
+  ss.GridTemplatesAreasProps &
+  ss.GridGapProps
+
+export const GRID_ITEM = listCompose(["gridArea"])
+export type GridItemProps = ss.GridAreaProps
+
 function listCompose(list: string[]) {
   return compose(
     ...list.map(

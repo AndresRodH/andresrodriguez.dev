@@ -8,6 +8,7 @@ export default createGlobalStyle`
   body {
     height: 100%;
     margin: 0;
+    color: ${props => props.theme.text};
   }
 
   /** Prism styles https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/ */
@@ -26,6 +27,7 @@ export default createGlobalStyle`
   * and overflow that we removed from <pre>.
   */
   .gatsby-highlight {
+    border-radius: 8px;
     background-color: #011627;
     margin: 0.5em 0;
     padding: 1em;
