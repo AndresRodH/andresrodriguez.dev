@@ -1,7 +1,7 @@
 import React from "react"
 import { useActiveTagsDispatch, useActiveTags } from "./ActiveTags"
-import { BlogPageQuery } from "../../generated"
-import Chip from "../../components/Chip"
+import { BlogPageQuery } from "../generated"
+import Chip from "./Chip"
 
 function TagsMenu({ tags }: { tags: BlogPageQuery["tags"]["group"] }) {
   const activeTags = useActiveTags()

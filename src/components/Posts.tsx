@@ -1,10 +1,10 @@
 import React from "react"
-import { BlogPageQuery } from "../../generated"
+import { BlogPageQuery } from "../generated"
 import { useActiveTags } from "./ActiveTags"
 import styled from "styled-components"
 import PostCard from "./PostCard"
-import Grid from "../../components/Grid"
-import { rhythm } from "../../utils/typography"
+import Grid from "./Grid"
+import { rhythm } from "../utils/typography"
 
 export const autoGrid = (minColumnWidth = 300, gridGap = 0) => ({
   display: "grid",

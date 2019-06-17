@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Base from "../../layouts/Base"
-import TagsMenu from "./TagsMenu"
-import { BlogPageQuery } from "../../generated"
-import ActiveTags from "./ActiveTags"
-import Posts from "./Posts"
-import { rhythm } from "../../utils/typography"
-import Grid from "../../components/Grid"
+import Base from "../layouts/Base"
+import TagsMenu from "../components/TagsMenu"
+import { BlogPageQuery } from "../generated"
+import ActiveTags from "../components/ActiveTags"
+import Posts from "../components/Posts"
+import { rhythm } from "../utils/typography"
+import Grid from "../components/Grid"
 
 function BlogPage({ data }: { data: BlogPageQuery }) {
   const { posts, tags } = data

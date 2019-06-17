@@ -1,7 +1,7 @@
 import React from "react"
 import { navigate } from "gatsby"
-import { BlogPageQuery } from "../../generated"
-import Card from "../../components/Card"
+import { BlogPageQuery } from "../generated"
+import Card from "./Card"
 
 function PostCard({
   title,
@@ -11,7 +11,7 @@ function PostCard({
   return (
     <Card as="article" onClick={() => navigate("/blog".concat(path))}>
       {title}
-      {tags[0]}
+      {tags && tags[0]}
     </Card>
   )
 }
