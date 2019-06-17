@@ -17,27 +17,27 @@ const PageGrid = styled(Grid)`
 `
 
 export const Base: React.FC<SEOProps> = ({ children, ...seo }) => {
-  const [activeTheme, setActiveTheme] = React.useState<"light" | "dark">(() => {
-    // if (window !== undefined) {
-    //   if (localStorage.getItem("theme")) {
-    //     return localStorage.getItem("theme") as "light" | "dark"
-    //   }
-    //   return "light"
-    // }
-    return "light"
-  })
+  // const [activeTheme, setActiveTheme] = React.useState<"light" | "dark">(() => {
+  //   if (window !== undefined) {
+  //     if (localStorage.getItem("theme")) {
+  //       return localStorage.getItem("theme") as "light" | "dark"
+  //     }
+  //     return "light"
+  //   }
+  //   return "light"
+  // })
 
-  const toggleTheme = () =>
-    setActiveTheme(theme => (theme === "light" ? "dark" : "light"))
+  // const toggleTheme = () =>
+  //   setActiveTheme(theme => (theme === "light" ? "dark" : "light"))
 
   return (
-    <ThemeProvider theme={theme[activeTheme]}>
+    <ThemeProvider theme={theme.light}>
       <>
         <SEO {...seo} />
         <BaseCSS />
         <PageGrid>
           <Grid.Item gridArea="nav">
-            <Nav activeTheme={activeTheme} toggleTheme={toggleTheme} />
+            <Nav />
           </Grid.Item>
           <Grid.Item gridArea="content" m={rhythm(1)}>
             {children}

@@ -29,22 +29,22 @@ const NavLink = styled(Link).attrs({
   ${navItemCSS}
 `
 
-const Sun = styled(SunSVG)`
-  ${navItemCSS}
-`
-const Moon = Sun.withComponent(MoonSVG)
+// const Sun = styled(SunSVG)`
+//   ${navItemCSS}
+// `
+// const Moon = Sun.withComponent(MoonSVG)
 
-type Props = {
-  activeTheme: "light" | "dark"
-  toggleTheme: () => void
-}
-function Nav({ toggleTheme, activeTheme }: Props) {
-  const ToggleButton =
-    activeTheme === "light" ? (
-      <Moon onClick={toggleTheme} />
-    ) : (
-      <Sun onClick={toggleTheme} />
-    )
+// type Props = {
+//   activeTheme: "light" | "dark"
+//   toggleTheme: () => void
+// }
+function Nav(/*{ toggleTheme, activeTheme }: Props*/) {
+  // const ToggleButton =
+  //   activeTheme === "light" ? (
+  //     <Moon onClick={toggleTheme} />
+  //   ) : (
+  //     <Sun onClick={toggleTheme} />
+  //   )
 
   return (
     <Toolbar as="nav">
@@ -60,7 +60,7 @@ function Nav({ toggleTheme, activeTheme }: Props) {
 
       <Flex.Item justifySelf="flex-end">
         <Flex alignItems="center">
-          {ToggleButton}
+          {/* {ToggleButton} */}
           <NavLink to="/blog">Blog</NavLink>
         </Flex>
       </Flex.Item>
