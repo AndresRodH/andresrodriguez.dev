@@ -1,36 +1,51 @@
 import React from "react"
 import styled, { ThemeProvider } from "styled-components"
-import Flex from "../../components/Flex"
 import Nav from "../../components/Nav"
 import Footer from "../../components/Footer"
 import SEO, { SEOProps } from "../../components/SEO"
 import BaseCSS from "./BaseCSS"
 import theme from "../../theme"
-import LocalStorage from "../../utils/LocalStorage"
+import { rhythm } from "../../utils/typography"
+import Grid from "../../components/Grid"
 
-const Content = styled(Flex)`
+const PageGrid = styled(Grid)`
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "nav" "content" "footer";
   min-height: 100vh;
-  flex-direction: column;
-  background-color: ${props => props.theme.backgroundDark};
+  background-color: ${props => props.theme.background};
 `
 
 export const Base: React.FC<SEOProps> = ({ children, ...seo }) => {
-  const [activeTheme, setActiveTheme] = React.useState<"light" | "dark">(
-    LocalStorage.getTheme()
-  )
+  const [activeTheme, setActiveTheme] = React.useState<"light" | "dark">(() => {
+    if (window !== undefined) {
+      if (localStorage.getItem("theme")) {
+        return localStorage.getItem("theme") as "light" | "dark"
+      }
+      return "light"
+    }
+    return "light"
+  })
 
-  const toggleTheme = () => setActiveTheme(LocalStorage.toggleTheme())
+  const toggleTheme = () =>
+    setActiveTheme(theme => (theme === "light" ? "dark" : "light"))
 
   return (
     <ThemeProvider theme={theme[activeTheme]}>
       <>
         <SEO {...seo} />
         <BaseCSS />
-        <Content>
-          <Nav activeTheme={activeTheme} toggleTheme={toggleTheme} />
-          <Flex.Item flex={2}>{children}</Flex.Item>
-          <Footer />
-        </Content>
+        <PageGrid>
+          <Grid.Item gridArea="nav">
+            <Nav activeTheme={activeTheme} toggleTheme={toggleTheme} />
+          </Grid.Item>
+          <Grid.Item gridArea="content" m={rhythm(1)}>
+            {children}
+          </Grid.Item>
+          <Grid.Item gridArea="footer">
+            <Footer />
+          </Grid.Item>
+        </PageGrid>
       </>
     </ThemeProvider>
   )
