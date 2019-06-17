@@ -23,7 +23,7 @@
     "gatsby-plugin-typography": "^2.2.13",
     "gatsby-remark-prismjs": "^3.2.9",
     "gatsby-source-filesystem": "^2.0.37",
-    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby-transformer-remark": "^2.4.0",
     "prism-theme-night-owl": "^1.0.1",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
