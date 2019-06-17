@@ -18,12 +18,12 @@ const PageGrid = styled(Grid)`
 
 export const Base: React.FC<SEOProps> = ({ children, ...seo }) => {
   const [activeTheme, setActiveTheme] = React.useState<"light" | "dark">(() => {
-    if (window !== undefined) {
-      if (localStorage.getItem("theme")) {
-        return localStorage.getItem("theme") as "light" | "dark"
-      }
-      return "light"
-    }
+    // if (window !== undefined) {
+    //   if (localStorage.getItem("theme")) {
+    //     return localStorage.getItem("theme") as "light" | "dark"
+    //   }
+    //   return "light"
+    // }
     return "light"
   })
 
