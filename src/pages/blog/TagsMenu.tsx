@@ -1,12 +1,9 @@
 import React from "react"
 import { useActiveTagsDispatch, useActiveTags } from "./ActiveTags"
+import { BlogPageQuery } from "../../generated"
+import Chip from "../../components/Chip"
 
-type Tag = {
-  name: string
-  count: number
-}
-
-function TagsMenu({ tags }: { tags: Tag[] }) {
+function TagsMenu({ tags }: { tags: BlogPageQuery["tags"]["group"] }) {
   const activeTags = useActiveTags()
   const dispatch = useActiveTagsDispatch()
 
@@ -21,24 +18,27 @@ function TagsMenu({ tags }: { tags: Tag[] }) {
           >
             Clear
           </span>
-          <ul>
+          <div>
             {activeTags.map(name => (
-              <li key={name} onClick={() => dispatch({ type: "remove", name })}>
+              <Chip
+                key={name}
+                onClick={() => dispatch({ type: "remove", name })}
+              >
                 {name}
-              </li>
+              </Chip>
             ))}
-          </ul>
+          </div>
         </>
       )}
-      <ul>
+      <div>
         {tags
           .filter(({ name }) => !activeTags.includes(name))
           .map(({ name, count }) => (
-            <li key={name} onClick={() => dispatch({ type: "add", name })}>
+            <Chip key={name} onClick={() => dispatch({ type: "add", name })}>
               {name} {count}
-            </li>
+            </Chip>
           ))}
-      </ul>
+      </div>
     </div>
   )
 }

@@ -8,9 +8,9 @@ description: "Second time's the charm"
 
 Yoooo!
 
-`js~const inline = 'inline'`
-
-```jsx{numberLines: true}
-<div>Code</div>
-<span>something</span> //highlight-line
+```typescript
+type A<T> = {
+  some: string
+  t: T
+}
 ```

@@ -5,6 +5,8 @@ import TagsMenu from "./TagsMenu"
 import { BlogPageQuery } from "../../generated"
 import ActiveTags from "./ActiveTags"
 import Posts from "./Posts"
+import { rhythm } from "../../utils/typography"
+import Grid from "../../components/Grid"
 
 function BlogPage({ data }: { data: BlogPageQuery }) {
   const { posts, tags } = data
@@ -12,8 +14,19 @@ function BlogPage({ data }: { data: BlogPageQuery }) {
   return (
     <Base title="Blog" description="Personal Blog">
       <ActiveTags>
-        <Posts posts={posts.edges} />
-        <TagsMenu tags={tags.group} />
+        <Grid
+          height="100%"
+          gridTemplateColumns="minMax(150px, 200px) 1fr"
+          gridTemplateAreas={'"tags posts"'}
+          gridGap={`0 ${rhythm(1)}`}
+        >
+          <Grid.Item gridArea="posts">
+            <Posts posts={posts.edges} />
+          </Grid.Item>
+          <Grid.Item gridArea="tags">
+            <TagsMenu tags={tags.group} />
+          </Grid.Item>
+        </Grid>
       </ActiveTags>
     </Base>
   )
