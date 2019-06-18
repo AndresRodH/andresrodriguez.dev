@@ -47,7 +47,7 @@
     "@types/typography": "^0.16.2",
     "@typescript-eslint/eslint-plugin": "^1.10.2",
     "@typescript-eslint/parser": "^1.9.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.0.2",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.1",
     "eslint-plugin-flowtype": "2.x",
