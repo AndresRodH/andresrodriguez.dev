@@ -32,7 +32,7 @@
     "react-typography": "^0.16.19",
     "styled-components": "^4.3.1",
     "styled-icons": "^8.1.0",
-    "styled-system": "^4.2.4",
+    "styled-system": "^5.0.6",
     "typography": "^0.16.19"
   },
   "devDependencies": {
