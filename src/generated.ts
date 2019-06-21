@@ -336,6 +336,7 @@ export type DirectorySortInput = {
 export enum ExcerptFormats {
   PLAIN = "PLAIN",
   HTML = "HTML",
+  MARKDOWN = "MARKDOWN",
 }
 
 export type File = Node & {
@@ -2069,14 +2070,17 @@ export type BlogPageQuery = { __typename?: "Query" } & {
     { __typename?: "MarkdownRemarkConnection" } & {
       edges: Array<
         { __typename?: "MarkdownRemarkEdge" } & {
-          node: { __typename?: "MarkdownRemark" } & {
-            frontmatter: Maybe<
-              { __typename?: "MarkdownRemarkFrontmatter" } & Pick<
-                MarkdownRemarkFrontmatter,
-                "title" | "path" | "date" | "tags"
+          node: { __typename?: "MarkdownRemark" } & Pick<
+            MarkdownRemark,
+            "excerpt"
+          > & {
+              frontmatter: Maybe<
+                { __typename?: "MarkdownRemarkFrontmatter" } & Pick<
+                  MarkdownRemarkFrontmatter,
+                  "title" | "path" | "date" | "tags"
+                >
               >
-            >
-          }
+            }
         }
       >
     }

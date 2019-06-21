@@ -13,7 +13,7 @@ const PageGrid = styled(Grid)`
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "nav" "content" "footer";
   min-height: 100vh;
-  background-color: ${props => props.theme.background};
+  background-color: ${props => props.theme.backgroundDark};
 `
 
 export const Base: React.FC<SEOProps> = ({ children, ...seo }) => {

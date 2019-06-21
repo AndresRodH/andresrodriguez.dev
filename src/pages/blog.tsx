@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Base from "../layouts/Base"
 import TagsMenu from "../components/TagsMenu"
 import { BlogPageQuery } from "../generated"
-import ActiveTags from "../components/ActiveTags"
+import TagsProvider from "../components/BlogContentProvider"
 import Posts from "../components/Posts"
 import { rhythm } from "../utils/typography"
 import Grid from "../components/Grid"
@@ -13,7 +13,7 @@ function BlogPage({ data }: { data: BlogPageQuery }) {
 
   return (
     <Base title="Blog" description="Personal Blog">
-      <ActiveTags>
+      <TagsProvider tagsList={tags.group} posts={posts.edges}>
         <Grid
           height="100%"
           gridTemplateColumns="minMax(150px, 200px) 1fr"
@@ -21,13 +21,13 @@ function BlogPage({ data }: { data: BlogPageQuery }) {
           gridGap={`0 ${rhythm(1)}`}
         >
           <Grid.Item gridArea="posts">
-            <Posts posts={posts.edges} />
+            <Posts />
           </Grid.Item>
           <Grid.Item gridArea="tags">
-            <TagsMenu tags={tags.group} />
+            <TagsMenu />
           </Grid.Item>
         </Grid>
-      </ActiveTags>
+      </TagsProvider>
     </Base>
   )
 }
@@ -39,6 +39,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          excerpt
           frontmatter {
             title
             path

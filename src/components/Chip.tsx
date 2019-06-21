@@ -1,25 +1,36 @@
-import React from "react"
-import styled from "styled-components"
-import { ReactLogo } from "styled-icons/boxicons-logos/ReactLogo"
-import Flex from "./Flex"
+import styled, { DefaultTheme, css } from "styled-components"
 
-const ChipContent = styled(Flex)`
-  flex-shrink: 2;
+function getChipStyles(label: string, theme: DefaultTheme) {
+  const { primary, secondary } = theme.chip[label] || theme.chip.default
+  return css`
+    color: ${primary};
+    background-color: ${secondary};
+    border: 1px solid ${primary};
+  `
+}
+
+type Props = { label: string; onClick: () => void; children: React.ReactNode }
+
+const Chip = styled.div.attrs((props: Props) => ({
+  children: props.label,
+}))<Props>`
+  display: inline-flex;
   font-size: 12px;
+  font-weight: bold;
+  align-items: center;
   height: 32px;
-  align-items: center;
   padding: 0 12px;
-  border: 1px solid ${props => props.theme.backgroundDark};
   border-radius: 16px;
-  text-transform: uppercase;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-property: opacity, color, background-color, border;
+  transition-duration: 0.3s;
+  will-change: opacity, color, background-color, border;
+  &:hover {
+    opacity: 0.9;
+  }
+  ${props => getChipStyles(props.label, props.theme)};
 `
-
-const Chip: React.FC<{ onClick: () => void }> = ({ onClick, children }) => (
-  <ChipContent onClick={onClick}>
-    <ReactLogo size="18px" />
-    <Flex.Item>{children}</Flex.Item>
-  </ChipContent>
-)
 
 export default Chip

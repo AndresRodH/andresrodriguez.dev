@@ -6,7 +6,7 @@ import { rhythm } from "../utils/typography"
 const Toolbar = styled(Flex).attrs({
   p: `0 ${rhythm(0.5)}`,
 })`
-  background-color: ${props => props.theme.backgroundDark};
+  background-color: ${props => props.theme.backgroundLight};
   justify-content: space-between;
   align-items: center;
   color: ${props => props.theme.text};
