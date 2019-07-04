@@ -15,7 +15,7 @@
     "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "gatsby": "^2.10.5",
+    "gatsby": "^2.13.3",
     "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-styled-components": "^3.1.0",
