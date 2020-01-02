@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Pandas Eating Lots',
-    description: 'Add description',
+    title: 'Andrés Rodríguez',
+    description: '',
     author: 'Andrés Rodríguez',
   },
   plugins: [
@@ -30,8 +30,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'src',
-        path: `${__dirname}/src/`,
+        name: 'content',
+        path: 'content',
       },
     },
     'gatsby-transformer-remark',
