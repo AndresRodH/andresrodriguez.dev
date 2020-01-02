@@ -7,7 +7,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Andrés Rodríguez',
-    description: '',
+    description:
+      'Andrés Rodríguez is a web developer, husband, father and Super Smash Bros. aficionado.',
     author: 'Andrés Rodríguez',
   },
   plugins: [
@@ -27,6 +28,25 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800,
+              wrapperStyle: `
+                border-radius: 5px;
+                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+              `,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -34,7 +54,6 @@ module.exports = {
         path: 'content',
       },
     },
-    'gatsby-transformer-remark',
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-typography',

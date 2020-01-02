@@ -3,22 +3,18 @@ import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 export default function Home({ data }) {
-  console.log(data)
+  const { totalCount, edges: posts } = data.allMarkdownRemark
   return (
     <Layout>
+      <SEO title="Home" />
       <div>
-        <h1
-          css={css`
-            display: inline-block;
-            border-bottom: 1px solid;
-          `}
-        >
-          Amazing Pandas Eating Things
-        </h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+        <span>
+          {totalCount} Post{totalCount > 1 && 's'}
+        </span>
+        {posts.map(({ node }) => (
           <div key={node.id}>
             <Link
               to={node.fields.slug}
@@ -49,6 +45,7 @@ export default function Home({ data }) {
     </Layout>
   )
 }
+
 export const query = graphql`
   query {
     allMarkdownRemark {

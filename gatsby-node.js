@@ -6,7 +6,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   // node.internal.type is the GraphQL type
   if (node.internal.type === 'MarkdownRemark') {
     // add a `slug` field to the MarkdownRemark type
-    const slug = createFilePath({ node, getNode, basePath: 'pages' })
+    // posts start with the number of the post so it's easier to see which are the newest/oldest posts
+    let slug = createFilePath({ node, getNode, basePath: 'pages' })
+    // /00-first-post -> /first-post
+    slug = `/${slug.substr(slug.indexOf('-') + 1)}`
+
     createNodeField({
       node,
       name: 'slug',

@@ -25,15 +25,16 @@ export default function Layout({ children }) {
       `}
     >
       <Link to={`/`}>
-        <h3
+        <span
           css={css`
+            color: black;
             margin-bottom: ${rhythm(2)};
             display: inline-block;
             font-style: normal;
           `}
         >
           {data.site.siteMetadata.title}
-        </h3>
+        </span>
       </Link>
       <Link
         to={`/about/`}
