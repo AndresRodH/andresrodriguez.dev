@@ -10,20 +10,24 @@ module.exports = {
     description:
       'Andrés Rodríguez is a web developer, husband, father and Super Smash Bros. aficionado.',
     author: 'Andrés Rodríguez',
+    siteUrl: 'https://andresrodriguez.dev',
+    social: {
+      twitter: '@andrexish',
+    },
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'GatsbyJS',
-        short_name: 'GatsbyJS',
+        name: 'Andrés Rodríguez',
+        short_name: 'Andrés Rodríguez',
         start_url: '/',
         background_color: '#6b37bf',
         theme_color: '#6b37bf',
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: 'standalone',
-        icon: 'src/images/icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/andres-rodriguez.png', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline',

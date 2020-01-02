@@ -9,7 +9,7 @@ export default function Home({ data }) {
   const { totalCount, edges: posts } = data.allMarkdownRemark
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO />
       <div>
         <span>
           {totalCount} Post{totalCount > 1 && 's'}
