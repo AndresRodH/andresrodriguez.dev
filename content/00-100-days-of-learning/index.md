@@ -7,7 +7,7 @@ I have been interested in learning Gatsby for quite some time now but I found it
 
 And also, there's this:
 
-<blockquote class="twitter-tweet" data-theme="light"><p lang="en" dir="ltr">This year I’m going to finally start working on redoing my personal website...<br><br>Said this last year and the year before for the last 3 years.</p>&mdash; Andrés Rodríguez (@andrexish) <a href="https://twitter.com/andrexish/status/1212377346700914688?ref_src=twsrc%5Etfw">January 1, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-theme="light"><p lang="en" dir="ltr">This year I’m going to finally start working on redoing my personal website...<br><br>Said this last year and the year before for the last 3 years.</p>&mdash; Andrés Rodríguez (@andrexish) <a href="https://twitter.com/andrexish/status/1212377346700914688?ref_src=twsrc%5Etfw">January 1, 2020</a></blockquote>
 
 The first challenge involves making [a blog from scratch](https://www.gatsbyjs.org/blog/100days/start-blog/) which means that I will be not only redoing my website using Gatsby but also will use it to document everything I have learned in the process.
 
