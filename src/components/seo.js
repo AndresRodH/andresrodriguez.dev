@@ -14,6 +14,7 @@ function SEO({ description, lang, meta, title, slug }) {
             title
             description
             author
+            image
             siteUrl
             social {
               twitter
@@ -44,6 +45,14 @@ function SEO({ description, lang, meta, title, slug }) {
         {
           name: 'description',
           content: metaDescription,
+        },
+        {
+          name: 'image',
+          content: siteMetadata.image,
+        },
+        {
+          property: 'og:image',
+          content: siteMetadata.image,
         },
         {
           property: 'og:url',

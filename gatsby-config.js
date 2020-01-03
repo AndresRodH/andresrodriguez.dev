@@ -11,6 +11,7 @@ module.exports = {
       'Andrés Rodríguez is a web developer, husband, father and Super Smash Bros. aficionado.',
     author: 'Andrés Rodríguez',
     siteUrl: 'https://andresrodriguez.dev',
+    image: 'https://andresrodriguez.dev/andres-rodriguez.png',
     social: {
       twitter: '@andrexish',
     },
@@ -27,7 +28,7 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: 'standalone',
-        icon: 'src/images/andres-rodriguez.png', // This path is relative to the root of the site.
+        icon: 'static/andres-rodriguez.png', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline',
