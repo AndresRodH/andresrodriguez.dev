@@ -63,6 +63,10 @@ function SEO({ description, lang, meta, title, slug }) {
           content: title || siteMetadata.title,
         },
         {
+          property: 'og:site_name',
+          content: 'Andrés Rodríguez',
+        },
+        {
           property: 'og:description',
           content: metaDescription,
         },
