@@ -11,7 +11,7 @@ module.exports = {
       'Andrés Rodríguez is a web developer, husband, father and Super Smash Bros. aficionado.',
     author: 'Andrés Rodríguez',
     siteUrl: 'https://andresrodriguez.dev',
-    image: 'https://andresrodriguez.dev/andres-rodriguez.png',
+    image: 'https://andresrodriguez.dev/andres-rodriguez.jpg',
     social: {
       twitter: '@andrexish',
     },
@@ -58,6 +58,13 @@ module.exports = {
       options: {
         name: 'content',
         path: 'content',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: 'src/images',
       },
     },
     'gatsby-plugin-emotion',
