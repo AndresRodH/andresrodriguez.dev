@@ -6,7 +6,8 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 
 export default function Home({ data }) {
-  const { totalCount, edges: posts } = data.allMarkdownRemark
+  const { totalCount, edges: posts } = data.allMdx
+
   return (
     <Layout>
       <SEO />
@@ -48,7 +49,7 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMdx {
       totalCount
       edges {
         node {

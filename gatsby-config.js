@@ -1,8 +1,11 @@
+const path = require('path')
+
 /**
- * Configure your Gatsby site with this file.
+ * Prepend dirname to path
  *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ * @param  {string} pathToJoin path to join with __dirname
  */
+const here = pathToJoin => path.join(__dirname, pathToJoin)
 
 module.exports = {
   siteMetadata: {
@@ -31,28 +34,6 @@ module.exports = {
         icon: 'static/logo.png', // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-twitter',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 800,
-              wrapperStyle: `
-                border-radius: 5px;
-                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
-              `,
-            },
-          },
-        ],
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -63,10 +44,39 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: 'src/images',
+        name: 'posts',
+        path: here('./content/posts'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: here('./src/images'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              wrapperStyle: `
+                border-radius: 5px;
+                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+              `,
+            },
+          },
+        ],
+      },
+    },
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-twitter',
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-typography',
