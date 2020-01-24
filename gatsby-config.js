@@ -75,17 +75,12 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-theme-ui',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-twitter',
     'gatsby-plugin-emotion',
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
   ],
 }
