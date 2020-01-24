@@ -56,11 +56,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: 'gatsby-plugin-mdx',
       options: {
+        defaultLayouts: {
+          default: here('./src/templates/mdx-page.js'),
+        },
         gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1035,
               wrapperStyle: `
