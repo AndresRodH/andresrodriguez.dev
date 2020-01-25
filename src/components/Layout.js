@@ -73,7 +73,7 @@ function Footer() {
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'base-line',
-          py: 32,
+          my: 32,
         }}
       >
         <div
