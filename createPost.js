@@ -20,6 +20,7 @@ const template = `
 title: ${title}
 slug: ${slug}
 date: ${date}
+description: insert description here
 ---
 
 Hello World

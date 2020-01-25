@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -14,7 +14,7 @@ export default function BlogPost({ data }) {
         description={post.excerpt}
         slug={post.fields.slug}
       />
-      <h1>{post.frontmatter.title}</h1>
+      <Styled.h1>{post.frontmatter.title}</Styled.h1>
       <MDXRenderer>{post.body}</MDXRenderer>
     </Layout>
   )

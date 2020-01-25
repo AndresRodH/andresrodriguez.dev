@@ -48,6 +48,9 @@ export default {
       lineHeight: 'body',
       fontWeight: 'body',
     },
+    p: {
+      fontSize: [2, 3],
+    },
     h1: {
       variant: 'textStyles.display',
     },

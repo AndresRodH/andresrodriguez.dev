@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: 'Andrés Rodríguez',
     description:
-      'Andrés Rodríguez is a web developer, husband, father and Super Smash Bros. aficionado.',
+      "Hi! I'm Andrés and I am a software engineer, husband, father and Super Smash Bros. aficionado.",
     author: 'Andrés Rodríguez',
     siteUrl: 'https://andresrodriguez.dev',
     image: 'https://andresrodriguez.dev/andres-rodriguez.jpg',

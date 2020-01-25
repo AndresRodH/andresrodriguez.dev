@@ -11,12 +11,12 @@ import React from 'react'
 
 const Container = props => (
   <div
-    {...props}
     sx={{
       maxWidth: 'container',
       mx: 'auto',
       px: 4,
     }}
+    {...props}
   />
 )
 
@@ -119,7 +119,6 @@ export default function Layout({ children }) {
         <Header />
         <Container
           sx={{
-            py: 4,
             flex: '1 1 auto',
           }}
         >
