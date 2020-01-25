@@ -43,13 +43,13 @@ function Header() {
         sx={{
           display: 'flex',
           alignItems: 'center',
+          pt: 30,
         }}
       >
         <Link
           to="/"
           sx={{
-            fontSize: 5,
-            py: 2,
+            fontSize: [4, 5],
           }}
         >
           {data.site.siteMetadata.title}
@@ -73,7 +73,7 @@ function Footer() {
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'base-line',
-          my: 32,
+          py: 30,
         }}
       >
         <div

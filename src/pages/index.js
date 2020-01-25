@@ -28,12 +28,11 @@ export default function Home({ data }) {
       <ul
         sx={{
           listStyle: 'none',
-          mb: 5,
           p: 0,
         }}
       >
         {posts.map(({ node }) => (
-          <li key={node.id} sx={{ mt: 2 }}>
+          <li key={node.id} sx={{ mt: 4 }}>
             <Styled.h3
               sx={{
                 m: 0,
