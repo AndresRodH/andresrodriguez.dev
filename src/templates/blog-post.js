@@ -15,7 +15,9 @@ export default function BlogPost({ data }) {
         slug={post.fields.slug}
       />
       <Styled.h1>{post.frontmatter.title}</Styled.h1>
-      <MDXRenderer>{post.body}</MDXRenderer>
+      <article>
+        <MDXRenderer>{post.body}</MDXRenderer>
+      </article>
     </Layout>
   )
 }

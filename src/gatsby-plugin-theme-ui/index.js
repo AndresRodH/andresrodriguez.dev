@@ -1,19 +1,21 @@
+import nightOwl from '@theme-ui/prism/presets/night-owl.json'
+
 export default {
+  colors: {
+    text: 'hsl(210, 50%, 96%)',
+    background: 'hsl(230, 25%, 18%)',
+    primary: 'hsl(260, 100%, 80%)',
+    secondary: 'hsl(290, 100%, 80%)',
+    highlight: 'hsl(260, 20%, 40%)',
+    purple: 'hsl(290, 100%, 80%)',
+    muted: 'hsla(230, 20%, 0%, 20%)',
+    gray: 'hsl(210, 50%, 60%)',
+  },
   fonts: {
     body:
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
-  },
-  colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#33e',
-    secondary: '#119',
-    muted: '#f6f6f6',
-    highlight: '#efeffe',
-    gray: '#777',
-    accent: '#609',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   fontWeights: {
@@ -22,7 +24,7 @@ export default {
     display: 900,
   },
   lineHeights: {
-    body: 1.5,
+    body: 1.65,
     heading: 1.25,
   },
   textStyles: {
@@ -81,6 +83,7 @@ export default {
       },
     },
     pre: {
+      variant: 'prism',
       fontFamily: 'monospace',
       fontSize: 1,
       p: 3,
@@ -92,8 +95,7 @@ export default {
       },
     },
     code: {
-      fontFamily: 'monospace',
-      fontSize: 1,
+      ...nightOwl,
     },
     inlineCode: {
       fontFamily: 'monospace',
@@ -126,6 +128,19 @@ export default {
       border: 0,
       borderBottom: '1px solid',
       borderColor: 'muted',
+    },
+    img: {
+      maxWidth: '100%',
+    },
+    blockquote: {
+      padding: 16,
+      backgroundColor: 'muted',
+      borderRadius: 4,
+      borderLeft: '8px solid',
+      borderColor: 'primary',
+      margin: 0,
+      fontSize: 3,
+      fontWeight: 'lighter',
     },
   },
 }

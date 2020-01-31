@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 function socialLink(url, label, svgEl) {
   return props => (
     <a
-      sx={{ color: 'black', '&:hover': { color: 'primary' } }}
+      sx={{ color: 'text', '&:hover': { color: 'primary' } }}
       href={url}
       aria-label={`Visit my ${label}`}
       {...props}
