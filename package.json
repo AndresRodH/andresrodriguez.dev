@@ -21,7 +21,7 @@
     "@sindresorhus/slugify": "^0.10.0",
     "@theme-ui/prism": "^0.3.0",
     "gatsby": "^2.19.10",
-    "gatsby-image": "^2.2.38",
+    "gatsby-image": "^2.3.1",
     "gatsby-plugin-emotion": "^4.1.18",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-mdx": "^1.0.67",
