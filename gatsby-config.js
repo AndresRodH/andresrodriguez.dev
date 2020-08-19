@@ -1,11 +1,11 @@
 const path = require('path')
-
 /**
  * Prepend dirname to path
  *
  * @param  {string} pathToJoin path to join with __dirname
  */
-const here = pathToJoin => path.join(__dirname, pathToJoin)
+
+const here = (pathToJoin) => path.join(__dirname, pathToJoin)
 
 module.exports = {
   siteMetadata: {
@@ -61,18 +61,7 @@ module.exports = {
         defaultLayouts: {
           default: here('./src/templates/mdx-page.js'),
         },
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1035,
-              wrapperStyle: `
-                border-radius: 5px;
-                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
-              `,
-            },
-          },
-        ],
+        gatsbyRemarkPlugins: ['gatsby-remark-images'],
       },
     },
     'gatsby-plugin-theme-ui',
@@ -82,5 +71,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-twitter',
     'gatsby-plugin-emotion',
+    'gatsby-plugin-postcss',
   ],
 }
