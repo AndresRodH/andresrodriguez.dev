@@ -1,10 +1,9 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import * as React from 'react'
 
 function socialLink(url, label, svgEl) {
-  return props => (
+  return ({ className = '', ...props }) => (
     <a
-      sx={{ color: 'text', '&:hover': { color: 'primary' } }}
+      className={`${className.trim()} hover:text-blue-500`}
       href={url}
       aria-label={`Visit my ${label}`}
       {...props}

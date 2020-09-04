@@ -64,13 +64,10 @@ module.exports = {
         gatsbyRemarkPlugins: ['gatsby-remark-images'],
       },
     },
-    'gatsby-plugin-theme-ui',
-    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-twitter',
-    'gatsby-plugin-emotion',
     'gatsby-plugin-postcss',
   ],
 }

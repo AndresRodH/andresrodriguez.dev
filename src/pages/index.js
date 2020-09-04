@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
@@ -7,50 +6,38 @@ import SEO from '../components/SEO'
 
 export default function Home({ data }) {
   const { description } = data.site.siteMetadata
-  const { totalCount, edges: posts } = data.allMdx
+  const { edges } = data.allMdx
 
   return (
-    <Layout>
+    <>
       <SEO />
-      <div
-        sx={{
-          variant: 'textStyles.display',
-          fontSize: [4, 5],
-          fontWeight: 400,
-          mb: 4,
-        }}
-      >
-        {description}
-      </div>
-      <span>
-        {totalCount} Post{totalCount > 1 && 's'}
-      </span>
-      <ul
-        sx={{
-          listStyle: 'none',
-          p: 0,
-        }}
-      >
-        {posts.map(({ node }) => (
-          <li key={node.id} sx={{ mt: 4 }}>
-            <Styled.h3
-              sx={{
-                m: 0,
-              }}
-            >
-              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-            </Styled.h3>
-            <small sx={{ fontWeight: 'bold' }}>{node.frontmatter.date}</small>
-            <Styled.p sx={{ m: 0 }}>{node.frontmatter.description}</Styled.p>
-          </li>
-        ))}
-      </ul>
-    </Layout>
+      <Layout>
+        <main className="container mx-auto px-4">
+          <p className="text-4xl py-10">{description}</p>
+          <ul className="list-none">
+            {edges.map(({ node }) => (
+              <li key={node.id} className="mt-8">
+                <h1 className="font-bold text-2xl">
+                  <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                </h1>
+                <h2 className="font-bold text-xl text-gray-600">
+                  {node.frontmatter.description}
+                </h2>
+                <p className="prose my-4">{node.excerpt}</p>
+                <Link className="text-lg font-bold" to={node.fields.slug}>
+                  Read more
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </main>
+      </Layout>
+    </>
   )
 }
 
 export const query = graphql`
-  query {
+  {
     site {
       siteMetadata {
         description
@@ -66,6 +53,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             description
           }
+          excerpt(truncate: false, pruneLength: 250)
           fields {
             slug
           }

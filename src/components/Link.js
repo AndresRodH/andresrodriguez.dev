@@ -1,22 +1,12 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import * as React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 
-export default function Link(props) {
+export default function Link({ className = '', ...props }) {
   return (
     <GatsbyLink
       {...props}
       activeClassName="active"
-      sx={{
-        color: 'inherit',
-        textDecoration: 'none',
-        '&.active': {
-          color: 'primary',
-        },
-        '&:hover': {
-          color: 'primary',
-        },
-      }}
+      className={`${className.trim()} hover:text-blue-500`}
     />
   )
 }

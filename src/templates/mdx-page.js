@@ -10,7 +10,9 @@ export default function MdxPage({ children, pageContext: { frontmatter } }) {
         title={frontmatter.title}
         slug={frontmatter.slug}
       />
-      <Layout>{children}</Layout>
+      <Layout>
+        <main className="prose mx-auto px-4">{children}</main>
+      </Layout>
     </>
   )
 }

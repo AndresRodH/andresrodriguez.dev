@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -8,17 +7,19 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 export default function BlogPost({ data }) {
   const post = data.mdx
   return (
-    <Layout>
+    <>
       <SEO
         title={post.frontmatter.title}
         description={post.excerpt}
         slug={post.fields.slug}
       />
-      <Styled.h1>{post.frontmatter.title}</Styled.h1>
-      <article>
-        <MDXRenderer>{post.body}</MDXRenderer>
-      </article>
-    </Layout>
+      <Layout>
+        <article className="prose mx-auto">
+          <h1>{post.frontmatter.title}</h1>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </article>
+      </Layout>
+    </>
   )
 }
 

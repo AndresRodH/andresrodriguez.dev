@@ -1,45 +1,12 @@
 @tailwind base;
 @tailwind components;
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-/* https://www.happyhues.co/palettes/2 */
-:root {
-  --elements-background: #f2f4f6;
-  --elements-background-secondary: #fffffe;
-  --elements-headline: #00214d;
-  --elements-paragraph: #1b2d45;
-  --elements-button: #00ebc7;
-  --elements-button-text: #00214d;
-
-  --illustration-stroke: #00214d;
-  --illustration-main: #fffffe;
-  --illustration-highlight: #00ebc7;
-  --illustration-secondary: #ff5470;
-  --illustration-tertiary: #fde24f;
-}
-
-/* https://www.happyhues.co/palettes/4 */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --elements-background: #242629;
-    --elements-background-secondary: #16161a;
-    --elements-headline: #fffffe;
-    --elements-paragraph: #94a1b2;
-    --elements-button: #7f5af0;
-    --elements-button-text: #fffffe;
-
-    --illustration-stroke: #010101;
-    --illustration-main: #fffffe;
-    --illustration-highlight: #7f5af0;
-    --illustration-secondary: #72757e;
-    --illustration-tertiary: #2cb67d;
-  }
-}
-
-body {
-  background: var(--elements-background);
-  color: var(--elements-paragraph);
-  font-family: 'Open Sans', sans-serif;
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .twitter-tweet-rendered {
