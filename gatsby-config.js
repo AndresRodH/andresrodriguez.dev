@@ -69,5 +69,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-twitter',
     'gatsby-plugin-postcss',
+    'gatsby-plugin-remove-serviceworker',
   ],
 }
