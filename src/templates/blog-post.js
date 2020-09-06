@@ -14,7 +14,7 @@ export default function BlogPost({ data }) {
         slug={post.fields.slug}
       />
       <Layout>
-        <article className="prose mx-auto">
+        <article className="prose prose-lg container px-4 mx-auto">
           <h1>{post.frontmatter.title}</h1>
           <MDXRenderer>{post.body}</MDXRenderer>
         </article>

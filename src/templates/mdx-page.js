@@ -11,7 +11,7 @@ export default function MdxPage({ children, pageContext: { frontmatter } }) {
         slug={frontmatter.slug}
       />
       <Layout>
-        <main className="prose mx-auto px-4">{children}</main>
+        <main className="prose prose-lg mx-auto px-4">{children}</main>
       </Layout>
     </>
   )
