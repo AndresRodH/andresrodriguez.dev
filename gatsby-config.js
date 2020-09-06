@@ -55,6 +55,9 @@ module.exports = {
         path: here('./src/images'),
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-remark-images',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -65,10 +68,9 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-twitter',
     'gatsby-plugin-postcss',
     'gatsby-plugin-remove-serviceworker',
+    'gatsby-plugin-styled-components',
   ],
 }

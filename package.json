@@ -27,16 +27,19 @@
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
-    "gatsby-plugin-sharp": "^2.6.27",
+    "gatsby-plugin-sharp": "^2.6.31",
+    "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-plugin-twitter": "^2.3.10",
-    "gatsby-remark-images": "^3.3.25",
+    "gatsby-remark-images": "^3.3.28",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.8.28",
-    "gatsby-transformer-sharp": "^2.5.13",
+    "gatsby-transformer-sharp": "^2.5.14",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "^1.7.2",
+    "styled-components": "^5.2.0",
+    "tailwindcss": "^1.8.2",
+    "twin.macro": "^1.8.1",
     "typeface-inter": "^3.15.0"
   },
   "devDependencies": {
@@ -49,5 +52,15 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js",
+      "preset": "styled-components",
+      "autoCssProp": true,
+      "debugProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
   }
 }
