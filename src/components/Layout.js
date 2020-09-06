@@ -31,7 +31,7 @@ function Header() {
 function Footer() {
   return (
     <footer className="w-full px-4 py-10">
-      <div className="container mx-auto flex flex-wrap items-baseline">
+      <div className="container mx-auto flex flex-wrap items-center">
         <div className="flex justify-between items-center">
           <SMI.GitHub />
           <SMI.Twitter className="mx-4" />
