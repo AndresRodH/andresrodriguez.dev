@@ -16,6 +16,7 @@ export default function BlogPost({ data }) {
       <Layout>
         <article className="prose prose-lg container px-4 mx-auto">
           <h1>{post.frontmatter.title}</h1>
+          <strong>{post.frontmatter.description}</strong>
           <MDXRenderer>{post.body}</MDXRenderer>
         </article>
       </Layout>
@@ -29,6 +30,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        description
       }
       excerpt
       fields {
