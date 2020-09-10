@@ -33,7 +33,7 @@
     "gatsby-remark-images": "^3.3.28",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-theme-i18n-react-i18next": "^1.0.2",
-    "gatsby-transformer-remark": "^2.8.28",
+    "gatsby-transformer-remark": "^2.8.34",
     "gatsby-transformer-sharp": "^2.5.14",
     "i18next": "^19.7.0",
     "react": "^16.13.1",
