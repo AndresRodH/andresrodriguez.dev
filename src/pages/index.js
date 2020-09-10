@@ -1,30 +1,30 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import Link from '../components/Link'
 import SEO from '../components/SEO'
 
 export default function Home({ data }) {
-  const { description } = data.site.siteMetadata
   const { edges } = data.allMdx
 
   return (
     <>
       <SEO />
       <Layout>
-        <main className="container mx-auto px-4">
-          <p className="text-4xl py-10">{description}</p>
-          <ul className="list-none">
+        <main className="container mx-auto flex justify-center px-4">
+          <ul className="list-none grid grid-cols-1 gap-4">
             {edges.map(({ node }) => (
-              <li key={node.id} className="mt-8">
-                <h1 className="font-bold text-2xl">
+              <li key={node.id}>
+                <h1 className="font-bold text-2xl hover:text-blue-500">
                   <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                 </h1>
                 <h2 className="font-bold text-xl text-gray-600">
                   {node.frontmatter.description}
                 </h2>
                 <p className="prose my-4">{node.excerpt}</p>
-                <Link className="text-lg font-bold" to={node.fields.slug}>
+                <Link
+                  className="text-lg font-bold hover:text-blue-500"
+                  to={node.fields.slug}
+                >
                   Read more
                 </Link>
               </li>
@@ -38,11 +38,6 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    site {
-      siteMetadata {
-        description
-      }
-    }
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       totalCount
       edges {
