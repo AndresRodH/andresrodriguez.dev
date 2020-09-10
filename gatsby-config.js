@@ -11,12 +11,14 @@ module.exports = {
   siteMetadata: {
     title: 'Andrés Rodríguez',
     description:
-      "Hi! I'm Andrés and I am a software engineer, husband, father and Super Smash Bros. aficionado.",
+      'Andrés Rodríguez is a software engineer currently living in St. Louis',
     author: 'Andrés Rodríguez',
     siteUrl: 'https://andresrodriguez.dev',
     image: 'https://andresrodriguez.dev/andres-rodriguez.jpg',
     social: {
-      twitter: '@andrexish',
+      twitter: 'andrexish',
+      gitHub: 'andresrodh',
+      linkedin: 'andresrodh',
     },
   },
   plugins: [
@@ -48,13 +50,6 @@ module.exports = {
         path: here('./content/posts'),
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: here('./src/images'),
-      },
-    },
     'gatsby-plugin-sharp',
     'gatsby-remark-images',
     'gatsby-transformer-sharp',
@@ -72,5 +67,6 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-eslint',
   ],
 }
