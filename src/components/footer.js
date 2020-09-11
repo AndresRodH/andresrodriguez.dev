@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 import twin from 'twin.macro'
 
 const A = twin.a`text-blue-500 font-bold border-b-2 border-blue-500`

@@ -27,10 +27,10 @@ Hello World
 `.trim()
 
 // make post entry folder with an empty images folder
-fs.mkdirSync(path.join(dirPath, '/images'), { recursive: true })
+fs.mkdirSync(path.join(dirPath, '/images'), {recursive: true})
 
 // add template
-fs.writeFile(path.join(dirPath, '/index.mdx'), template, error => {
+fs.writeFile(path.join(dirPath, '/index.mdx'), template, (error) => {
   if (error) console.error('Something went wrong:'.red, error)
   else console.log('Post created successfully'.green)
 })

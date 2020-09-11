@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { graphql, Link } from 'gatsby'
+import {graphql, Link} from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 
-export default function Home({ data }) {
-  const { edges } = data.allMdx
+export default function Home({data}) {
+  const {edges} = data.allMdx
 
   return (
     <>
@@ -12,7 +12,7 @@ export default function Home({ data }) {
       <Layout>
         <main className="container mx-auto flex justify-center px-4">
           <ul className="list-none grid grid-cols-1 gap-4">
-            {edges.map(({ node }) => (
+            {edges.map(({node}) => (
               <li key={node.id}>
                 <h1 className="font-bold text-2xl hover:text-blue-500">
                   <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
@@ -38,7 +38,7 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
       totalCount
       edges {
         node {

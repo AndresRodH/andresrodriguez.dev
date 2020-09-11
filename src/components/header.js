@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Link } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
+import {Link} from 'gatsby'
 
 export default function Header() {
   const data = useStaticQuery(

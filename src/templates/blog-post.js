@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import {graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import {MDXRenderer} from 'gatsby-plugin-mdx'
 
-export default function BlogPost({ data }) {
+export default function BlogPost({data}) {
   const post = data.mdx
   return (
     <>
@@ -26,7 +26,7 @@ export default function BlogPost({ data }) {
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+    mdx(fields: {slug: {eq: $slug}}) {
       body
       frontmatter {
         title
