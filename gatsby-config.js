@@ -1,10 +1,10 @@
 const path = require('path')
+
 /**
  * Prepend dirname to path
  *
  * @param  {string} pathToJoin path to join with __dirname
  */
-
 const here = (pathToJoin) => path.join(__dirname, pathToJoin)
 
 module.exports = {
@@ -57,7 +57,7 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
-          default: here('./src/templates/mdx-page.js'),
+          default: here('./src/templates/mdx-page.tsx'),
         },
         gatsbyRemarkPlugins: ['gatsby-remark-images'],
       },
@@ -68,5 +68,19 @@ module.exports = {
     'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-eslint',
+    'gatsby-plugin-layout',
+    'gatsby-plugin-typescript',
+    {
+      resolve: `gatsby-plugin-typegen`,
+      options: {
+        emitSchema: {
+          'src/__generated__/gatsby-introspection.json': true,
+          'src/__generated__/gatsby-schema.graphql': true,
+        },
+        emitPluginDocuments: {
+          'src/__generated__/gatsby-plugin-documents.graphql': true,
+        },
+      },
+    },
   ],
 }

@@ -13,6 +13,7 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 
     // mount blog posts on /blog/:slug
     if (node.fileAbsolutePath.includes('content/posts/')) {
+      // eslint-disable-next-line no-restricted-globals
       slug = `/blog/${node.frontmatter.slug || slugify(parent.name)}`
     }
 
@@ -47,11 +48,20 @@ exports.createPages = async ({graphql, actions}) => {
   posts.data.allMdx.edges.forEach(({node}) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/blog-post.js`),
+      component: path.resolve(`./src/templates/blog-post.tsx`),
       context: {
         // data passed to context is available in page queries as GraphQL variables.
         slug: node.fields.slug,
       },
     })
+  })
+}
+
+// enable root imports
+exports.onCreateWebpackConfig = ({actions}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
   })
 }

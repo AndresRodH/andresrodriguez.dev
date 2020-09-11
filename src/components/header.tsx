@@ -2,10 +2,10 @@ import * as React from 'react'
 import {useStaticQuery, graphql} from 'gatsby'
 import {Link} from 'gatsby'
 
-export default function Header() {
-  const data = useStaticQuery(
+export function Header() {
+  const data = useStaticQuery<GatsbyTypes.NavTitleQuery>(
     graphql`
-      query {
+      query NavTitle {
         site {
           siteMetadata {
             title
@@ -19,7 +19,7 @@ export default function Header() {
     <header>
       <div className="container mx-auto px-4 lg:px-8 py-10 flex justify-between items-center">
         <Link to="/" className="text-2xl lg:text-4xl font-bold">
-          {data.site.siteMetadata.title}
+          {data!.site!.siteMetadata!.title}
         </Link>
         <Link
           activeClassName="text-blue-500 border-blue-500"

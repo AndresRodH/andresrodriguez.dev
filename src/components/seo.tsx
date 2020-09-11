@@ -1,14 +1,25 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import {useStaticQuery, graphql} from 'gatsby'
 
-function SEO({description, lang, meta, title, slug}) {
-  const {
-    site: {siteMetadata},
-  } = useStaticQuery(
+type Props = Partial<{
+  lang: string
+  title: string
+  slug: string
+  description: string
+  meta: any[]
+}>
+
+export function SEO({
+  description,
+  lang = 'en',
+  meta = [],
+  title,
+  slug = '',
+}: Props) {
+  const data = useStaticQuery<GatsbyTypes.SEOQuery>(
     graphql`
-      query {
+      query SEO {
         site {
           siteMetadata {
             title
@@ -25,8 +36,9 @@ function SEO({description, lang, meta, title, slug}) {
     `,
   )
 
-  const metaDescription = description || siteMetadata.description
-  const url = `${siteMetadata.siteUrl}${slug}`
+  const {siteMetadata} = data!.site!
+  const metaDescription = description || siteMetadata!.description
+  const url = `${siteMetadata!.siteUrl}${slug}`
 
   return (
     <Helmet
@@ -35,11 +47,11 @@ function SEO({description, lang, meta, title, slug}) {
       }}
       {...(title
         ? {
-            titleTemplate: `%s — ${siteMetadata.title}`,
+            titleTemplate: `%s — ${siteMetadata!.title}`,
             title,
           }
         : {
-            title: `${siteMetadata.title}`,
+            title: `${siteMetadata!.title}`,
           })}
       meta={[
         {
@@ -48,11 +60,11 @@ function SEO({description, lang, meta, title, slug}) {
         },
         {
           name: 'image',
-          content: siteMetadata.image,
+          content: siteMetadata!.image,
         },
         {
           property: 'og:image',
-          content: siteMetadata.image,
+          content: siteMetadata!.image,
         },
         {
           property: 'og:url',
@@ -60,7 +72,7 @@ function SEO({description, lang, meta, title, slug}) {
         },
         {
           property: 'og:title',
-          content: title || siteMetadata.title,
+          content: title || siteMetadata!.title,
         },
         {
           property: 'og:site_name',
@@ -80,11 +92,11 @@ function SEO({description, lang, meta, title, slug}) {
         },
         {
           name: 'twitter:creator',
-          content: siteMetadata.social.twitter,
+          content: siteMetadata!.social!.twitter,
         },
         {
           name: 'twitter:title',
-          content: title || siteMetadata.title,
+          content: title || siteMetadata!.title,
         },
         {
           name: 'twitter:description',
@@ -94,21 +106,3 @@ function SEO({description, lang, meta, title, slug}) {
     />
   )
 }
-
-SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  description: '',
-  slug: '',
-  title: '',
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string,
-  slug: PropTypes.string,
-}
-
-export default SEO

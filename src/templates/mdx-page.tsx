@@ -1,6 +1,5 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import {SEO} from 'components/seo'
 
 export default function MdxPage({children, pageContext: {frontmatter}}) {
   return (
@@ -10,9 +9,7 @@ export default function MdxPage({children, pageContext: {frontmatter}}) {
         title={frontmatter.title}
         slug={frontmatter.slug}
       />
-      <Layout>
-        <main className="prose prose-lg mx-auto px-4">{children}</main>
-      </Layout>
+      <main className="prose prose-lg mx-auto px-4">{children}</main>
     </>
   )
 }
