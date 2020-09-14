@@ -5,18 +5,30 @@ const path = require('path')
  *
  * @param  {string} pathToJoin path to join with __dirname
  */
+
 const here = (pathToJoin) => path.join(__dirname, pathToJoin)
+
+const siteUrl = 'https://andresrodriguez.dev'
 
 module.exports = {
   siteMetadata: {
+    siteUrl,
     title: 'Andrés Rodríguez',
     description:
       'Andrés Rodríguez is a software engineer currently living in St. Louis',
     author: 'Andrés Rodríguez',
-    siteUrl: 'https://andresrodriguez.dev',
-    image: 'https://andresrodriguez.dev/andres-rodriguez.jpg',
+    image: 'images/andres-rodriguez.jpg',
+    organization: {
+      name: 'Andrés Rodríguez',
+      url: siteUrl,
+      logo: {
+        url: 'images/logo.png',
+        width: 512,
+        height: 512,
+      },
+    },
     social: {
-      twitter: 'andrexish',
+      twitter: '@andrexish',
       gitHub: 'andresrodh',
       linkedin: 'andresrodh',
     },
@@ -33,7 +45,7 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: 'standalone',
-        icon: 'static/logo.png', // This path is relative to the root of the site.
+        icon: 'static/images/logo.png', // This path is relative to the root of the site.
       },
     },
     {

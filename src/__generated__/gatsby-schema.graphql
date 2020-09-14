@@ -1908,11 +1908,16 @@ type SiteEdge {
 
 enum SiteFieldsEnum {
   buildTime
+  siteMetadata___siteUrl
   siteMetadata___title
   siteMetadata___description
   siteMetadata___author
-  siteMetadata___siteUrl
   siteMetadata___image
+  siteMetadata___organization___name
+  siteMetadata___organization___url
+  siteMetadata___organization___logo___url
+  siteMetadata___organization___logo___width
+  siteMetadata___organization___logo___height
   siteMetadata___social___twitter
   siteMetadata___social___gitHub
   siteMetadata___social___linkedin
@@ -2621,21 +2626,47 @@ input SitePluginSortInput {
 }
 
 type SiteSiteMetadata {
+  siteUrl: String
   title: String
   description: String
   author: String
-  siteUrl: String
   image: String
+  organization: SiteSiteMetadataOrganization
   social: SiteSiteMetadataSocial
 }
 
 input SiteSiteMetadataFilterInput {
+  siteUrl: StringQueryOperatorInput
   title: StringQueryOperatorInput
   description: StringQueryOperatorInput
   author: StringQueryOperatorInput
-  siteUrl: StringQueryOperatorInput
   image: StringQueryOperatorInput
+  organization: SiteSiteMetadataOrganizationFilterInput
   social: SiteSiteMetadataSocialFilterInput
+}
+
+type SiteSiteMetadataOrganization {
+  name: String
+  url: String
+  logo: SiteSiteMetadataOrganizationLogo
+}
+
+input SiteSiteMetadataOrganizationFilterInput {
+  name: StringQueryOperatorInput
+  url: StringQueryOperatorInput
+  logo: SiteSiteMetadataOrganizationLogoFilterInput
+}
+
+type SiteSiteMetadataOrganizationLogo {
+  url: String
+  width: Int
+  height: Int
+}
+
+input SiteSiteMetadataOrganizationLogoFilterInput {
+  url: StringQueryOperatorInput
+  width: IntQueryOperatorInput
+  height: IntQueryOperatorInput
 }
 
 type SiteSiteMetadataSocial {

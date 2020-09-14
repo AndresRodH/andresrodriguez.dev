@@ -1,20 +1,18 @@
 import * as React from 'react'
 import {graphql} from 'gatsby'
-import {SEO} from 'components/seo'
+import {SEO} from 'components/seo/seo'
 import {MDXRenderer} from 'gatsby-plugin-mdx'
 
-export default function BlogPost({data}) {
-  const post = data.mdx
+export default function BlogPost({data}: {data: GatsbyTypes.BlogPostQuery}) {
+  const post = data.mdx!
+  const {title, description, date} = post.frontmatter!
+
   return (
     <>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.excerpt}
-        slug={post.fields.slug}
-      />
+      <SEO title={title} description={post.excerpt} datePublished={date} />
       <article className="prose prose-lg container px-4 mx-auto">
-        <h1>{post.frontmatter.title}</h1>
-        <strong>{post.frontmatter.description}</strong>
+        <h1>{title}</h1>
+        <strong>{description}</strong>
         <MDXRenderer>{post.body}</MDXRenderer>
       </article>
     </>
@@ -22,12 +20,13 @@ export default function BlogPost({data}) {
 }
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
+  query BlogPost($slug: String!) {
     mdx(fields: {slug: {eq: $slug}}) {
       body
       frontmatter {
         title
         description
+        date
       }
       excerpt
       fields {

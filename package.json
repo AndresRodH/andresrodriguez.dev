@@ -53,6 +53,7 @@
     "typescript": "^4.0.2"
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.0",
     "colors": "^1.4.0",
     "eslint-config-react-app": "^5.2.1",
     "gatsby-plugin-eslint": "^2.0.8",
