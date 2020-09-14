@@ -3000,24 +3000,8 @@ type BioQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type BioQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'author' | 'image' | 'description'>
+      Pick<SiteSiteMetadata, 'author' | 'image' | 'description' | 'siteUrl'>
       & { readonly social: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
-    )> }> };
-
-type NavTitleQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NavTitleQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'title' | 'description' | 'author' | 'image' | 'siteUrl'>
-      & { readonly organization: Maybe<(
-        Pick<SiteSiteMetadataOrganization, 'name' | 'url'>
-        & { readonly logo: Maybe<Pick<SiteSiteMetadataOrganizationLogo, 'url' | 'width' | 'height'>> }
-      )>, readonly social: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
     )> }> };
 
 }

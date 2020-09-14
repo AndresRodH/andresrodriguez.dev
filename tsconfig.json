@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "twin.d.ts"],
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
