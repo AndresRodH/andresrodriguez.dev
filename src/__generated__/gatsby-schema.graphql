@@ -2245,6 +2245,7 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_introspection_json
   pluginCreator___pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
   pluginCreator___pluginOptions___emitPluginDocuments___src___generated___gatsby_plugin_documents_graphql
+  pluginCreator___pluginOptions___trackingId
   pluginCreator___pluginOptions___pathCheck
   pluginCreator___nodeAPIs
   pluginCreator___browserAPIs
@@ -2439,6 +2440,7 @@ enum SitePluginFieldsEnum {
   pluginOptions___emitSchema___src___generated___gatsby_introspection_json
   pluginOptions___emitSchema___src___generated___gatsby_schema_graphql
   pluginOptions___emitPluginDocuments___src___generated___gatsby_plugin_documents_graphql
+  pluginOptions___trackingId
   pluginOptions___pathCheck
   nodeAPIs
   browserAPIs
@@ -2570,6 +2572,7 @@ type SitePluginPluginOptions {
   gatsbyRemarkPlugins: [String]
   emitSchema: SitePluginPluginOptionsEmitSchema
   emitPluginDocuments: SitePluginPluginOptionsEmitPluginDocuments
+  trackingId: String
   pathCheck: Boolean
 }
 
@@ -2617,6 +2620,7 @@ input SitePluginPluginOptionsFilterInput {
   gatsbyRemarkPlugins: StringQueryOperatorInput
   emitSchema: SitePluginPluginOptionsEmitSchemaFilterInput
   emitPluginDocuments: SitePluginPluginOptionsEmitPluginDocumentsFilterInput
+  trackingId: StringQueryOperatorInput
   pathCheck: BooleanQueryOperatorInput
 }
 
