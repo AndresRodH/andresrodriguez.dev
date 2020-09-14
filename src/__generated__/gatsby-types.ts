@@ -2961,6 +2961,11 @@ type PostsFeedQuery = { readonly allMdx: (
       ) }> }
   ) };
 
+type NavTitleQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NavTitleQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
 type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -2976,10 +2981,5 @@ type BioQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
       Pick<SiteSiteMetadata, 'author' | 'image' | 'description'>
       & { readonly social: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
     )> }> };
-
-type NavTitleQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NavTitleQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 }

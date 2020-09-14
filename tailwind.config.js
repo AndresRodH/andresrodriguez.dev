@@ -3,7 +3,7 @@ const mdx = require('@mdx-js/mdx')
 module.exports = {
   purge: {
     mode: 'all',
-    content: ['./src/**/*.{js,mdx}'],
+    content: ['./src/**/*.{js,tsx,mdx}'],
     // taken from the actual tailwind's blog codebase
     // https://github.com/tailwindlabs/blog.tailwindcss.com/blob/eb2a0ff80c8e56a79f6514c8dc4253ef84ac5548/tailwind.config.js#L13
     options: {
