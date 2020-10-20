@@ -1,7 +1,7 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import {useStaticQuery, graphql} from 'gatsby'
-import {useLocation} from '@reach/router'
+import Head from 'next/head'
+import config from 'config'
+import {useRouter} from 'next/router'
 import {SchemaOrg} from './schema-org'
 
 type Props = Partial<{
@@ -21,34 +21,7 @@ export function SEO({
   image,
   datePublished,
 }: Props) {
-  const {pathname} = useLocation()
-  const data = useStaticQuery<GatsbyTypes.SEOQuery>(
-    graphql`
-      query SEO {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            image
-            siteUrl
-            organization {
-              name
-              url
-              logo {
-                url
-                width
-                height
-              }
-            }
-            social {
-              twitter
-            }
-          }
-        }
-      }
-    `,
-  )
+  const {pathname} = useRouter()
 
   const {
     title: defaultTitle,
@@ -58,35 +31,26 @@ export function SEO({
     social,
     author,
     organization: org,
-  } = data!.site!.siteMetadata!
+  } = config
 
   const seo = {
-    title: title || defaultTitle!,
-    description: description || defaultDescription!,
+    title: title || defaultTitle,
+    description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
-    twitterUsername: social!.twitter!,
-    author: author!,
+    twitterUsername: social.twitter,
+    author: author,
     organization: {
-      name: org?.name!,
-      logo: org?.logo!,
-      url: org?.url!,
+      name: org.name,
+      logo: org.logo,
+      url: org.url,
     },
   }
 
   return (
     <>
-      <Helmet
-        htmlAttributes={{lang}}
-        {...(title
-          ? {
-              titleTemplate: `%s | ${seo.title}`,
-              title: seo.title,
-            }
-          : {
-              title: `${seo.title}`,
-            })}
-      >
+      <Head>
+        <title>{`${seo.title} | ${title}`}</title>
         {/* general */}
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
@@ -104,15 +68,15 @@ export function SEO({
         <meta name="twitter:title" content={seo.title} />
         <meta name="twitter:description" content={seo.description} />
         <meta name="twitter:image" content={seo.image} />
-      </Helmet>
+      </Head>
 
       {/* schema org */}
       <SchemaOrg
         description={seo.description}
         image={seo.image}
         defaultTitle={seo.title}
-        canonicalUrl={siteUrl!}
-        datePublished={datePublished!}
+        canonicalUrl={siteUrl}
+        datePublished={datePublished}
         author={seo.author}
         organization={seo.organization}
         isBlogPost={isBlogPost}

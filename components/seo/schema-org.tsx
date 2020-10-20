@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Helmet} from 'react-helmet'
+import Head from 'next/head'
 
 type Props = {
   author: string
@@ -96,10 +96,10 @@ function SchemaOrgComponent({
     : baseSchema
 
   return (
-    <Helmet>
+    <Head>
       {/* Schema.org tags */}
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
+    </Head>
   )
 }
 
