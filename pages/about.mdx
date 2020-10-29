@@ -1,4 +1,5 @@
 import { Layout } from 'components/layout'
+import { SEO } from 'components/seo'
 
 # Hola! I'm Andrés
 
@@ -10,4 +11,9 @@ Currently I work as a Software Engineer at [Coolfire](https://www.coolfiresoluti
 
 I now live with my wife Mirella in Missouri with our baby Sofía 🧔🏻👩🏻👶🏻.
 
-export default ({ children }) => <Layout>{children}</Layout>
+export default ({ children }) => (
+  <Layout>
+    <SEO title="About" description="Learn more about Software Engineer Andrés Rodríguez" />
+    <main className="prose prose-lg mx-auto px-4">{children}</main>
+  </Layout>
+)
