@@ -4,23 +4,19 @@ import config from 'config'
 import {useRouter} from 'next/router'
 import {SchemaOrg} from './schema-org'
 
-type Props = Partial<{
+type BaseProps = {
   lang: string
   title: string
   description: string
-  isBlogPost: boolean
   image: string
-  datePublished: string
-}>
+  isBlogPost: boolean
+}
 
-export function SEO({
-  lang = 'en',
-  title,
-  description,
-  isBlogPost = false,
-  image,
-  datePublished,
-}: Props) {
+type Props = BaseProps &
+  ({isBlogPost: true; datePublished: string} | {isBlogPost: false})
+
+export function SEO(props: Props) {
+  const {title, description, image} = props
   const {pathname} = useRouter()
 
   const {
@@ -57,7 +53,10 @@ export function SEO({
 
         {/* OpenGraph */}
         <meta property="og:url" content={seo.url} />
-        <meta property="og:type" content={isBlogPost ? 'article' : 'website'} />
+        <meta
+          property="og:type"
+          content={props.isBlogPost ? 'article' : 'website'}
+        />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
         <meta property="og:image" content={seo.image} />
@@ -72,16 +71,20 @@ export function SEO({
 
       {/* schema org */}
       <SchemaOrg
-        description={seo.description}
-        image={seo.image}
-        defaultTitle={seo.title}
-        canonicalUrl={siteUrl}
-        datePublished={datePublished}
-        author={seo.author}
-        organization={seo.organization}
-        isBlogPost={isBlogPost}
         url={seo.url}
         title={seo.title}
+        defaultTitle={seo.title}
+        {...(props.isBlogPost
+          ? {
+              isBlogPost: true,
+              author,
+              canonicalUrl: siteUrl,
+              datePublished: props.datePublished,
+              description: seo.description,
+              image: seo.image,
+              organization: seo.organization,
+            }
+          : {isBlogPost: false})}
       />
     </>
   )
