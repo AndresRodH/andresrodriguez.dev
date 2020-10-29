@@ -46,7 +46,7 @@ export function SEO(props: Props) {
   return (
     <>
       <Head>
-        <title>{`${seo.title} | ${title}`}</title>
+        <title>{seo.title}</title>
         {/* general */}
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
