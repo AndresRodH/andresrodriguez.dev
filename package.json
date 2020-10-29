@@ -7,14 +7,14 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
     "start": "next start"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.18",
-    "@mdx-js/mdx": "^1.6.16",
-    "@mdx-js/react": "^1.6.16",
-    "@next/mdx": "^9.5.5",
+    "@mdx-js/loader": "^1.6.19",
+    "@mdx-js/mdx": "^1.6.19",
+    "@mdx-js/react": "^1.6.19",
+    "@next/mdx": "^10.0.0",
     "@tailwindcss/typography": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
