@@ -16,7 +16,7 @@
     "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.16",
+    "@mdx-js/mdx": "^1.6.19",
     "@mdx-js/react": "^1.6.16",
     "@sindresorhus/slugify": "^1.1.0",
     "@tailwindcss/typography": "^0.2.0",
