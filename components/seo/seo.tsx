@@ -4,16 +4,16 @@ import config from 'config'
 import {useRouter} from 'next/router'
 import {SchemaOrg} from './schema-org'
 
-type BaseProps = {
+type BaseProps = Partial<{
   lang: string
   title: string
   description: string
   image: string
   isBlogPost: boolean
-}
+}>
 
 type Props = BaseProps &
-  ({isBlogPost: true; datePublished: string} | {isBlogPost: false})
+  ({isBlogPost: true; datePublished: string} | {isBlogPost?: false})
 
 export function SEO(props: Props) {
   const {title, description, image} = props
