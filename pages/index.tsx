@@ -202,7 +202,7 @@ export default function Home() {
           </Transition>
         </Timeline>
         <button
-          className="mx-auto text:lg hover:bg-gray-100 rounded font-semibold text-gray-900 flex items-center py-2 px-4"
+          className="mx-auto transition-colors duration-300 text:lg hover:bg-gray-100 rounded font-semibold text-gray-900 flex items-center py-2 px-4"
           onClick={() => setShowMore(!showMore)}
         >
           {showMore ? 'Collapse' : 'Show More'}{' '}
