@@ -3,8 +3,7 @@ const siteUrl = 'https://andresrodriguez.dev'
 export default {
   siteUrl,
   title: 'Andrés Rodríguez',
-  description:
-    'Andrés Rodríguez is a software engineer currently living in St. Louis',
+  shortBio: `I'm a developer, husband and father. I work at Coolfire Solutions as a Software Engineer building Core.`,
   author: 'Andrés Rodríguez',
   image: 'images/andres-rodriguez.jpg',
   organization: {

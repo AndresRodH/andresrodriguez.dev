@@ -21,7 +21,7 @@ export function SEO(props: Props) {
 
   const {
     title: defaultTitle,
-    description: defaultDescription,
+    shortBio: defaultDescription,
     siteUrl,
     image: defaultImage,
     social,
