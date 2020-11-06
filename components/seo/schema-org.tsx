@@ -1,4 +1,4 @@
-import * as React from 'react'
+import {memo} from 'react'
 import Head from 'next/head'
 import config from 'config'
 
@@ -112,4 +112,4 @@ function SchemaOrgComponent(props: Props) {
   )
 }
 
-export const SchemaOrg = React.memo(SchemaOrgComponent)
+export const SchemaOrg = memo(SchemaOrgComponent)
