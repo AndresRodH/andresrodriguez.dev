@@ -86,8 +86,8 @@ export default function Home() {
               <Timeline.Entry title="Started experimenting with GraphQL">
                 Our stack on the frontend was very convoluted. I thought that
                 GraphQL would alleviate a lot of the fatigue and kill
-                boilerplate so I presented a made a route on our BFF with a
-                GraphQL wrapper over our REST endpoints.
+                boilerplate so I made a route on our BFF with a GraphQL wrapper
+                over our REST endpoints.
               </Timeline.Entry>
               <Timeline.Entry
                 title={
@@ -125,10 +125,10 @@ export default function Home() {
               <Timeline.Year>2016</Timeline.Year>
               <Timeline.Entry title="Participated in a programming contest">
                 Fifth place in the ACM programming contest with the Lindenwood
-                II team in the Webster University of Saint Louis’ venue.
+                II team in the Webster University of Saint Louis&apos; venue.
               </Timeline.Entry>
               <Timeline.Entry title="Started tutoring programming and math">
-                Worked as a Computer Science and Mathematics tutor at the
+                Worked as a Computer Science and Mathematics tutor at
                 Lindenwood. Made some money and reinforced some knowledge.
               </Timeline.Entry>
             </Timeline.Section>
