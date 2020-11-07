@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO />
-      <main className="prose mx-auto px-4 sm:px-0">
+      <main className="prose mx-auto px-4">
         <h1>Hola! I&apos;m Andrés Rodríguez</h1>
         <p>{config.shortBio}</p>
         <h2>Timeline</h2>

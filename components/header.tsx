@@ -10,7 +10,10 @@ export function Header() {
             <span>Rodríguez</span>
           </div>
         </Link>
-        <Link href="/about">About</Link>
+        <div className="grid grid-rows-1 gap-4 grid-cols-2">
+          <Link href="/about">About</Link>
+          <Link href="/uses">Uses</Link>
+        </div>
       </div>
     </header>
   )
