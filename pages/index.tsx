@@ -67,8 +67,27 @@ export default function Home() {
                 <em>magnum opus</em>
               </strong>
               . Started working on officially supporting GraphQL on the api.
-              Rewrote the whole thing 3 times with different approaches: vanilla
-              GraphQL, <code>graphql-tools</code> and <code>type-graphql</code>.
+              Rewrote the whole thing three times with different approaches:{' '}
+              <a
+                href="https://www.graphql-tools.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <code>graphql-tools</code>
+              </a>
+              ,{' '}
+              <a
+                href="https://typegraphql.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <code>type-graphql</code>
+              </a>{' '}
+              and{' '}
+              <a href="https://nexusjs.org/" target="_blank" rel="noreferrer">
+                <code>nexus</code>
+              </a>
+              . Nexus stuck better with our internal tools.
             </Timeline.Entry>
           </Timeline.Section>
           <Transition
