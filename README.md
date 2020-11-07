@@ -1,3 +1,3 @@
 # andresrodriguez.dev
 
-Source for https://andresrodriguez.dev. Powered by [Gatsby](https://www.gatsbyjs.org/) and deployed via [Netlify](https://www.netlify.com/).
+Source for <https://andresrodriguez.dev>. Powered by [Next.js](https://nextjs.org/) and deployed via [Vercel](https://www.vercel.com/).
