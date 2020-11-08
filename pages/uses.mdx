@@ -1,5 +1,5 @@
 import {Layout} from 'components/layout'
-import {SEO} from 'components/seo'
+import {NextSeo} from 'next-seo'
 
 # Things I use
 
@@ -29,7 +29,7 @@ A list of the things I have around in my office and use for work/hobby.
 
 export default ({children}) => (
   <Layout>
-    <SEO title="Uses" description="The tools I use" />
+    <NextSeo title="Uses" description="The tools I use" />
     <main className="prose mx-auto px-4 sm:px-0">{children}</main>
   </Layout>
 )
