@@ -10,7 +10,7 @@ export default {
     name: 'Andrés Rodríguez',
     url: siteUrl,
     logo: {
-      url: 'images/logo.png',
+      url: 'https://andresrodriguez.dev/images/logo.png',
       width: 512,
       height: 512,
     },
