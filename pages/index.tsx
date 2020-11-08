@@ -10,9 +10,11 @@ export default function Home() {
   return (
     <Layout>
       <SEO />
-      <main className="prose mx-auto px-4">
-        <h1>Hola! I&apos;m Andrés Rodríguez</h1>
-        <p>{config.shortBio}</p>
+      <main className="prose mx-auto px-4 sm:px-0">
+        <section className="py-10">
+          <h1>Hola! I&apos;m Andrés Rodríguez</h1>
+          <p>{config.shortBio}</p>
+        </section>
         <h2>Timeline</h2>
         <Timeline>
           <Timeline.Section>
@@ -221,7 +223,7 @@ export default function Home() {
           </Transition>
         </Timeline>
         <button
-          className="mx-auto transition-colors duration-300 text:lg hover:bg-gray-100 rounded font-semibold text-gray-900 flex items-center py-2 px-4"
+          className="mx-auto transition-colors duration-300 hover:bg-gray-100 rounded font-semibold text-gray-900 flex items-center py-2 px-4"
           onClick={() => setShowMore(!showMore)}
         >
           {showMore ? 'Collapse' : 'Show More'}{' '}
