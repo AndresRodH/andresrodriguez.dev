@@ -5,7 +5,7 @@ export default {
   title: 'Andrés Rodríguez',
   shortBio: `I'm a developer, husband and father. I work at Coolfire Solutions as a Software Engineer building Core.`,
   author: 'Andrés Rodríguez',
-  image: 'images/andres-rodriguez.jpg',
+  image: 'https://andresrodriguez.dev/me.jpg',
   organization: {
     name: 'Andrés Rodríguez',
     url: siteUrl,
