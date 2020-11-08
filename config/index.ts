@@ -1,23 +1,6 @@
-const siteUrl = 'https://andresrodriguez.dev'
+import seo from './seo'
 
 export default {
-  siteUrl,
-  title: 'Andrés Rodríguez',
+  seo,
   shortBio: `I'm a developer, husband and father. I work at Coolfire Solutions as a Software Engineer building Core.`,
-  author: 'Andrés Rodríguez',
-  image: 'https://andresrodriguez.dev/me.jpg',
-  organization: {
-    name: 'Andrés Rodríguez',
-    url: siteUrl,
-    logo: {
-      url: 'https://andresrodriguez.dev/images/logo.png',
-      width: 512,
-      height: 512,
-    },
-  },
-  social: {
-    twitter: '@andrexish',
-    gitHub: 'andresrodh',
-    linkedin: 'andresrodh',
-  },
 }
