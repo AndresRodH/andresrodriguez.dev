@@ -24,7 +24,8 @@ const seo: DefaultSeoProps = {
   },
   twitter: {
     handle: '@andrexish',
-    cardType: 'summary_large_image',
+    site: '@andrexish',
+    cardType: 'summary',
   },
 }
 
