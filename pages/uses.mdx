@@ -29,7 +29,16 @@ A list of the things I have around in my office and use for work/hobby.
 
 export default ({children}) => (
   <Layout>
-    <NextSeo title="Uses" description="The tools I use" />
+    <NextSeo
+      title="Uses | Andrés Rodríguez"
+      description="The tools I use for work, coding and music."
+      canonical="https://andresrodriguez.dev/uses"
+      openGraph={{
+        url: 'https://andresrodriguez.dev/uses',
+        title: 'Uses | Andrés Rodríguez',
+        description: 'The tools I use for work, coding and music.',
+      }}
+    />
     <main className="prose mx-auto px-4 sm:px-0">{children}</main>
   </Layout>
 )

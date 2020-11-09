@@ -9,10 +9,6 @@ export default function Home() {
   const [showMore, setShowMore] = useState(false)
   return (
     <Layout>
-      <NextSeo
-        title={config.seo.title}
-        titleTemplate="%s | Software Engineer"
-      />
       <main className="prose mx-auto px-4 sm:px-0">
         <section className="py-10">
           <h1>Hola! I&apos;m Andrés Rodríguez</h1>

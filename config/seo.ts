@@ -1,12 +1,11 @@
 import type {DefaultSeoProps} from 'next-seo'
 
-const title = 'Andrés Rodríguez'
+const title = 'Andrés Rodríguez | Software Engineer'
 const description = `I'm a developer, husband and father. I work at Coolfire Solutions as a Software Engineer building Core.`
 const siteUrl = 'https://andresrodriguez.dev'
 
 const seo: DefaultSeoProps = {
   title,
-  titleTemplate: '%s | Andrés Rodríguez',
   description,
   openGraph: {
     locale: 'en_US',
