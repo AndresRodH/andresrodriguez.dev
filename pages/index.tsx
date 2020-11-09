@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {SEO} from 'components/seo'
+import {NextSeo} from 'next-seo'
 import {Layout} from 'components/layout'
 import config from 'config'
 import {Timeline} from 'components/timeline'
@@ -9,7 +9,6 @@ export default function Home() {
   const [showMore, setShowMore] = useState(false)
   return (
     <Layout>
-      <SEO />
       <main className="prose mx-auto px-4 sm:px-0">
         <section className="py-10">
           <h1>Hola! I&apos;m Andrés Rodríguez</h1>

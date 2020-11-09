@@ -1,5 +1,5 @@
 import {Layout} from 'components/layout'
-import {SEO} from 'components/seo'
+import {NextSeo} from 'next-seo'
 
 # About Me
 
@@ -13,9 +13,15 @@ I now live with my wife Mirella in Missouri with our baby Sofía 🧔🏻👩�
 
 export default ({children}) => (
   <Layout>
-    <SEO
-      title="About"
+    <NextSeo
+      title="About | Andrés Rodríguez"
       description="Learn more about Software Engineer Andrés Rodríguez"
+      canonical="https://andresrodriguez.dev/about"
+      openGraph={{
+        url: 'https://andresrodriguez.dev/about',
+        title: 'About | Andrés Rodríguez',
+        description: 'Learn more about Software Engineer Andrés Rodríguez',
+      }}
     />
     <main className="prose mx-auto px-4 sm:px-0">{children}</main>
   </Layout>
