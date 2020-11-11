@@ -3,7 +3,7 @@ import 'styles/index.css'
 import type {AppProps} from 'next/app'
 import {GlobalStyles} from 'twin.macro'
 import {DefaultSeo} from 'next-seo'
-import seo from 'config/seo'
+import {seo} from 'config'
 
 function MyApp({Component, pageProps}: AppProps) {
   return (

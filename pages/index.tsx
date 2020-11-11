@@ -1,7 +1,6 @@
 import {useState} from 'react'
-import {NextSeo} from 'next-seo'
 import {Layout} from 'components/layout'
-import config from 'config'
+import {siteMetadata} from 'config'
 import {Timeline} from 'components/timeline'
 import {Transition} from '@headlessui/react'
 
@@ -12,7 +11,7 @@ export default function Home() {
       <main className="prose mx-auto px-4 sm:px-0">
         <section className="py-10">
           <h1>Hola! I&apos;m Andrés Rodríguez</h1>
-          <p>{config.shortBio}</p>
+          <p>{siteMetadata.shortBio}</p>
         </section>
         <h2>Timeline</h2>
         <Timeline>

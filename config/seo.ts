@@ -1,21 +1,17 @@
-import type {DefaultSeoProps} from 'next-seo'
+import siteMetadata from './siteMetadata'
 
-const title = 'Andrés Rodríguez | Software Engineer'
-const description = `I'm a developer, husband and father. I work at Coolfire Solutions as a Software Engineer building Core.`
-const siteUrl = 'https://andresrodriguez.dev'
-
-const seo: DefaultSeoProps = {
-  title,
-  description,
+export default {
+  title: siteMetadata.title,
+  description: siteMetadata.shortBio,
   openGraph: {
     locale: 'en_US',
     type: 'website',
-    url: siteUrl,
-    title,
-    description,
+    url: siteMetadata.siteUrl,
+    title: siteMetadata.title,
+    description: siteMetadata.shortBio,
     images: [
       {
-        url: `${siteUrl}/images/andres-rodriguez.jpg`,
+        url: `${siteMetadata.siteUrl}/images/andres-rodriguez.jpg`,
         width: 660,
         height: 660,
         alt: 'Andrés Rodríguez',
@@ -28,5 +24,3 @@ const seo: DefaultSeoProps = {
     cardType: 'summary',
   },
 }
-
-export default seo
