@@ -265,6 +265,6 @@ Next.js is an awesome framework. I feel like this flow suits my expected DX bett
 
 ## Next steps
 
-I want to have the views update realtime-ish but I also want to keep it as simple as I can and not rely on `firebase` on the client. Instead, I'll add `react-query` to manage my server state and optimize some of these calls.
-
-I still need to build a `/blog` page or put the list of posts on the home page in which I will need to fetch all post views and display them alongside the post info. I'll probably just add it to the home page until I have written enough posts so that it requires a dedicated page.
+- I want to have the views update realtime-ish but I also want to keep it as simple as I can and not rely on `firebase` on the client. Instead, I'll add `react-query` to manage my server state and optimize some of these calls.
+- I still need to build a `/blog` page or put the list of posts on the home page in which I will need to fetch all post views and display them alongside the post info. I'll probably just add it to the home page until I have written enough posts so that it requires a dedicated page.
+- Since I am using two different firebase projects, one for dev and one for prod, I will have to set the appropriate environment variables for the production environment in Vercel.
