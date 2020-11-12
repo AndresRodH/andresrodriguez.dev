@@ -1,8 +1,19 @@
 import {getPostStats} from 'lib/api'
 import {useQuery} from 'react-query'
 
-export function ViewCounter({id}: {id: string}) {
+export function ViewCounter({
+  id,
+  className = '',
+  ...props
+}: {id: string} & React.HTMLProps<HTMLSpanElement>) {
   const {data, isLoading} = useQuery(['post-meta', id], getPostStats)
 
-  return <span>{isLoading ? '-----' : data?.views} Views</span>
+  return (
+    <span
+      className={`${className} slashed-zero font-semibold text-lg`.trim()}
+      {...props}
+    >
+      {isLoading ? '-----' : data?.views.toLocaleString()} views
+    </span>
+  )
 }

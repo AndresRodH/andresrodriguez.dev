@@ -14,7 +14,8 @@ export type PostFrontmatter = {
 
 const postsDirectory = path.join(process.cwd(), '_content/posts')
 
-export function getSortedPostsData(): (PostFrontmatter & {id: string})[] {
+export type GetSortedPostsData = PostFrontmatter & {id: string}
+export function getSortedPostsData(): GetSortedPostsData[] {
   // Get file names under _content/posts
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map((fileName) => {
