@@ -6,7 +6,7 @@ export function ViewCounter({
   className = '',
   ...props
 }: {id: string} & React.HTMLProps<HTMLSpanElement>) {
-  const {data, isLoading} = useQuery(['post-meta', id], getPostStats)
+  const {data, isLoading} = useQuery(['post-stats', id], getPostStats)
 
   return (
     <span
