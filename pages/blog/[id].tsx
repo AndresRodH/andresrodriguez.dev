@@ -11,7 +11,7 @@ import {useMutation, useQueryCache} from 'react-query'
 import {useEffect} from 'react'
 import {ViewCounter} from 'components/view-counter'
 import {incrementViews} from 'lib/api'
-import {css} from 'twin.macro'
+import tw, {css} from 'twin.macro'
 
 type Props = PostData
 
@@ -92,6 +92,12 @@ export default function Post({
         </p>
         <article
           className="px-4 sm:px-0"
+          css={css`
+            pre {
+              width: 418px;
+              ${tw`sm:w-full`};
+            }
+          `}
           dangerouslySetInnerHTML={{__html: contentHtml}}
         />
       </main>
