@@ -22,8 +22,9 @@ export function Footer() {
         <div className="prose w-full max-w-screen-lg mx-auto px-4 lg:px-8 py-10 flex flex-col items-center">
           <div className="mb-4 flex flex-col sm:flex-row flex-wrap justify-between items-center w-full">
             <Logo />
-            <div className="grid grid-cols-2 text-center gap-4 my-8 sm:my-0 items-center">
+            <div className="grid grid-cols-3 text-center gap-4 my-8 sm:my-0 items-center">
               <Link href="/about">/about</Link>
+              <Link href="/blog">/blog</Link>
               <Link href="/uses">/uses</Link>
             </div>
             <div className="grid grid-cols-3 gap-4">
