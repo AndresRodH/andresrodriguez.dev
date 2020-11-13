@@ -11,6 +11,7 @@ import {useMutation, useQueryCache} from 'react-query'
 import {useEffect} from 'react'
 import {ViewCounter} from 'components/view-counter'
 import {incrementViews} from 'lib/api'
+import {css} from 'twin.macro'
 
 type Props = PostData
 
@@ -70,10 +71,9 @@ export default function Post({
       />
       <main className="prose mx-auto sm:px-0">
         <h1 tw="sm:text-5xl! mb-0! text-center">{title}</h1>
-        <div className="my-4 text-center items-center">
-          <time className="mr-4" dateTime={date}>
-            {format(datePublished, 'LLLL d, yyyy')}
-          </time>
+        <div className="my-4 flex flex-col sm:flex-row text-lg justify-center font-semibold items-center">
+          <time dateTime={date}>{format(datePublished, 'LLLL d, yyyy')}</time>
+          <span className="sm:mx-4">~</span>
           <ViewCounter id={id} />
         </div>
         <div className="block relative h-80 w-full">
