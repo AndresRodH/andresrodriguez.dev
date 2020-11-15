@@ -11,6 +11,7 @@ import {useEffect} from 'react'
 import {ViewCounter} from 'components/view-counter'
 import {incrementViews} from 'lib/api'
 import {styled} from 'twin.macro'
+import {seo} from 'config'
 
 type Props = PostData
 
@@ -71,6 +72,7 @@ export default function Post({
             modifiedTime: dateModified,
           },
         }}
+        twitter={seo.twitter}
       />
       <ArticleJsonLd
         authorName="Andrés Rodríguez"
