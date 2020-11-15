@@ -50,6 +50,8 @@ export default function Post({
   const url = `${siteMetadata.siteUrl}/blog/${id}`
   const postImage = {
     url: `${siteMetadata.siteUrl}${banner}`,
+    width: 1280,
+    height: 675,
     alt: title,
   }
 
@@ -70,7 +72,6 @@ export default function Post({
             modifiedTime: dateModified,
           },
         }}
-        twitter={seo.twitter}
       />
       <ArticleJsonLd
         authorName="Andrés Rodríguez"
