@@ -21,6 +21,6 @@ export default {
   twitter: {
     handle: '@andrexish',
     site: '@andrexish',
-    cardType: 'summary_image_large',
+    cardType: 'summary_large_image',
   },
 }
