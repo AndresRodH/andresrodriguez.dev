@@ -1,7 +1,6 @@
 import {Layout} from 'components/layout'
 import {getAllPostIds, getPostData, PostData} from 'lib/posts'
 import {GetStaticPaths, GetStaticProps} from 'next'
-import {useRouter} from 'next/router'
 import {NextSeo, ArticleJsonLd} from 'next-seo'
 import {siteMetadata} from 'config'
 import {format, parseISO} from 'date-fns'
@@ -33,7 +32,6 @@ export default function Post({
   banner,
   modifiedAt,
 }: Props) {
-  const router = useRouter()
   const queryCache = useQueryCache()
   const [mutate] = useMutation(incrementViews, {
     onSuccess: (result) => {
@@ -49,7 +47,7 @@ export default function Post({
   const dateModified = modifiedAt
     ? parseISO(modifiedAt).toISOString()
     : undefined
-  const url = `${siteMetadata.siteUrl}${router.pathname}`
+  const url = `${siteMetadata.siteUrl}/blog/${id}`
   const postImage = {
     url: `${siteMetadata.siteUrl}${banner}`,
     alt: title,
