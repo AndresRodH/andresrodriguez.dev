@@ -2,15 +2,15 @@
 title: 'Making a Blog Post Views Counter With Firebase and Next.js'
 description: 'A journey into how I built the viewer counter used in this blog'
 date: '2020-11-09'
-banner: '/images/count-blog-post-views-with-firebase/banner.jpg'
-bannerCredit: 'Photo by [Sigmund](https://unsplash.com/photos/R401qwThw7w) on [Unsplash](https://unsplash.com)'
+modifiedAt: '2020-11-15'
+banner: '/images/count-blog-post-views-with-firebase/banner.png'
 ---
 
 I'm very picky about the stuff I want to write. It makes it hard to finally sit down and do it! I need some content, something fun and engaging not only for a reader but for me as well. So I will start by learning in public and build a blog post view counter for this blog and document it as I go.
 
 I love Firebase. It is such an amazing product and every time I use it it just feels like a breath of fresh air. I want to use Firebase because it has a very generous free tier and also the database offerings do what I need with very minimal setup required.
 
-## Planning it out
+## Planning the work
 
 1. Initialize project in the firebase console and enable a database
 2. Initialize `firebase-admin` in the codebase
@@ -32,7 +32,7 @@ I have thought about what I want to achieve with these data points and I really 
 }
 ```
 
-## Getting to work
+## Building the data layer
 
 I am going with `firebase-admin` because I will only use it for data fetching on the api routes. In order to initialize it I need to get a service account which I can get from the `Project settings` -> `Service Accounts` in the Firebase console. Now that I have my key generated, I only need a the client email and private key as I will only mess with database stuff.
 
@@ -260,6 +260,8 @@ And display it on the blog post next to the published date. I have refreshed the
 Building this view counter was a pretty fun experience. I have been a little out of the loop in frontend work ever since I joined the backend fulltime and these kinds of things are good for keeping up.
 
 Firebase is as still as lovely as ever to work with. I don't think I've ever had a bad experience for basic things like these.
+
+The way I built this will allow me to swap firebase with another database solution if deemed necessary thanks to not relying on Firebase it on the client.
 
 Next.js is an awesome framework. I feel like this flow suits my expected DX better than Gatsby in its current state.
 

@@ -8,8 +8,8 @@ export type PostFrontmatter = {
   title: string
   description: string
   date: string
+  modifiedAt?: string
   banner: string
-  bannerCredit: string
 }
 
 const postsDirectory = path.join(process.cwd(), '_content/posts')

@@ -1,19 +1,27 @@
 import {Layout} from 'components/layout'
 import {getAllPostIds, getPostData, PostData} from 'lib/posts'
 import {GetStaticPaths, GetStaticProps} from 'next'
-import Image from 'next/image'
+import {useRouter} from 'next/router'
 import {NextSeo, ArticleJsonLd} from 'next-seo'
 import {siteMetadata} from 'config'
-import Markdown from 'react-markdown'
 import {format, parseISO} from 'date-fns'
 import 'twin.macro'
 import {useMutation, useQueryCache} from 'react-query'
 import {useEffect} from 'react'
 import {ViewCounter} from 'components/view-counter'
 import {incrementViews} from 'lib/api'
-import tw, {css} from 'twin.macro'
+import {styled} from 'twin.macro'
 
 type Props = PostData
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr min(60ch, calc(100% - 64px)) 1fr;
+
+  & > * {
+    grid-column: 2;
+  }
+`
 
 export default function Post({
   id,
@@ -22,8 +30,9 @@ export default function Post({
   date,
   contentHtml,
   banner,
-  bannerCredit,
+  modifiedAt,
 }: Props) {
+  const router = useRouter()
   const queryCache = useQueryCache()
   const [mutate] = useMutation(incrementViews, {
     onSuccess: (result) => {
@@ -36,10 +45,13 @@ export default function Post({
   }, [id, mutate])
 
   const datePublished = parseISO(date)
-  const url = `${siteMetadata.siteUrl}/blog/${id}`
+  const dateModified = modifiedAt
+    ? parseISO(modifiedAt).toISOString()
+    : undefined
+  const url = `${siteMetadata.siteUrl}${router.pathname}`
   const postImage = {
     url: `${url}${banner}`,
-    alt: bannerCredit,
+    alt: title,
   }
 
   return (
@@ -62,6 +74,7 @@ export default function Post({
       <ArticleJsonLd
         authorName="Andrés Rodríguez"
         datePublished={datePublished.toISOString()}
+        dateModified={dateModified}
         description={description}
         publisherName="Andrés Rodríguez"
         publisherLogo={siteMetadata.logo}
@@ -69,38 +82,26 @@ export default function Post({
         title={title}
         url={url}
       />
-      <main className="prose mx-auto sm:px-0">
-        <h1 tw="sm:text-5xl! mb-0! text-center">{title}</h1>
-        <div className="my-4 flex flex-col sm:flex-row text-lg justify-center font-semibold items-center">
-          <time dateTime={date}>{format(datePublished, 'LLLL d, yyyy')}</time>
-          <span className="sm:mx-4">~</span>
-          <ViewCounter id={id} />
-        </div>
-        <div className="block relative h-80 w-full">
-          <Image
-            src={banner}
-            layout="fill"
-            alt={title}
-            className="object-cover"
-          />
-        </div>
-        <small className="text-center">
-          <Markdown>{bannerCredit}</Markdown>
-        </small>
-        <p className="px-4 sm:px-0">
-          <em>{description}</em>
-        </p>
-        <article
-          className="px-4 sm:px-0"
-          css={css`
-            pre {
-              width: 418px;
-              ${tw`sm:w-full`};
-            }
-          `}
-          dangerouslySetInnerHTML={{__html: contentHtml}}
-        />
-      </main>
+      <Wrapper>
+        <div />
+        <main className="prose">
+          <header>
+            <h1 tw="sm:text-5xl! mb-0! text-center">{title}</h1>
+            <div className="my-4 flex flex-col sm:flex-row text-lg justify-center font-semibold items-center">
+              <time dateTime={date}>
+                {format(datePublished, 'LLLL d, yyyy')}
+              </time>
+              <span className="sm:mx-4">~</span>
+              <ViewCounter id={id} />
+            </div>
+          </header>
+          <p>
+            <em>{description}</em>
+          </p>
+          <article dangerouslySetInnerHTML={{__html: contentHtml}} />
+        </main>
+        <div />
+      </Wrapper>
     </Layout>
   )
 }
