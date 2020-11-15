@@ -50,7 +50,7 @@ export default function Post({
     : undefined
   const url = `${siteMetadata.siteUrl}${router.pathname}`
   const postImage = {
-    url: `${url}${banner}`,
+    url: `${siteMetadata.siteUrl}${banner}`,
     alt: title,
   }
 
@@ -70,11 +70,6 @@ export default function Post({
             publishedTime: datePublished.toISOString(),
             modifiedTime: dateModified,
           },
-        }}
-        twitter={{
-          handle: '@andrexish',
-          site: '@andrexish',
-          cardType: 'summary_large_image',
         }}
       />
       <ArticleJsonLd
