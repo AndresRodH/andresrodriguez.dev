@@ -11,9 +11,9 @@ export default {
     description: siteMetadata.shortBio,
     images: [
       {
-        url: `${siteMetadata.siteUrl}/images/andres-rodriguez.jpg`,
-        width: 660,
-        height: 660,
+        url: `${siteMetadata.siteUrl}/images/og.png`,
+        width: 1280,
+        height: 675,
         alt: 'Andrés Rodríguez',
       },
     ],
@@ -21,6 +21,6 @@ export default {
   twitter: {
     handle: '@andrexish',
     site: '@andrexish',
-    cardType: 'summary',
+    cardType: 'summary_image_large',
   },
 }
