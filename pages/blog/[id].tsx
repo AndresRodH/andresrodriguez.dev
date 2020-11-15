@@ -68,7 +68,13 @@ export default function Post({
           images: [postImage],
           article: {
             publishedTime: datePublished.toISOString(),
+            modifiedTime: dateModified,
           },
+        }}
+        twitter={{
+          handle: '@andrexish',
+          site: '@andrexish',
+          cardType: 'summary_large_image',
         }}
       />
       <ArticleJsonLd
