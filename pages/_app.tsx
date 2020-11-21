@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import 'typeface-inter'
 import 'styles/index.css'
 import type {AppProps} from 'next/app'
@@ -7,8 +8,15 @@ import {DefaultSeo} from 'next-seo'
 import {seo} from 'config'
 import {ReactQueryDevtools} from 'react-query-devtools'
 import {QueryCache, ReactQueryCacheProvider} from 'react-query'
+import {Components, MDXProvider} from '@mdx-js/react'
+import {CodeBlock} from 'components/code-block'
 
 const queryCache = new QueryCache()
+
+const components: Components = {
+  pre: (props) => <div {...props} />,
+  code: CodeBlock,
+}
 
 function MyApp({Component, pageProps}: AppProps) {
   return (
@@ -39,7 +47,9 @@ function MyApp({Component, pageProps}: AppProps) {
       <DefaultSeo {...seo} />
       <ReactQueryCacheProvider queryCache={queryCache}>
         <ReactQueryDevtools initialIsOpen />
-        <Component {...pageProps} />
+        <MDXProvider components={components}>
+          <Component {...pageProps} />
+        </MDXProvider>
       </ReactQueryCacheProvider>
     </>
   )

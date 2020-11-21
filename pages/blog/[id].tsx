@@ -11,6 +11,7 @@ import {ViewCounter} from 'components/view-counter'
 import {incrementViews} from 'lib/api'
 import {styled} from 'twin.macro'
 import hydrate from 'next-mdx-remote/hydrate'
+import {components} from 'components/mdx-components'
 
 type Props = PostData
 
@@ -50,7 +51,7 @@ export default function Post({
     height: 675,
     alt: title,
   }
-  const content = hydrate(mdxSource)
+  const content = hydrate(mdxSource, {components})
 
   return (
     <Layout>
