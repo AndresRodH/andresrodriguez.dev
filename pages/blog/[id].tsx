@@ -10,7 +10,7 @@ import {useEffect} from 'react'
 import {ViewCounter} from 'components/view-counter'
 import {incrementViews} from 'lib/api'
 import {styled} from 'twin.macro'
-import {seo} from 'config'
+import hydrate from 'next-mdx-remote/hydrate'
 
 type Props = PostData
 
@@ -25,12 +25,8 @@ const Wrapper = styled.div`
 
 export default function Post({
   id,
-  title,
-  description,
-  date,
-  contentHtml,
-  banner,
-  modifiedAt,
+  mdxSource,
+  frontMatter: {title, description, date, banner, modifiedAt},
 }: Props) {
   const queryCache = useQueryCache()
   const [mutate] = useMutation(incrementViews, {
@@ -54,6 +50,7 @@ export default function Post({
     height: 675,
     alt: title,
   }
+  const content = hydrate(mdxSource)
 
   return (
     <Layout>
@@ -100,7 +97,7 @@ export default function Post({
           <p>
             <em>{description}</em>
           </p>
-          <article dangerouslySetInnerHTML={{__html: contentHtml}} />
+          <article>{content}</article>
         </main>
         <div />
       </Wrapper>

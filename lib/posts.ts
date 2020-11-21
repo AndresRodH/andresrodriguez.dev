@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
+import renderToString from 'next-mdx-remote/render-to-string'
 
 export type PostFrontmatter = {
   title: string
@@ -57,12 +58,7 @@ export function getAllPostIds(): {params: {id: string}}[] {
   })
 }
 
-export type PostData = PostFrontmatter & {
-  id: string
-  contentHtml: string
-}
-
-export async function getPostData(id): Promise<PostData> {
+export async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -74,10 +70,23 @@ export async function getPostData(id): Promise<PostData> {
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
 
+  const mdxSource = await renderToString(matterResult.content)
+
   // Combine the data with the id
   return {
     id,
     contentHtml,
-    ...(matterResult.data as PostFrontmatter),
+    mdxSource,
+    frontMatter: matterResult.data as PostFrontmatter,
   }
 }
+
+type Unpacked<T> = T extends (infer U)[]
+  ? U
+  : T extends (...args: never[]) => infer U
+  ? U
+  : T extends Promise<infer U>
+  ? U
+  : T
+
+export type PostData = Unpacked<ReturnType<typeof getPostData>>
