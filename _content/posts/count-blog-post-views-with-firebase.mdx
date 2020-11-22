@@ -139,7 +139,7 @@ All that's left as far as api routes go is to make the call to increment a post'
 
 Moved stuff around and it does work as expected still. My folder structure now looks like this:
 
-```bash
+```diff
 - pages/api/post-stats
 + pages/api/post-stats/[id].ts
 + pages/api/post-stats/view.ts
@@ -209,7 +209,7 @@ export async function incrementViews(id: string) {
 
 And call it on the blog post page
 
-```typescript
+```diff
 // pages/blog/[id].tsx
 React.useEffect(() => {
 -  getPostStats(id)
