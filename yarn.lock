@@ -4828,6 +4828,16 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+fontsource-inter@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/fontsource-inter/-/fontsource-inter-3.0.5.tgz#4d645514f61921f83034ff244985374413bd019d"
+  integrity sha512-7AGbrHVjL2IcIz/Lv64IR5g0W+JuGQT/bFFF5nDD1zNOT5Ke8IMIMc+tE4rb5fCVNG2AGt0gtXH3kGLUURKY8w==
+
+fontsource-jetbrains-mono@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/fontsource-jetbrains-mono/-/fontsource-jetbrains-mono-3.0.5.tgz#667f007067837aacb8c33a1acb9385a1008a665f"
+  integrity sha512-1BCPh1V61umUOq21HitHpdRmOx4BsQiXl4H3AeoRkfQkqcBT4XDoZJNTAodlrEsNry0yBuzsByIDtkXrfFItaw==
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -9306,11 +9316,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-inter@^3.15.0:
-  version "3.15.0"
-  resolved "https://registry.yarnpkg.com/typeface-inter/-/typeface-inter-3.15.0.tgz#7ac09c0bcc5fdd5c5b85727df6478ee287f56deb"
-  integrity sha512-kWLJsvqSJTBKilu1HsBYHwi3usFg8JQ9I9u+bcU2kOkIi48fOZy8sYacbFmlJ9EHRVNqqvM4zeI73WCSKNMOuQ==
 
 typescript@^4.0.3:
   version "4.0.3"

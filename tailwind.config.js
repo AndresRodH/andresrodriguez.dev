@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const mdx = require('@mdx-js/mdx')
 
 module.exports = {
@@ -31,7 +32,12 @@ module.exports = {
     },
   },
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter'],
+        mono: ['Jetbrains Mono'],
+      },
+    },
   },
   variants: {},
   plugins: [require('@tailwindcss/typography')],
