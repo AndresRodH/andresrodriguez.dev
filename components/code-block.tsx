@@ -18,7 +18,7 @@ export function CodeBlock({
   className: string
 }) {
   const language = className.replace(/language-/, '') as Language
-  console.log(theme`screens.sm`)
+
   return (
     <Highlight
       {...defaultProps}
