@@ -8,6 +8,7 @@ import {getSortedPostsData} from 'lib/posts'
 import {GetStaticProps} from 'next'
 import {PostItem} from 'components/post-item'
 import tw from 'twin.macro'
+import clsx from 'clsx'
 
 type Props = {
   allPostsData: ReturnType<typeof getSortedPostsData>
@@ -40,7 +41,7 @@ export default function Home({allPostsData}: Props) {
         </section>
         <section className="pt-8">
           <H2>Timeline</H2>
-          <Timeline className="prose">
+          <Timeline>
             <Timeline.Section>
               <Timeline.Year>2020</Timeline.Year>
               <Timeline.Entry title="Bought a house">
@@ -256,9 +257,10 @@ export default function Home({allPostsData}: Props) {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className={`h-4 w-4 ml-2 ${
-                showMore ? 'transform rotate-180' : ''
-              }`.trim()}
+              className={clsx(
+                'h-4 w-4 ml-2',
+                showMore && 'transform rotate-180',
+              )}
             >
               <path
                 strokeLinecap="round"

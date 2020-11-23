@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import {getPostStats} from 'lib/api'
 import {useQuery} from 'react-query'
 
@@ -10,7 +11,10 @@ export function ViewCounter({
 
   return (
     <span
-      className={`${className} slashed-zero font-semibold text-lg`.trim()}
+      className={clsx(
+        className,
+        'slashed-zero font-semibold text-lg text-gray-600',
+      )}
       {...props}
     >
       {isLoading ? '-----' : data?.views.toLocaleString()} views
