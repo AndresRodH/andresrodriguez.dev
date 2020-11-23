@@ -14,20 +14,22 @@ type Props = {
   allPostsData: ReturnType<typeof getSortedPostsData>
 }
 
-const H2 = tw.h2`text-3xl font-bold text-gray-900`
+const H2 = tw.h2`text-3xl font-bold text-indigo-600`
 
 export default function Home({allPostsData}: Props) {
   const [showMore, setShowMore] = useState(false)
   return (
     <Layout>
-      <main className="container max-w-screen-sm mx-auto px-4 sm:px-0">
-        <section className="py-10">
-          <h1 className="text-4xl font-bold">
+      <main className="px-4 sm:px-0">
+        <section className="max-w-screen-sm sm:max-w-none mx-auto sm:px-8 py-24 sm:py-48 w-full">
+          <h1 className="text-6xl leading-tight sm:text-8xl font-bold sm:text-center">
             Hola! I&apos;m Andrés Rodríguez
           </h1>
-          <p className="mt-2 text-gray-600">{siteMetadata.shortBio}</p>
+          <p className="text-2xl max-w-screen-sm sm:text-center mx-auto sm:text-3xl font-semibold mt-8 text-gray-600">
+            {siteMetadata.shortBio}
+          </p>
         </section>
-        <section className="pt-8">
+        <section className="max-w-screen-sm mx-auto">
           <H2>Recent Posts</H2>
           <ul className="grid gap-4 divide-y">
             {allPostsData.map((post) => (
@@ -39,7 +41,7 @@ export default function Home({allPostsData}: Props) {
             ))}
           </ul>
         </section>
-        <section className="pt-8">
+        <section className="max-w-screen-sm mx-auto pt-12">
           <H2>Timeline</H2>
           <Timeline>
             <Timeline.Section>
