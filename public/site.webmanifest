@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Andrés Rodríguez",
+    "short_name": "andresrodriguez.dev",
+    "description": "Developer, husband and father.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,5 +16,7 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "dir": "ltr",
+    "lang": "en-US"
 }
