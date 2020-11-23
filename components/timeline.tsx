@@ -46,7 +46,7 @@ function Entry({
   )
 }
 
-const TimelineWrapper = tw.div`grid grid-cols-1 divide-y`
+const TimelineWrapper = tw.div`prose grid grid-cols-1 divide-y`
 const Year = tw.h3`mt-0!`
 const Section = tw.div`grid grid-cols-1 gap-2 py-4`
 
