@@ -93,7 +93,7 @@ export default function Post({
         <article className="prose my-4">{content}</article>
         <div className="mt-12" />
       </Wrapper>
-      <div className="my-4 text-gray-500 flex flex-col sm:flex-row text-lg justify-center font-semibold items-center">
+      <div className="my-4 text-gray-600 flex flex-col sm:flex-row text-lg justify-center font-semibold items-center">
         <div>
           <span className="mr-2">Last Updated:</span>
           <time className="text-gray-900 font-bold" dateTime={date}>
