@@ -116,7 +116,7 @@ export async function getPostStats(id: string) {
 
 And then call it anywhere, see if it works.
 
-```typescript
+```tsx
 // pages/blog/[id].tsx
 React.useEffect(() => {
   getPostStats(id)
@@ -224,7 +224,7 @@ Success 🎉! In my network tab I got as a response `{ views: 1 }`
 
 I will actually keep the last bit of code for incrementing views on the dynamic post route. As far as reading goes, I will make a component that will fetch the views data and display it so I can reuse the views on a blog post list and the blog post page itself.
 
-```typescript
+```tsx
 import {getPostStats} from 'lib/api'
 import {useEffect, useState} from 'react'
 
@@ -245,7 +245,7 @@ export function ViewCounter({id}: {id: string}) {
 
 And display it on the blog post next to the published date. I have refreshed the page a couple of times, so the counter has gone up.
 
-```typescript
+```tsx
 // pages/blog/[id].tsx
 <div className="my-4 text-center items-center">
   <time className="mr-4" dateTime={date}>
