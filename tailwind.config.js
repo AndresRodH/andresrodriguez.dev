@@ -33,6 +33,15 @@ module.exports = {
   },
   theme: {
     extend: {
+      typography: (theme) => ({
+        default: {
+          css: {
+            code: {
+              color: theme('colors.teal.500'),
+            },
+          },
+        },
+      }),
       fontFamily: {
         sans: ['Inter'],
         mono: ['Jetbrains Mono'],
