@@ -1,5 +1,5 @@
 import {Footer} from 'components/footer'
-import {Header} from 'components/header'
+import {Nav} from 'components/nav'
 
 export function Layout({children}) {
   return (
@@ -7,7 +7,7 @@ export function Layout({children}) {
       className="grid min-h-screen"
       style={{gridTemplateColumns: '1fr', gridTemplateRows: 'auto 1fr auto'}}
     >
-      <Header />
+      <Nav />
       {children}
       <Footer />
     </div>
