@@ -41,9 +41,7 @@ export default function Post({
   }, [id, mutate])
 
   const datePublished = parseISO(date)
-  const dateModified = modifiedAt
-    ? parseISO(modifiedAt).toISOString()
-    : undefined
+  const dateModified = modifiedAt ? parseISO(modifiedAt) : undefined
   const url = `${siteMetadata.siteUrl}/blog/${id}`
   const postImage = {
     url: `${siteMetadata.siteUrl}${banner}`,
@@ -67,14 +65,14 @@ export default function Post({
           images: [postImage],
           article: {
             publishedTime: datePublished.toISOString(),
-            modifiedTime: dateModified,
+            modifiedTime: dateModified?.toISOString(),
           },
         }}
       />
       <ArticleJsonLd
         authorName="Andrés Rodríguez"
         datePublished={datePublished.toISOString()}
-        dateModified={dateModified}
+        dateModified={dateModified?.toISOString()}
         description={description}
         publisherName="Andrés Rodríguez"
         publisherLogo={siteMetadata.logo}
@@ -82,26 +80,29 @@ export default function Post({
         title={title}
         url={url}
       />
+      <header className="px-8 py-16">
+        <h1 className="max-w-screen-lg mx-auto leading-tight font-black text-4xl sm:text-5xl sm:text-center">
+          {title}
+        </h1>
+        <h2 className="font-semibold text-xl sm:text-2xl sm:text-center mt-4 text-gray-500">
+          {description}
+        </h2>
+      </header>
       <Wrapper>
         <div />
-        <main className="prose">
-          <header>
-            <h1 tw="sm:text-5xl! mb-0! text-center">{title}</h1>
-            <div className="my-4 flex flex-col sm:flex-row text-lg justify-center font-semibold items-center">
-              <time dateTime={date}>
-                {format(datePublished, 'LLLL d, yyyy')}
-              </time>
-              <span className="sm:mx-4">~</span>
-              <ViewCounter id={id} />
-            </div>
-          </header>
-          <p>
-            <em>{description}</em>
-          </p>
-          <article>{content}</article>
-        </main>
-        <div />
+        <article className="prose my-4">{content}</article>
+        <div className="mt-12" />
       </Wrapper>
+      <div className="my-4 text-gray-500 flex flex-col sm:flex-row text-lg justify-center font-semibold items-center">
+        <div>
+          <span className="mr-2">Last Updated:</span>
+          <time className="text-gray-900 font-bold" dateTime={date}>
+            {format(dateModified || datePublished, 'LLLL d, yyyy')}
+          </time>
+        </div>
+        <span className="sm:mx-4 text-teal-400">~</span>
+        <ViewCounter id={id} />
+      </div>
     </Layout>
   )
 }
