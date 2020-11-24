@@ -2,7 +2,7 @@
 title: 'Making a Blog Post Views Counter With Firebase and Next.js'
 description: 'A journey into how I built the viewer counter used in this blog'
 date: '2020-11-09'
-modifiedAt: '2020-11-15'
+modifiedAt: '2020-11-24'
 banner: '/images/count-blog-post-views-with-firebase/banner.png'
 ---
 
@@ -84,16 +84,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const postStats = await db.runTransaction<PostStats>(async (t) => {
     const snapshot = await t.get(postStatsRef)
-    let postStats: PostStats
 
     if (!snapshot.exists) {
-      postStats = {
+      const postStats: PostStats = {
         views: 0,
       }
       t.set(postStatsRef, postStats)
-    } else postStats = snapshot.data() as PostStats
+      return postStats
+    }
 
-    return postStats
+    return snapshot.data() as PostStats
   })
 
   return res.status(200).json(postStats)
@@ -148,6 +148,7 @@ Moved stuff around and it does work as expected still. My folder structure now l
 The logic in the view route is very similar to the other route. We attempt to get the data first and either increment the view count for the post or set it with some initial data.
 
 ```typescript
+// pages/api/post-stats/[id]/view.ts
 import {NextApiRequest, NextApiResponse} from 'next'
 import {db} from 'lib/firebase-admin'
 import {PostStats} from '.'
@@ -175,17 +176,17 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const postStats = await db.runTransaction<PostStats>(async (t) => {
     const snapshot = await t.get(postStatsRef)
-    let postStats: PostStats
     if (!snapshot.exists) {
-      postStats = {
+      const postStats: PostStats = {
         views: 1,
       }
       t.set(postStatsRef, postStats)
-    } else {
-      postStats = snapshot.data() as PostStats
-      postStats.views += 1
-      t.update(postStatsRef, postStats)
+      return postStats
     }
+
+    const postStats = snapshot.data() as PostStats
+    postStats.views += 1
+    t.update(postStatsRef, postStats)
 
     return postStats
   })

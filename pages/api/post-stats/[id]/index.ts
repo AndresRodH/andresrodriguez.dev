@@ -21,16 +21,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const postStats = await db.runTransaction<PostStats>(async (t) => {
     const snapshot = await t.get(postStatsRef)
-    let postStats: PostStats
 
     if (!snapshot.exists) {
-      postStats = {
+      const postStats: PostStats = {
         views: 0,
       }
       t.set(postStatsRef, postStats)
-    } else postStats = snapshot.data() as PostStats
+      return postStats
+    }
 
-    return postStats
+    return snapshot.data() as PostStats
   })
 
   return res.status(200).json(postStats)
