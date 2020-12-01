@@ -36,7 +36,7 @@
     "react-query": "^2.26.2",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
-    "styled-components": "^5.2.0",
+    "styled-components": "^5.2.1",
     "tailwindcss": "^1.9.6",
     "twin.macro": "^1.11.0"
   },
