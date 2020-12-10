@@ -31,7 +31,7 @@ export default function Home({allPostsData}: Props) {
         </section>
         <section className="max-w-screen-sm mx-auto">
           <H2>Recent Posts</H2>
-          <ul className="grid gap-4 divide-y">
+          <ul className="grid divide-y">
             {allPostsData.map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}>
                 <li>

@@ -18,7 +18,7 @@ export function PostItem({id, title, description}: GetSortedPostsData) {
       >
         {title}
       </span>
-      <ViewCounter style={{gridArea: 'views'}} id={id} />
+      <ViewCounter className="ml-auto" style={{gridArea: 'views'}} id={id} />
       <p style={{gridArea: 'description'}} tw="mt-0!">
         {description}
       </p>
