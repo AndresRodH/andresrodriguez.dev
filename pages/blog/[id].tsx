@@ -84,7 +84,7 @@ export default function Post({
         <h1 className="max-w-screen-lg mx-auto leading-tight font-black text-4xl sm:text-5xl sm:text-center">
           {title}
         </h1>
-        <h2 className="font-semibold text-xl sm:text-2xl sm:text-center mt-4 text-gray-500">
+        <h2 className="font-semibold text-xl sm:text-2xl sm:text-center mt-4 text-gray-500 max-w-screen-md mx-auto">
           {description}
         </h2>
       </header>
