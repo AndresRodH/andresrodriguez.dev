@@ -1,5 +1,3 @@
-import 'twin.macro'
-
 export function XStateViz({gist}: {gist: string}) {
   return (
     <iframe
