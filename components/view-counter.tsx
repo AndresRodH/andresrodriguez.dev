@@ -4,7 +4,7 @@ import {useQuery} from 'react-query'
 
 export function ViewCounter({
   id,
-  className = '',
+  className,
   ...props
 }: {id: string} & React.HTMLProps<HTMLSpanElement>) {
   const {data, isLoading} = useQuery(['post-stats', id], getPostStats)
