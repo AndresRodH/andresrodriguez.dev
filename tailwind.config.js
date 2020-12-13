@@ -1,5 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const mdx = require('@mdx-js/mdx')
+const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: {
@@ -32,6 +34,16 @@ module.exports = {
     },
   },
   theme: {
+    colors: {
+      transparent: 'transparent',
+      black: colors.black,
+      white: colors.white,
+
+      teal: colors.teal,
+      gray: colors.coolGray,
+      indigo: colors.indigo,
+      blue: colors.blue,
+    },
     extend: {
       typography: (theme) => ({
         default: {
@@ -43,19 +55,10 @@ module.exports = {
         },
       }),
       fontFamily: {
-        sans: ['Inter'],
-        mono: ['Jetbrains Mono'],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
     },
   },
   variants: {},
   plugins: [require('@tailwindcss/typography')],
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
-  experimental: {
-    extendedFontSizeScale: true,
-    extendedSpacingScale: true,
-    uniformColorPalette: true,
-  },
 }
