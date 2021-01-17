@@ -1,7 +1,8 @@
 import React from 'react'
 import Highlight, {defaultProps, Language} from 'prism-react-renderer'
 import nightOwl from 'prism-react-renderer/themes/nightOwl'
-import 'twin.macro'
+import clsx from 'clsx'
+import styles from './code-block.module.css'
 
 export function CodeBlock({
   children,
@@ -20,14 +21,7 @@ export function CodeBlock({
       theme={nightOwl}
     >
       {({className, style, tokens, getLineProps, getTokenProps}) => (
-        <pre
-          tw="box-content rounded-none! sm:rounded-lg! p-8! pb-0! -mx-8!"
-          className={className}
-          style={{
-            ...style,
-            maxWidth: '100vw',
-          }}
-        >
+        <pre className={clsx(className, styles.innerWrapper)} style={style}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({line, key: i})}>
               {line.map((token, key) => (
