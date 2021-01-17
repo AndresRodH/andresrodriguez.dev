@@ -9,7 +9,6 @@ import 'fontsource-jetbrains-mono'
 import 'styles/index.css'
 import type {AppProps} from 'next/app'
 import Head from 'next/head'
-import {GlobalStyles} from 'twin.macro'
 import {DefaultSeo} from 'next-seo'
 import {seo} from 'config'
 import {ReactQueryDevtools} from 'react-query-devtools'
@@ -50,7 +49,6 @@ function MyApp({Component, pageProps}: AppProps) {
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <GlobalStyles />
       <DefaultSeo {...seo} />
       <ReactQueryCacheProvider queryCache={queryCache}>
         <ReactQueryDevtools initialIsOpen />
