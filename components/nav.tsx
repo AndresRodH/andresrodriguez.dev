@@ -8,14 +8,14 @@ function NavLink({to, children}: {to: string; children: React.ReactNode}) {
 
   return (
     <Link href={to}>
-      <span
+      <li
         className={clsx(
-          'cursor-pointer',
-          router.pathname === to && 'font-semibold text-teal-600',
+          'cursor-pointer px-2 py-1 font-semibold rounded',
+          router.pathname === to && 'text-indigo-600 bg-indigo-50',
         )}
       >
         {children}
-      </span>
+      </li>
     </Link>
   )
 }
@@ -25,10 +25,10 @@ export function Nav() {
     <nav>
       <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-8 py-10 flex justify-between items-center">
         <Logo />
-        <div className="grid grid-rows-1 gap-4 text-center grid-cols-2">
+        <ul className="flex space-x-2">
           <NavLink to="/about">About</NavLink>
           <NavLink to="/uses">Uses</NavLink>
-        </div>
+        </ul>
       </div>
     </nav>
   )
