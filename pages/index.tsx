@@ -1,20 +1,16 @@
 import {useState} from 'react'
-import Link from 'next/link'
 import {Layout} from 'components/layout'
 import {siteMetadata} from 'config'
-import {Timeline} from 'components/timeline'
+import {Timeline} from 'components/timeline/timeline'
 import {Transition} from '@headlessui/react'
 import {getSortedPostsData} from 'lib/posts'
 import {GetStaticProps} from 'next'
 import {PostItem} from 'components/post-item'
-import tw from 'twin.macro'
 import clsx from 'clsx'
 
 type Props = {
   allPostsData: ReturnType<typeof getSortedPostsData>
 }
-
-const H2 = tw.h2`text-3xl font-bold text-indigo-600`
 
 export default function Home({allPostsData}: Props) {
   const [showMore, setShowMore] = useState(false)
@@ -30,22 +26,32 @@ export default function Home({allPostsData}: Props) {
           </p>
         </section>
         <section className="max-w-screen-sm mx-auto">
-          <H2>Recent Posts</H2>
+          <h2 className="text-3xl font-bold text-indigo-600">Recent Posts</h2>
           <ul className="grid divide-y">
             {allPostsData.map((post) => (
-              <Link key={post.id} href={`/blog/${post.id}`}>
-                <li>
-                  <PostItem {...post} />
-                </li>
-              </Link>
+              <li key={post.id}>
+                <PostItem {...post} />
+              </li>
             ))}
           </ul>
         </section>
         <section className="max-w-screen-sm mx-auto pt-12">
-          <H2>Timeline</H2>
+          <h2 className="text-3xl font-bold text-indigo-600">Timeline</h2>
           <Timeline>
             <Timeline.Section>
               <Timeline.Year>2020</Timeline.Year>
+              <Timeline.Entry title="I am going to be a daddy again!">
+                Baby boy coming in hot! Diego Alejandro Rodríguez Mosquera{' '}
+                <span role="img" aria-label="Baby emoji">
+                  👶🏻
+                </span>
+                . ETA May 2021.
+              </Timeline.Entry>
+              <Timeline.Entry title="Got COVID-19">
+                Thankfully symptoms were mild and family surprisingly did not
+                get it. Stayed locked in a room and played League of Legends
+                with my highschool friends a lot.
+              </Timeline.Entry>
               <Timeline.Entry title="Bought a house">
                 Too much money wasted on rent.
               </Timeline.Entry>

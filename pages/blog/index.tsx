@@ -26,11 +26,9 @@ export default function BlogPage({allPostsData}: Props) {
         <h1 className="text-4xl font-bold">Blog</h1>
         <ul className="mt-8 grid gap-4 divide-y">
           {allPostsData.map((post) => (
-            <Link key={post.id} href={`/blog/${post.id}`}>
-              <li>
-                <PostItem {...post} />
-              </li>
-            </Link>
+            <li key={post.id}>
+              <PostItem {...post} />
+            </li>
           ))}
         </ul>
       </main>
