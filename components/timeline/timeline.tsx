@@ -1,11 +1,5 @@
-import tw, {styled} from 'twin.macro'
-
-const EntryWrapper = styled.div`
-  grid-template-areas:
-    'icon title'
-    ' . description';
-  ${tw`grid gap-2 gap-x-4 justify-start items-center`};
-`
+import clsx from 'clsx'
+import styles from './timeline.module.css'
 
 function Entry({
   title,
@@ -15,7 +9,12 @@ function Entry({
   children?: React.ReactNode
 }) {
   return (
-    <EntryWrapper>
+    <div
+      className={clsx(
+        styles.entry,
+        'grid gap-2 gap-x-4 justify-start items-center py-2',
+      )}
+    >
       <div style={{gridArea: 'icon'}}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -34,20 +33,29 @@ function Entry({
           />
         </svg>
       </div>
-      <h4 style={{gridArea: 'title'}} tw="my-0!">
+      <h4
+        style={{gridArea: 'title'}}
+        className="my-0 font-semibold text-gray-900"
+      >
         {title}
       </h4>
       {children && (
-        <p style={{gridArea: 'description'}} tw="my-0!">
+        <p style={{gridArea: 'description'}} className="my-0 text-gray-700">
           {children}
         </p>
       )}
-    </EntryWrapper>
+    </div>
   )
 }
 
-const TimelineWrapper = tw.div`prose grid grid-cols-1 divide-y`
-const Year = tw.h3`mt-0!`
-const Section = tw.div`grid grid-cols-1 gap-2 py-4`
+const TimelineWrapper = ({children}: {children: React.ReactNode}) => (
+  <div className="grid grid-cols-1 divide-y">{children}</div>
+)
+const Year = ({children}: {children: React.ReactNode}) => (
+  <h3 className="mt-0 text-xl text-gray-900 font-semibold">{children}</h3>
+)
+const Section = ({children}: {children: React.ReactNode}) => (
+  <div className="grid grid-cols-1 gap-2 py-4">{children}</div>
+)
 
 export const Timeline = Object.assign(TimelineWrapper, {Entry, Year, Section})
