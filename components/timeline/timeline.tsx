@@ -19,16 +19,16 @@ function Entry({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="flex h-6 w-6"
+          className="flex w-6 h-6"
         >
           <circle
             cx="12"
             cy="12"
             r="10"
-            className="fill-current text-teal-400"
+            className="text-teal-400 fill-current"
           />
           <path
-            className="fill-current text-teal-800"
+            className="text-teal-800 fill-current"
             d="M10 14.59l6.3-6.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-3-3a1 1 0 0 1 1.4-1.42l2.3 2.3z"
           />
         </svg>
@@ -49,10 +49,10 @@ function Entry({
 }
 
 const TimelineWrapper = ({children}: {children: React.ReactNode}) => (
-  <div className="grid grid-cols-1 divide-y">{children}</div>
+  <div className="divide-y">{children}</div>
 )
 const Year = ({children}: {children: React.ReactNode}) => (
-  <h3 className="mt-0 text-xl text-gray-900 font-semibold">{children}</h3>
+  <h3 className="mt-0 text-xl font-semibold text-gray-900">{children}</h3>
 )
 const Section = ({children}: {children: React.ReactNode}) => (
   <div className="grid grid-cols-1 gap-2 py-4">{children}</div>
