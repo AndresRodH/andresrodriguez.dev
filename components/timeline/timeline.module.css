@@ -1,5 +1,0 @@
-.entry {
-  grid-template-areas:
-    'icon title'
-    ' . description';
-}

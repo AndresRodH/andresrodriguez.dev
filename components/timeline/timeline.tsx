@@ -1,6 +1,3 @@
-import clsx from 'clsx'
-import styles from './timeline.module.css'
-
 function Entry({
   title,
   children,
@@ -10,10 +7,13 @@ function Entry({
 }) {
   return (
     <div
-      className={clsx(
-        styles.entry,
-        'grid gap-2 gap-x-4 justify-start items-center py-2',
-      )}
+      className="grid items-center justify-start gap-2 py-2 gap-x-4"
+      style={{
+        gridTemplateAreas: `
+          'icon title'
+          ' . description'
+        `,
+      }}
     >
       <div style={{gridArea: 'icon'}}>
         <svg
