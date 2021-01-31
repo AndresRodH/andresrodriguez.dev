@@ -17,11 +17,11 @@ export default function Home({allPostsData}: Props) {
   return (
     <Layout>
       <main className="px-4 sm:px-0">
-        <section className="max-w-screen-sm sm:max-w-none mx-auto sm:px-8 py-24 sm:py-48 w-full">
-          <h1 className="text-6xl leading-tight sm:text-8xl font-bold sm:text-center">
+        <section className="w-full max-w-screen-sm py-24 mx-auto sm:max-w-none sm:px-8 sm:py-48">
+          <h1 className="text-6xl font-bold leading-tight sm:text-8xl sm:text-center">
             Hola! I&apos;m Andrés Rodríguez
           </h1>
-          <p className="text-2xl max-w-screen-sm sm:text-center mx-auto sm:text-3xl font-semibold mt-8 text-gray-600">
+          <p className="max-w-screen-sm mx-auto mt-8 text-2xl font-semibold text-gray-600 sm:text-center sm:text-3xl">
             {siteMetadata.shortBio}
           </p>
         </section>
@@ -35,9 +35,15 @@ export default function Home({allPostsData}: Props) {
             ))}
           </ul>
         </section>
-        <section className="max-w-screen-sm mx-auto pt-12">
+        <section className="max-w-screen-sm pt-12 mx-auto">
           <h2 className="text-3xl font-bold text-indigo-600">Timeline</h2>
           <Timeline>
+            <Timeline.Section>
+              <Timeline.Year>2021</Timeline.Year>
+              <Timeline.Entry title="Senior Software Engineer">
+                Very excited about this, what a way to start the year.
+              </Timeline.Entry>
+            </Timeline.Section>
             <Timeline.Section>
               <Timeline.Year>2020</Timeline.Year>
               <Timeline.Entry title="I am going to be a daddy again!">
@@ -61,70 +67,6 @@ export default function Home({allPostsData}: Props) {
                 planning features in this new role.
               </Timeline.Entry>
             </Timeline.Section>
-            <Timeline.Section>
-              <Timeline.Year>2019</Timeline.Year>
-              <Timeline.Entry title="Back to frontend full time">
-                Many projects came up that required all hands on deck. Every now
-                and then I would fix some GraphQL bugs and work on small GraphQL
-                related features.
-              </Timeline.Entry>
-            </Timeline.Section>
-            <Timeline.Section>
-              <Timeline.Year>2018</Timeline.Year>
-              <Timeline.Entry
-                title={
-                  <>
-                    Got married{' '}
-                    <span role="img" aria-label="Groom emoji">
-                      🤵🏻
-                    </span>
-                    <span role="img" aria-label="Bride emoji">
-                      👰🏻
-                    </span>
-                  </>
-                }
-              >
-                Happiest day of my life! Honeymoon in Galápagos Islands{' '}
-                <span role="img" aria-label="Island emoji">
-                  🌴
-                </span>
-              </Timeline.Entry>
-              <Timeline.Entry title="Sofía was born">
-                Blessed by this little angel.
-              </Timeline.Entry>
-              <Timeline.Entry title="Software Engineer III">
-                I have worked in both the backend and the frontend for months.
-                Very happy with having the opportunity to work fullstack.
-              </Timeline.Entry>
-              <Timeline.Entry title="Adopted GraphQL on the API">
-                My{' '}
-                <strong>
-                  <em>magnum opus</em>
-                </strong>
-                . Started working on officially supporting GraphQL on the api.
-                Rewrote the whole thing three times with different approaches:{' '}
-                <a
-                  href="https://www.graphql-tools.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <code>graphql-tools</code>
-                </a>
-                ,{' '}
-                <a
-                  href="https://typegraphql.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <code>type-graphql</code>
-                </a>{' '}
-                and{' '}
-                <a href="https://nexusjs.org/" target="_blank" rel="noreferrer">
-                  <code>nexus</code>
-                </a>
-                . Nexus stuck better with our internal tools.
-              </Timeline.Entry>
-            </Timeline.Section>
             <Transition
               show={showMore}
               enter="transition-opacity duration-75"
@@ -135,6 +77,74 @@ export default function Home({allPostsData}: Props) {
               leaveTo="opacity-0"
               className="divide-y"
             >
+              <Timeline.Section>
+                <Timeline.Year>2019</Timeline.Year>
+                <Timeline.Entry title="Back to frontend full time">
+                  Many projects came up that required all hands on deck. Every
+                  now and then I would fix some GraphQL bugs and work on small
+                  GraphQL related features.
+                </Timeline.Entry>
+              </Timeline.Section>
+              <Timeline.Section>
+                <Timeline.Year>2018</Timeline.Year>
+                <Timeline.Entry
+                  title={
+                    <>
+                      Got married{' '}
+                      <span role="img" aria-label="Groom emoji">
+                        🤵🏻
+                      </span>
+                      <span role="img" aria-label="Bride emoji">
+                        👰🏻
+                      </span>
+                    </>
+                  }
+                >
+                  Happiest day of my life! Honeymoon in Galápagos Islands{' '}
+                  <span role="img" aria-label="Island emoji">
+                    🌴
+                  </span>
+                </Timeline.Entry>
+                <Timeline.Entry title="Sofía was born">
+                  Blessed by this little angel.
+                </Timeline.Entry>
+                <Timeline.Entry title="Software Engineer III">
+                  I have worked in both the backend and the frontend for months.
+                  Very happy with having the opportunity to work fullstack.
+                </Timeline.Entry>
+                <Timeline.Entry title="Adopted GraphQL on the API">
+                  My{' '}
+                  <strong>
+                    <em>magnum opus</em>
+                  </strong>
+                  . Started working on officially supporting GraphQL on the api.
+                  Rewrote the whole thing three times with different approaches:{' '}
+                  <a
+                    href="https://www.graphql-tools.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <code>graphql-tools</code>
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://typegraphql.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <code>type-graphql</code>
+                  </a>{' '}
+                  and{' '}
+                  <a
+                    href="https://nexusjs.org/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <code>nexus</code>
+                  </a>
+                  . Nexus stuck better with our internal tools.
+                </Timeline.Entry>
+              </Timeline.Section>
               <Timeline.Section>
                 <Timeline.Year>2017</Timeline.Year>
                 <Timeline.Entry title="Started experimenting with GraphQL">
@@ -256,7 +266,7 @@ export default function Home({allPostsData}: Props) {
             </Transition>
           </Timeline>
           <button
-            className="mx-auto transition-colors duration-300 hover:bg-gray-100 rounded font-semibold text-gray-900 flex items-center py-2 px-4"
+            className="flex items-center px-4 py-2 mx-auto font-semibold text-gray-900 transition-colors duration-300 rounded hover:bg-gray-100"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? 'Collapse' : 'Show More'}{' '}
