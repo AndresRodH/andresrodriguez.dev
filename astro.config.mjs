@@ -1,6 +1,8 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
+import vercel from "@astrojs/vercel/static";
+
 const SERVER_PORT = 3000;
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
 const LIVE_URL = "https://andresrodriguez.dev";
@@ -23,5 +25,7 @@ export default defineConfig({
 		}),
 		sitemap(),
 	],
+	output: "static",
+	adapter: vercel(),
 });
 
