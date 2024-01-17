@@ -1,0 +1,119 @@
+---
+import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Nav from "../components/nav.astro";
+import meImage from "../images/yo.jpg";
+import { Picture } from "astro:assets";
+
+const title = SITE_TITLE;
+const description = SITE_DESCRIPTION;
+
+const externalLinks = [
+	{
+		label: "follow me",
+		href: "https://twitter.com/andrexish",
+	},
+	{
+		label: "github",
+		href: "https://github.com/andresrodh",
+	},
+];
+---
+
+<html lang="en" class="h-full">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<!-- <meta property="og:image" content="https://astro.build/social.png" /> -->
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta name="twitter:creator" content="@andrexish" />
+		<!-- <meta name="twitter:image" content="https://astro.build/social.png" /> -->
+	</head>
+	<body
+		class="max-w-screen-sm mx-auto h-full min-h-full p-6 sm:p-8 flex flex-col"
+	>
+		<header>
+			<div
+				class="flex flex-col-reverse sm:flex-row gap-8 justify-between w-full sm:items-center"
+			>
+				<div>
+					<h1 class="font-medium text-4xl">Andrés Rodríguez</h1>
+					<h2 class="text-muted-foregorund text-2xl mt-1">
+						Software Engineer in St.Louis
+					</h2>
+				</div>
+				<Picture
+					src={meImage}
+					alt="Andrés Rodríguez"
+					formats={["avif", "webp"]}
+					width={300}
+					class="rounded-lg object-cover w-40 h-40"
+				/>
+			</div>
+		</header>
+		<main class="flex-1">
+			<section class="prose prose-slate prose-lg mt-8">
+				<p>
+					Hola! My name is Andrés. I'm a Software Engineer primarily focused on
+					full-stack web development. I'm currently working as the Tech Lead of <a
+						href="https://coolfiresolutions.com"
+						target="_blank"
+						rel="noopener noreferrer">Coolfire Solutions</a
+					>.
+				</p>
+			</section>
+		</main>
+		<footer>
+			<ul class="flex gap-4">
+				{
+					externalLinks.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-1"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									class="h-4 w-4"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="lucide lucide-external-link"
+								>
+									<path d="M15 3h6v6" />
+									<path d="M10 14 21 3" />
+									<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+								</svg>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</footer>
+	</body>
+</html>

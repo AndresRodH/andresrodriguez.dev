@@ -1,3 +1,3 @@
 # andresrodriguez.dev
 
-Source for <https://andresrodriguez.dev>. Powered by [Next.js](https://nextjs.org/) and deployed via [Vercel](https://www.vercel.com/).
+Source for <https://andresrodriguez.dev>. Powered by [Astro](https://astro.build/) and deployed via [Vercel](https://www.vercel.com/).
