@@ -26,6 +26,8 @@ export default defineConfig({
 		sitemap(),
 	],
 	output: "static",
-	adapter: vercel(),
+	adapter: vercel({
+		imageService: true,
+		webAnalytics: true,
+	}),
 });
-
