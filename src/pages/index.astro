@@ -16,6 +16,10 @@ const externalLinks = [
 		label: "github",
 		href: "https://github.com/andresrodh",
 	},
+	{
+		label: "linkedin",
+		href: "https://www.linkedin.com/in/andresrodh",
+	},
 ];
 ---
 
@@ -79,12 +83,12 @@ const externalLinks = [
 					alt="Andrés Rodríguez"
 					formats={["avif", "webp"]}
 					width={300}
-					class="rounded-lg object-cover w-40 h-40"
+					class="mx-auto shadow border-4 object-cover w-40 h-40"
 				/>
 			</div>
 		</header>
 		<main class="flex-1">
-			<section class="prose prose-slate prose-lg mt-8">
+			<section class="prose prose-lg mt-8">
 				<p>
 					Hola! My name is Andrés. I'm a Software Engineer primarily focused on
 					full-stack web development. I'm currently working as the Tech Lead of <a
@@ -104,7 +108,7 @@ const externalLinks = [
 								href={link.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1"
+								class="inline-flex items-center gap-1 border-2 shadow-sm px-1.5 py-0.5"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +121,6 @@ const externalLinks = [
 									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
-									class="lucide lucide-external-link"
 								>
 									<path d="M15 3h6v6" />
 									<path d="M10 14 21 3" />
