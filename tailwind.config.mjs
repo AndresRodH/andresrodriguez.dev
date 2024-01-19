@@ -1,5 +1,4 @@
 import defaultTheme from "tailwindcss/defaultTheme";
-import defaultModifiers from "@tailwindcss/typography";
 
 /** @type {import('tailwindcss').Config} */
 export default {
