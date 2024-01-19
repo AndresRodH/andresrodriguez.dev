@@ -7,8 +7,8 @@
 	src:
 		url("fonts/Mona-Sans.woff2") format("woff2 supports variations"),
 		url("fonts/Mona-Sans.woff2") format("woff2-variations");
-	font-weight: 400;
-	font-stretch: 100%;
+	font-weight: 400 500;
+	font-stretch: 100% 75%;
 }
 
 @font-face {
@@ -16,8 +16,8 @@
 	src:
 		url("fonts/Hubot-Sans.woff2") format("woff2 supports variations"),
 		url("fonts/Hubot-Sans.woff2") format("woff2-variations");
-	font-weight: 200 900;
-	font-stretch: 75% 125%;
+	font-weight: 400 500 900;
+	font-stretch: 75% 75% 125%;
 }
 
 @layer base {
@@ -28,6 +28,7 @@
 		--muted-foreground: 215.4 16.3% 46.9%;
 		--shadow: 0 0% 0%;
 		--border: 0 0% 0%;
+		--light-green: 120 73% 75%;
 	}
 }
 
@@ -38,14 +39,5 @@
 
 	body {
 		@apply bg-background text-foreground;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply font-heading;
 	}
 }
