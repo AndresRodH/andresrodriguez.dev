@@ -23,6 +23,20 @@ const externalLinks = [
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<link
+			rel="preload"
+			href="/fonts/Hubot-Sans.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="/fonts/Mona-Sans.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 
@@ -53,9 +67,11 @@ const externalLinks = [
 				class="flex flex-col-reverse sm:flex-row gap-8 justify-between w-full sm:items-center"
 			>
 				<div>
-					<h1 class="font-medium text-4xl">Andrés Rodríguez</h1>
-					<h2 class="text-muted-foregorund text-2xl mt-1">
-						Software Engineer in St.Louis
+					<h1 class="font-extrabold tracking-tight text-4xl">
+						Andrés Rodríguez
+					</h1>
+					<h2 class="text-muted-foreground text-2xl tracking mt-1">
+						Computer Scientist
 					</h2>
 				</div>
 				<Picture
