@@ -12,7 +12,7 @@ export default {
 				muted: "hsl(var(--muted))",
 				"muted-foreground": "hsl(var(--muted-foreground))",
 				shadow: "hsl(var(--shadow))",
-				"light-green": "hsl(var(--light-green))",
+				"light-blue": "hsl(var(--light-blue))",
 			},
 			typography: (theme) => ({
 				DEFAULT: {
