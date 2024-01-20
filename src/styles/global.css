@@ -5,8 +5,8 @@
 @font-face {
 	font-family: "Mona Sans";
 	src:
-		url("fonts/Mona-Sans.woff2") format("woff2 supports variations"),
-		url("fonts/Mona-Sans.woff2") format("woff2-variations");
+		url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+		url("/fonts/Mona-Sans.woff2") format("woff2-variations");
 	font-weight: 400 500;
 	font-stretch: 100% 75%;
 }
@@ -14,8 +14,8 @@
 @font-face {
 	font-family: "Hubot Sans";
 	src:
-		url("fonts/Hubot-Sans.woff2") format("woff2 supports variations"),
-		url("fonts/Hubot-Sans.woff2") format("woff2-variations");
+		url("/fonts/Hubot-Sans.woff2") format("woff2 supports variations"),
+		url("/fonts/Hubot-Sans.woff2") format("woff2-variations");
 	font-weight: 400 500 900;
 	font-stretch: 75% 75% 125%;
 }
