@@ -20,6 +20,11 @@
 	font-stretch: 75% 75% 125%;
 }
 
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
 @layer base {
 	:root {
 		--background: 0 0% 100%;
