@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/base.astro";
+import Tag from "../../components/tag.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("posts");
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const publishedAt = new Intl.DateTimeFormat("en-US", {
+	dateStyle: "long",
+}).format(post.data.publishedAt);
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+	<header class="font-robot space-y-2">
+		<h1 class="text-4xl tracking-tight font-extrabold">
+			{post.data.title}
+		</h1>
+		<time
+			datetime={post.data.publishedAt.toISOString()}
+			class="text-gray-500 block"
+		>
+			{publishedAt}
+		</time>
+		<div class="flex items-center gap-2">
+			{post.data.tags.map((tag) => <Tag tag={tag} />)}
+		</div>
+	</header>
+	<article
+		class="mt-8 prose prose-pre:px-8 prose-pre:-mx-8 sm:prose-pre:px-4 sm:prose-pre:mx-0 sm:prose-pre:border-4 sm:prose-pre:shadow"
+	>
+		<Content />
+	</article>
+	<style>
+		html {
+			tab-size: 2;
+		}
+	</style>
+</BaseLayout>
