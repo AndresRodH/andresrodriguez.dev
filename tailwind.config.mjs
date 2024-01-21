@@ -13,6 +13,7 @@ export default {
 				"muted-foreground": "hsl(var(--muted-foreground))",
 				shadow: "hsl(var(--shadow))",
 				"light-blue": "hsl(var(--light-blue))",
+				"hot-pink": "hsl(var(--hot-pink))",
 			},
 			typography: (theme) => ({
 				DEFAULT: {
@@ -20,6 +21,9 @@ export default {
 						color: theme("colors.foreground"),
 						a: {
 							color: theme("colors.foreground"),
+							textDecorationThickness: "2px",
+							textUnderlineOffset: "2px",
+							textDecorationColor: theme("colors.hot-pink"),
 						},
 						pre: {
 							borderRadius: "none",
