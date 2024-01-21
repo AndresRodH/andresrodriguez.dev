@@ -40,4 +40,4 @@ return {
 }
 ```
 
-Personally, I like how LazyNvim configures Telescope to search for files in a directory with `<leader><leader>` and `<leader>ff` so I decided to keep those same keybindings and just add the `hidden` and `no_ignore` options.
+Personally, I like how LazyNvim configures Telescope to search for files in the context of root directories -- this is very useful in monorepo setups. I kept that behavior by using LazyNvim's telescope utilities from `lazyvim.util`. I then remapped the default keybindings for `<leader><leader>` and `<leader>ff` and set the `hidden` and `no_ignore` options.
