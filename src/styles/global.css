@@ -34,6 +34,7 @@
 		--shadow: 0 0% 0%;
 		--border: 0 0% 0%;
 		--light-blue: 190 72% 66%;
+		--hot-pink: 302 100% 50%;
 	}
 }
 
@@ -43,6 +44,6 @@
 	}
 
 	body {
-		@apply bg-background text-foreground;
+		@apply antialiased bg-background text-foreground;
 	}
 }
