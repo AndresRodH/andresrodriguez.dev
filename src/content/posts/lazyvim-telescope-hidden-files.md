@@ -31,13 +31,12 @@ return {
 			Util.telescope("files", { cwd = false, hidden = true, no_ignore = false }),
 			desc = "Find files (cwd)",
 		},
-		{
-			"<leader>fF",
-			Util.telescope("files", { cwd = false, hidden = true, no_ignore = false }),
-			desc = "Find files (cwd)",
-		},
 	},
 }
 ```
 
-Personally, I like how LazyNvim configures Telescope to search for files in the context of root directories -- this is very useful in monorepo setups. I kept that behavior by using LazyNvim's telescope utilities from `lazyvim.util`. I then remapped the default keybindings for `<leader><leader>` and `<leader>ff` and set the `hidden` and `no_ignore` options.
+Personally, I like how LazyNvim configures Telescope to search for files in the context of root directories -- this is very useful in monorepo setups. I kept that behavior by using LazyNvim's telescope utilities from `lazyvim.util`.
+
+I then remapped the default keybindings for `<leader><leader>` and `<leader>ff` for searching files in the root directory and `<leader>fF` to find files in the current working directory as shown above.
+
+Setting `hidden = true` allows to surface dotfiles/hidden files in search results and `no_ignore = false` makes it respect the project's `.gitignore`.
