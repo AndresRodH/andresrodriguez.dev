@@ -1,0 +1,116 @@
+---
+import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import meImage from "../images/yo.jpg";
+import { Picture } from "astro:assets";
+
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+
+const externalLinks = [
+	{
+		label: "follow me",
+		href: "https://twitter.com/andrexish",
+	},
+	{
+		label: "github",
+		href: "https://github.com/andresrodh",
+	},
+	{
+		label: "linkedin",
+		href: "https://www.linkedin.com/in/andresrodh",
+	},
+];
+---
+
+<html lang="en" class="h-full">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<link
+			rel="preload"
+			href="/fonts/Hubot-Sans.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="/fonts/Mona-Sans.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+    <link
+      rel="preload"
+      href="/fonts/JetBrainsMono-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<!-- <meta property="og:image" content="https://astro.build/social.png" /> -->
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta name="twitter:creator" content="@andrexish" />
+		<!-- <meta name="twitter:image" content="https://astro.build/social.png" /> -->
+	</head>
+	<body
+		class="max-w-screen-sm mx-auto h-full min-h-full p-6 sm:p-8 flex flex-col"
+	>
+		<slot />
+		<footer>
+			<ul class="flex gap-4">
+				{
+					externalLinks.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-1 border-2 shadow-sm px-1.5 py-0.5 transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none bg-light-blue font-medium font-robot"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									class="h-4 w-4"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path d="M15 3h6v6" />
+									<path d="M10 14 21 3" />
+									<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+								</svg>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</footer>
+	</body>
+</html>
