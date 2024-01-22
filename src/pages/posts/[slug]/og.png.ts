@@ -26,7 +26,7 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 				children: {
 					type: "div",
 					props: {
-						tw: "border-4 p-12 border-black w-full h-full bg-white flex flex-col",
+						tw: "border-8 p-12 border-black w-full h-full bg-white flex flex-col",
 						style: { boxShadow: "20px 20px 0 0px" },
 						children: [
 							{
@@ -58,7 +58,7 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 												children: post.data.tags.map((tag) => ({
 													type: "span",
 													props: {
-														tw: "border-2 border-black px-4 py-1 rounded-full text-4xl font-semibold mr-4",
+														tw: "border-4 border-black px-4 py-1 rounded-full text-4xl font-semibold mr-4",
 														children: tag,
 													},
 												})),
