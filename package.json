@@ -12,9 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/sitemap": "3.0.5",
     "@astrojs/tailwind": "5.1.0",
-    "@astrojs/vercel": "^6.1.4",
+    "@astrojs/vercel": "6.1.4",
     "@catppuccin/vscode": "3.11.0",
     "@vercel/og": "0.6.2",
     "astro": "4.1.3",
