@@ -34,7 +34,9 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 						<p class="pt-3">{post.data.description}</p>
 						<ul class="flex gap-2 pt-3">
 							{post.data.tags.map((tag) => (
-								<Tag tag={tag} />
+								<li>
+									<Tag tag={tag} />
+								</li>
 							))}
 						</ul>
 					</li>
