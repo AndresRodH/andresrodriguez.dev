@@ -20,6 +20,15 @@ const publishedAt = new Intl.DateTimeFormat("en-US", {
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
+	<Fragment slot="meta">
+		<meta
+			property="og:image"
+			content={`${import.meta.env.SITE}/posts/${post.slug}/og.png`}
+		/>
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={post.data.title} />
+	</Fragment>
 	<header class="font-robot space-y-2">
 		<h1 class="text-4xl tracking-tight font-extrabold">
 			{post.data.title}
@@ -35,7 +44,7 @@ const publishedAt = new Intl.DateTimeFormat("en-US", {
 		</div>
 	</header>
 	<article
-		class="mt-8 prose prose-pre:px-8 prose-pre:-mx-8 sm:prose-pre:px-4 sm:prose-pre:mx-0 sm:prose-pre:border-4 sm:prose-pre:shadow"
+		class="mt-8 prose prose-pre:px-6 prose-pre:-mx-6 sm:prose-pre:px-4 sm:prose-pre:mx-0 sm:prose-pre:border-4 sm:prose-pre:shadow"
 	>
 		<Content />
 	</article>
