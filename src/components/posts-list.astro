@@ -1,0 +1,52 @@
+---
+import Tag from "./tag.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("posts");
+
+const pastYearFormatter = new Intl.DateTimeFormat("en-US", {
+	year: "numeric",
+	month: "short",
+	day: "numeric",
+});
+
+const currentYearFormatter = new Intl.DateTimeFormat("en-US", {
+	month: "long",
+	day: "numeric",
+});
+
+const posts = allPosts.map((post) => ({
+	...post.data,
+	slug: post.slug,
+	publishedAt:
+		post.data.publishedAt.getFullYear() === new Date().getFullYear()
+			? currentYearFormatter.format(post.data.publishedAt)
+			: pastYearFormatter.format(post.data.publishedAt),
+}));
+---
+
+<ul class="divide-y divide-black">
+	{
+		posts.map((post) => (
+			<li class="border-2 shadow p-4">
+				<div class="flex flex-col sm:flex-row sm:items-center gap-2 font-robot">
+					<a
+						href={`/posts/${post.slug}`}
+						class="font-semibold tracking-tight text-xl underline-offset-2 hover:underline flex-1 decoration-2 decoration-hot-pink"
+					>
+						{post.title}
+					</a>
+					<time class="font-semibold text-gray-600">{post.publishedAt}</time>
+				</div>
+				<p class="pt-3">{post.description}</p>
+				<ul class="flex gap-2 pt-3">
+					{post.tags.map((tag) => (
+						<li>
+							<Tag tag={tag} />
+						</li>
+					))}
+				</ul>
+			</li>
+		))
+	}
+</ul>

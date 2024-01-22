@@ -1,47 +1,10 @@
 ---
 import BaseLayout from "../../layouts/base.astro";
-import Tag from "../../components/tag.astro";
-import { getCollection } from "astro:content";
-
-const posts = await getCollection("posts");
-
-const formatter = new Intl.DateTimeFormat("en-US", {
-	year: "numeric",
-	month: "short",
-});
+import PostsList from "../../components/posts-list.astro";
 ---
 
 <BaseLayout title="Posts" description="List of all posts written by me">
 	<main>
-		<ul class="divide-y divide-black">
-			{
-				posts.map((post) => (
-					<li class="border-2 shadow p-4">
-						<div class="flex flex-col sm:flex-row sm:items-center gap-2 font-robot">
-							<a
-								href={`/posts/${post.slug}`}
-								class="font-semibold tracking-tight text-xl underline-offset-2 hover:underline flex-1 decoration-2 decoration-hot-pink"
-							>
-								{post.data.title}
-							</a>
-							<time
-								datetime={post.data.publishedAt.toDateString()}
-								class="font-semibold text-gray-600"
-							>
-								{formatter.format(post.data.publishedAt)}
-							</time>
-						</div>
-						<p class="pt-3">{post.data.description}</p>
-						<ul class="flex gap-2 pt-3">
-							{post.data.tags.map((tag) => (
-								<li>
-									<Tag tag={tag} />
-								</li>
-							))}
-						</ul>
-					</li>
-				))
-			}
-		</ul>
+		<PostsList />
 	</main>
 </BaseLayout>
