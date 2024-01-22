@@ -58,7 +58,7 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 												children: post.data.tags.map((tag) => ({
 													type: "span",
 													props: {
-														tw: "border-2 border-black px-2 py-0.5 rounded-full  text-xl font-semibold mr-4",
+														tw: "border-2 border-black px-4 py-1 rounded-full text-4xl font-semibold mr-4",
 														children: tag,
 													},
 												})),
@@ -67,7 +67,7 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 										{
 											type: "span",
 											props: {
-												tw: "text-4xl",
+												tw: "text-5xl",
 												children: "andresrodriguez.dev",
 												style: {
 													textDecorationColor: "#FF00F5",
@@ -86,7 +86,7 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 		},
 		{
 			width: 1200,
-			height: 600,
+			height: 630,
 			fonts: [
 				{
 					name: "Hubot Sans",
