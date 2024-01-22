@@ -1,7 +1,7 @@
 ---
 title: "Show hidden files with Telescope in LazyNvim"
 description: "How to configure Telecope to show hidden files in LazyNvim so dotfiles are visible while still respecting .gitignore"
-publishedAt: 2023-01-19
+publishedAt: 2024-01-19
 tags:
   - neovim
 ---
