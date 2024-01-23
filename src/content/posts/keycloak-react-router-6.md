@@ -206,7 +206,7 @@ export default function ProtectedRoute() {
 // src/main.tsx
 // ...
 import { ProtectedRoute } from '../path/to/component' // [!code --]
-import ProtectedRoute, { loader as protectedLoader } from './routes/protected.tsx' // [!code ++]
+import ProtectedRoute, { loader as protectedLoader } from './routes/protected' // [!code ++]
 
 const router = createBrowserRouter([
   {
@@ -262,22 +262,22 @@ export default function ProtectedRoute() {
   const data = useLoaderData() as Awaited<ReturnType<typeof loader>>
   return <div>Hello, {data.profile.username}!</div> // [!code --]
   return ( // [!code ++]
-    <div>
-      Hello, {data.profile.username}!
-      <Form method="POST">
-        <button type="submit">Logout</button>
-      </Form>
-    </div>
-  )
+    <div> // [!code ++]
+      Hello, {data.profile.username}! // [!code ++]
+      <Form method="POST"> // [!code ++]
+        <button type="submit">Logout</button> // [!code ++]
+      </Form> // [!code ++]
+    </div> // [!code ++]
+  ) // [!code ++]
 }
 
 // src/main.tsx
 // ...
-import ProtectedRoute, { loader as protectedLoader } from './routes/protected.tsx' // [!code --]
+import ProtectedRoute, { loader as protectedLoader } from './routes/protected' // [!code --]
 import ProtectedRoute, { // [!code ++]
   loader as protectedLoader, // [!code ++]
   action as protectedAction, // [!code ++]
-} from './routes/protected.tsx' // [!code ++]
+} from './routes/protected' // [!code ++]
 
 const router = createBrowserRouter([
   {
