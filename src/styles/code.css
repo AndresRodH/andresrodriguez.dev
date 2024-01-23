@@ -1,0 +1,29 @@
+:root {
+	--code-remove: 349.72, 89.16%, 60.2%, 0.2;
+	--code-add: 160.12, 84.08%, 39.41%, 0.2;
+	--code-remove-indicator: 0, 44.97%, 62.94%, 1;
+	--code-add-indicator: 150.98, 65.11%, 53.92%, 1;
+}
+
+.line.diff.remove {
+	background-color: hsla(var(--code-remove));
+	opacity: 0.75;
+}
+
+.line.diff.remove::before {
+	content: "-";
+	font-size: 1rem;
+	color: hsla(var(--code-remove-indicator));
+	padding: 0 4px;
+}
+
+.line.diff.add {
+	background-color: hsla(var(--code-add));
+}
+
+.line.diff.add::before {
+	content: "+";
+	font-size: 1rem;
+	color: hsla(var(--code-add-indicator));
+	padding: 0 4px;
+}

@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/base.astro";
 import Tag from "../../components/tag.astro";
 import { getCollection } from "astro:content";
+import "../../styles/code.css";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("posts");
@@ -16,6 +17,7 @@ const { Content } = await post.render();
 
 const publishedAt = new Intl.DateTimeFormat("en-US", {
 	dateStyle: "long",
+	timeZone: "utc",
 }).format(post.data.publishedAt);
 
 const imageUrl = `${import.meta.env.SITE}/posts/${post.slug}/og.png`;
@@ -51,20 +53,19 @@ const imageUrl = `${import.meta.env.SITE}/posts/${post.slug}/og.png`;
 		</div>
 	</header>
 	<article
-		class="mt-8 prose prose-pre:px-6 prose-pre:-mx-6 sm:prose-pre:px-4 sm:prose-pre:mx-0 sm:prose-pre:border-4 sm:prose-pre:shadow"
+		class="mt-8 prose prose-pre:px-6 sm:prose-pre:px-8 prose-pre:-mx-6 sm:prose-pre:-mx-8 sm:prose-pre:ring-4 sm:prose-pre:ring-border sm:prose-pre:shadow-md"
 	>
 		<Content />
 	</article>
 	<style>
+		@font-face {
+			font-family: "JetBrains Mono";
+			src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+			font-display: swap;
+		}
+
 		html {
 			tab-size: 2;
 		}
 	</style>
 </BaseLayout>
-<style>
-	@font-face {
-		font-family: "JetBrains Mono";
-		src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
-		font-display: swap;
-	}
-</style>
