@@ -8,7 +8,7 @@ tags:
 
 React Router 6 stopped being "just a router". The new data apis not only change the way we think about routing in React applications, but also about how we handle data fetching and mutations. In this post we will go over a simple example on how to use Keycloak to add authentication to your React Router 6 app using the new data apis.
 
-All the code is on [GitHub](https://github.com/AndresRodH/keycloak-react-router-6#set-up-keycloak), including a [simple Keycloak setup](https://github.com/AndresRodH/keycloak-react-router-6/blob/main/docker-compose.yml) if you need one. Just follow the instructions in the `README` to get it running.
+All the exploratory code I wrote for this post is on [GitHub](https://github.com/AndresRodH/keycloak-react-router-6#set-up-keycloak), including a [simple Keycloak setup](https://github.com/AndresRodH/keycloak-react-router-6/blob/main/docker-compose.yml) if you need one. Just follow the instructions in the `README` to get it running.
 
 ## Application overview
 
@@ -328,6 +328,8 @@ const router = createBrowserRouter([
   // ...
 ])
 ```
+
+You can check the full diff in the example in [this PR](https://github.com/AndresRodH/keycloak-react-router-6/pull/2).
 
 ## Conclusion
 
