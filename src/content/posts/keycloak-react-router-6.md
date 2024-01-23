@@ -12,7 +12,7 @@ All the exploratory code I wrote for this post is on [GitHub](https://github.com
 
 ## Application overview
 
-I don't want to go into a lot of detail about the application itself as this post is intended to help you add it to _your_ application.
+I don't want to go into a lot of detail about the application itself as this post is intended to help you add it to your application.
 
 Let's say we have an application that has some pages that the user can access without being logged in, and some that require authentication. In a traditional React Router 5 application we would create a custom component that checks the auth state via an auth provider and redirects to the login page if the user is not logged in:
 

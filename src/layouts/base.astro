@@ -11,16 +11,26 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 
 const externalLinks = [
 	{
+		label: "buy me a coffee",
+		emoji: "☕",
+		href: "https://www.buymeacoffee.com/andres.rodriguez",
+		color: "bg-yellorange",
+	},
+	{
 		label: "follow me",
 		href: "https://twitter.com/andrexish",
+		color: "bg-light-blue",
 	},
 	{
 		label: "github",
 		href: "https://github.com/andresrodh",
+		color: "bg-light-blue",
 	},
 	{
 		label: "linkedin",
 		href: "https://www.linkedin.com/in/andresrodh",
+
+		color: "bg-light-blue",
 	},
 ];
 
@@ -104,7 +114,7 @@ const navItems = [
 					<slot />
 				</div>
 				<footer class="pt-12">
-					<ul class="flex gap-4">
+					<ul class="flex gap-4 flex-wrap">
 						{
 							externalLinks.map((link) => (
 								<li>
@@ -112,24 +122,12 @@ const navItems = [
 										href={link.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										class="inline-flex items-center gap-1 border-2 shadow-sm px-1.5 py-0.5 transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none bg-light-blue font-medium font-robot"
+										class:list={[
+											link.color,
+											"inline-flex items-center gap-1 border-2 shadow-sm px-1.5 py-0.5 transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none bg-light-blue font-medium font-robot after:content-['_↗']",
+										]}
 									>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24"
-											fill="none"
-											class="h-4 w-4"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										>
-											<path d="M15 3h6v6" />
-											<path d="M10 14 21 3" />
-											<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-										</svg>
+										{link.emoji}
 										{link.label}
 									</a>
 								</li>

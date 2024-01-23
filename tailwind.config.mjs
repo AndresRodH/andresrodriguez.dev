@@ -14,6 +14,7 @@ export default {
 				shadow: "hsl(var(--shadow))",
 				"light-blue": "hsl(var(--light-blue))",
 				"hot-pink": "hsl(var(--hot-pink))",
+				yellorange: "hsl(var(--yellorange))",
 			},
 			typography: (theme) => ({
 				DEFAULT: {
