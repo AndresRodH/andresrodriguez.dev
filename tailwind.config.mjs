@@ -39,6 +39,7 @@ export default {
 			boxShadow: {
 				DEFAULT: "0.375rem 0.375rem 0 0px hsl(var(--shadow))",
 				sm: "0.125rem 0.125rem 0 0px hsl(var(--shadow))",
+				md: "0.75rem 0.75rem 0 0px hsl(var(--shadow))",
 				none: "none",
 			},
 		},
