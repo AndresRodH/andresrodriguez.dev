@@ -99,6 +99,8 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
 }
 ```
 
+This works... but, we can do better. Let's use the data api to remove the `AuthProvider` and `useAuth` hook.
+
 ### Initializing Keycloak
 
 The first step is to have `keycloak-js` installed with any package manager you want. We will be working on a series of abstractions to handle auth cases in a case-by-case basis.
