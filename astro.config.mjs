@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/static";
-import catpuccinTheme from "@catppuccin/vscode/themes/mocha.json";
+import catpuccinTheme from "./shiki/catppuccin.json"; // customized catpuccin mocha theme - no italics
 import { transformerNotationDiff } from "shikiji-transformers";
 
 const SERVER_PORT = 3000;
