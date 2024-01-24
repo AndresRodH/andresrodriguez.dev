@@ -74,6 +74,10 @@
 	font-size: inherit;
 }
 
+.content a {
+	@apply text-foreground font-medium decoration-hot-pink underline underline-offset-2 decoration-2;
+}
+
 .line.diff {
 	position: relative;
 	margin-left: -1rem;
