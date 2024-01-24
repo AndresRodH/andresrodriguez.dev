@@ -27,10 +27,15 @@ export default defineConfig({
 		sitemap(),
 		expressiveCode({
 			themes: [catpuccinTheme],
+			frames: {
+				showCopyToClipboardButton: false,
+			},
 			styleOverrides: {
 				borderRadius: "0px",
 				borderWidth: "1px",
 				borderColor: "hsl(var(--border))",
+				uiFontFamily: "JetBrains Mono",
+				codeFontFamily: "JetBrains Mono",
 				frames: {
 					frameBoxShadowCssValue: "none",
 				},
