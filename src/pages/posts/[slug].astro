@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/base.astro";
 import Tag from "../../components/tag.astro";
 import { getCollection } from "astro:content";
-import "../../styles/code.css";
+import "../../styles/post.css";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("posts");
@@ -38,23 +38,24 @@ const imageUrl = `${import.meta.env.SITE}/posts/${post.slug}/og.png`;
 		<meta property="og:image:alt" content={post.data.title} />
 		<meta name="twitter:image" content={imageUrl} />
 	</Fragment>
-	<header class="font-robot space-y-2">
+	<header class="font-robot space-y-6">
 		<h1 class="text-4xl tracking-tight font-extrabold">
 			{post.data.title}
 		</h1>
-		<time
-			datetime={post.data.publishedAt.toISOString()}
-			class="text-gray-500 block"
-		>
-			{publishedAt}
-		</time>
-		<div class="flex items-center gap-2">
-			{post.data.tags.map((tag) => <Tag tag={tag} />)}
+		<p class="text-xl text-muted-foreground">{post.data.description}</p>
+		<div class="flex justify-between">
+			<div class="flex items-center gap-2">
+				{post.data.tags.map((tag) => <Tag tag={tag} />)}
+			</div>
+			<time
+				datetime={post.data.publishedAt.toISOString()}
+				class="text-gray-500 block"
+			>
+				{publishedAt}
+			</time>
 		</div>
 	</header>
-	<article
-		class="mt-8 prose prose-pre:px-6 sm:prose-pre:px-8 prose-pre:-mx-6 sm:prose-pre:-mx-8 sm:prose-pre:ring-4 sm:prose-pre:ring-border sm:prose-pre:shadow-md"
-	>
+	<article class="mt-8 content">
 		<Content />
 	</article>
 	<style>
