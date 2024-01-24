@@ -1,16 +1,27 @@
 import type { APIRoute } from "astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import fs from "node:fs";
 import path from "node:path";
 import { ImageResponse } from "@vercel/og";
 
-interface Props {
-	post: CollectionEntry<"posts">;
-}
+export const prerender = false;
 
-export const GET: APIRoute<Props> = async ({ props }) => {
-	const { post } = props;
+// biome-ignore lint/complexity/noBannedTypes: no props
+export const GET: APIRoute<{}, { slug: string }> = async ({
+	request,
+	params,
+}) => {
+	const { slug } = params;
+	const posts = await getCollection("posts");
+	const post = posts.find((p) => p.slug === slug);
 
+	if (!post) {
+		return new Response(null, { status: 404 });
+	}
+
+	const { searchParams } = new URL(request.url);
+	const width = Number(searchParams.get("width") ?? 1200);
+	const height = Number(searchParams.get("height") ?? 630);
 	const hubotFont = fs.readFileSync(
 		path.join(process.cwd(), "public/fonts/HubotSansCondensed-ExtraBold.ttf"),
 	);
@@ -85,8 +96,8 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 			},
 		},
 		{
-			width: 1200,
-			height: 630,
+			width,
+			height,
 			fonts: [
 				{
 					name: "Hubot Sans",
@@ -100,11 +111,3 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 		},
 	);
 };
-
-export async function getStaticPaths() {
-	const posts = await getCollection("posts");
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: { post },
-	}));
-}
