@@ -70,7 +70,7 @@ export const GET: APIRoute<{}, { slug: string }> = async ({
 													type: "span",
 													props: {
 														tw: "border-4 border-black px-4 py-1 rounded-full text-4xl font-semibold mr-4",
-														children: tag,
+														children: `#${tag}`,
 													},
 												})),
 											},
