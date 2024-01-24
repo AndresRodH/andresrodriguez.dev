@@ -254,9 +254,9 @@ import { Form, useLoaderData } from 'react-router-dom' // [!code ++]
 
 // ...
 
-export async function action() {
-  await logout()
-}
+export async function action() { // [!code ++]
+  await logout() // [!code ++]
+} // [!code ++]
 
 export default function ProtectedRoute() {
   const data = useLoaderData() as Awaited<ReturnType<typeof loader>>
