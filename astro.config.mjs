@@ -3,8 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel/static";
 import catpuccinTheme from "./shiki/catppuccin.json"; // customized catpuccin mocha theme - no italics
-import { transformerNotationDiff } from "shikiji-transformers";
-
+import expressiveCode from "astro-expressive-code";
 const SERVER_PORT = 3000;
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
 const LIVE_URL = "https://andresrodriguez.dev";
@@ -26,16 +25,22 @@ export default defineConfig({
 			applyBaseStyles: false,
 		}),
 		sitemap(),
+		expressiveCode({
+			themes: [catpuccinTheme],
+			styleOverrides: {
+				borderRadius: "0px",
+				borderWidth: "1px",
+				borderColor: "hsl(var(--border))",
+				frames: {
+					frameBoxShadowCssValue: "none",
+				},
+			},
+		}),
 	],
 	output: "static",
 	adapter: vercel({
 		imageService: true,
 		webAnalytics: true,
 	}),
-	markdown: {
-		shikiConfig: {
-			theme: catpuccinTheme,
-			transformers: [transformerNotationDiff()],
-		},
-	},
 });
+

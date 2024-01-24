@@ -6,8 +6,8 @@
 }
 
 .content
-	:not(a, strong, em, del, span, code)
-	+ :not(a, strong, em, del, span, code) {
+	:not(a, strong, em, del, span, code, pre)
+	+ :not(a, strong, em, del, span, code, pre, :where(.frame *)) {
 	margin-top: 1rem;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .content pre {
-	@apply text-sm -mx-6 px-6 sm:mx-0 sm:px-0;
+	@apply text-sm -mx-6 px-6 sm:mx-0 sm:px-0 shadow-none;
 	border: 1px solid var(--border);
 	padding: 0.75rem 1rem;
 	tab-size: 2;

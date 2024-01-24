@@ -8,8 +8,7 @@ tags:
 
 When working on my dotfiles I was wondering why I couldn't see my `.config` folders. Telescope hides these hidden files by default. Here's how I set up Telescope to show hidden files using the LazyNvim distro:
 
-```lua
--- lua/plugins/telescope.lua
+```lua title="lua/plugins/telescope.lua"
 local Util = require("lazyvim.util")
 
 return {
