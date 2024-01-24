@@ -85,7 +85,7 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 			},
 		},
 		{
-			width: 1200,
+			width: 1260,
 			height: 630,
 			fonts: [
 				{
