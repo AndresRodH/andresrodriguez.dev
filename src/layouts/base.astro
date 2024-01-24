@@ -139,7 +139,7 @@ const navItems = [
 		</div>
 	</body>
 </html>
-<style>
+<style is:global>
 	@font-face {
 		font-family: "Mona Sans";
 		src:
@@ -148,6 +148,22 @@ const navItems = [
 		font-weight: 400 500;
 		font-stretch: 100% 75%;
 		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Mona Sans Italic";
+		src:
+			url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+			url("/fonts/Mona-Sans.woff2") format("woff2-variations");
+		font-style: oblique 20deg;
+		font-weight: 400;
+		font-stretch: 100%;
+		font-display: swap;
+	}
+
+	i,
+	em {
+		font-family: "Mona Sans Italic";
 	}
 
 	@font-face {
