@@ -17,14 +17,16 @@ const currentYearFormatter = new Intl.DateTimeFormat("en-US", {
 	timeZone: "utc",
 });
 
-const posts = allPosts.map((post) => ({
-	...post.data,
-	slug: post.slug,
-	publishedAt:
-		post.data.publishedAt.getFullYear() === new Date().getFullYear()
-			? currentYearFormatter.format(post.data.publishedAt)
-			: pastYearFormatter.format(post.data.publishedAt),
-}));
+const posts = allPosts
+	.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+	.map((post) => ({
+		...post.data,
+		slug: post.slug,
+		publishedAt:
+			post.data.publishedAt.getFullYear() === new Date().getFullYear()
+				? currentYearFormatter.format(post.data.publishedAt)
+				: pastYearFormatter.format(post.data.publishedAt),
+	}));
 ---
 
 <ul class="space-y-8">
