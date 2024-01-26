@@ -43,15 +43,15 @@ const image = `/posts/${post.slug}/og.png`;
 		</h1>
 		<p class="text-xl text-muted-foreground">{post.data.description}</p>
 		<div class="flex flex-col gap-4 sm:flex-row-reverse sm:justify-between">
-			<div class="flex items-center gap-2">
-				{post.data.tags.map((tag) => <Tag tag={tag} />)}
-			</div>
 			<time
 				datetime={post.data.publishedAt.toISOString()}
 				class="text-gray-500 block"
 			>
 				{publishedAt}
 			</time>
+			<div class="flex items-center gap-2">
+				{post.data.tags.map((tag) => <Tag tag={tag} />)}
+			</div>
 		</div>
 	</header>
 	<article class="mt-8 content">
