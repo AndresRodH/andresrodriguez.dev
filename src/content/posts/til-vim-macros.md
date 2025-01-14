@@ -11,17 +11,20 @@ tags:
 I was refactoring a bunch of imports. We use `remix-utils` in our Remix codebase at work and we have been on v4 for quite a long time. This version exported some utility functions for http responses
 
 ```ts
-import { badRequest, serverError, forbidden } from 'remix-utils'
+import { badRequest, serverError, forbidden } from "remix-utils";
 ```
 
 Latest versions do _not_ export these functions anymore, so I replicated them in a utility file.
 
 ```ts
 // File: utils/http.server.ts
-import { json } from '@remix-run/node';
+import { json } from "@remix-run/node";
 
-export function badRequest<Data = unknown>(data: Data, init?: Omit<ResponseInit, 'status'>) {
-	return json(data, { ...init, status: 400 });
+export function badRequest<Data = unknown>(
+ data: Data,
+ init?: Omit<ResponseInit, "status">,
+) {
+ return json(data, { ...init, status: 400 });
 }
 
 // ... other HTTP helpers

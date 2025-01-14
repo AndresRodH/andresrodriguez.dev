@@ -18,9 +18,9 @@ Let's say we have an application that has some pages that the user can access wi
 
 ```tsx
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const auth = useAuth()
+ const auth = useAuth();
 
-  return auth.isAuthenticated ? children : <Redirect to="/login" />
+ return auth.isAuthenticated ? children : <Redirect to="/login" />;
 }
 ```
 
@@ -32,25 +32,19 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
 
 ```tsx
 export function App() {
-  return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/">
-            This is public
-          </Route>
-          <Route 
-            path="/protected"
-            render={() => (
-              <ProtectedRoute>
-                This is protected
-              </ProtectedRoute>
-            )}
-          />
-        </Switch>
-      </BrowserRouter>
-    </AuthProvider>
-  )
+ return (
+  <AuthProvider>
+   <BrowserRouter>
+    <Switch>
+     <Route path="/">This is public</Route>
+     <Route
+      path="/protected"
+      render={() => <ProtectedRoute>This is protected</ProtectedRoute>}
+     />
+    </Switch>
+   </BrowserRouter>
+  </AuthProvider>
+ );
 }
 ```
 
@@ -62,29 +56,29 @@ The first thing we need to do is transform that router into a data router:
 
 ```tsx
 // File: src/main.tsx
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { AuthProvider } from '../path/to/provider'
-import { ProtectedRoute } from '../path/to/component'
+import React from "react";
+import ReactDOM from "react-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AuthProvider } from "../path/to/provider";
+import { ProtectedRoute } from "../path/to/component";
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <>This is public</>
-  },
-  {
-    path: '/protected',
-    element: <ProtectedRoute>This is protected</ProtectedRoute>
-  }
-])
+ {
+  path: "/",
+  element: <>This is public</>,
+ },
+ {
+  path: "/protected",
+  element: <ProtectedRoute>This is protected</ProtectedRoute>,
+ },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<React.StrictMode>
-    <AuthProvider>
-		  <RouterProvider router={router} />
-    </AuthProvider>
-	</React.StrictMode>,
+ <React.StrictMode>
+  <AuthProvider>
+   <RouterProvider router={router} />
+  </AuthProvider>
+ </React.StrictMode>,
 );
 ```
 
@@ -117,22 +111,22 @@ let keycloak: Keycloak | undefined;
  * Returns the Keycloak instance. This function will make sure that the Keycloak instance is only initialized _once_
  */
 async function getKeycloak() {
-	if (keycloak) {
-		return keycloak;
-	}
+ if (keycloak) {
+  return keycloak;
+ }
 
-	keycloak = new Keycloak({
-		url: import.meta.env.VITE_KEYCLOAK_URL,
-		realm: import.meta.env.VITE_KEYCLOAK_REALM,
-		clientId: import.meta.env.VITE_KEYCLOAK_CLIENT_ID,
-	});
+ keycloak = new Keycloak({
+  url: import.meta.env.VITE_KEYCLOAK_URL,
+  realm: import.meta.env.VITE_KEYCLOAK_REALM,
+  clientId: import.meta.env.VITE_KEYCLOAK_CLIENT_ID,
+ });
 
-	await keycloak.init({
-		onLoad: "check-sso", // this lets us check if the user is already authenticated as soon as we initialize Keycloak
-		redirectUri: "http://localhost:5173", // or whatever your app's url is
-	});
+ await keycloak.init({
+  onLoad: "check-sso", // this lets us check if the user is already authenticated as soon as we initialize Keycloak
+  redirectUri: "http://localhost:5173", // or whatever your app's url is
+ });
 
-	return keycloak;
+ return keycloak;
 }
 ```
 
@@ -144,14 +138,14 @@ With this function we can create a couple of helper functions to handle authenti
  * Returns the user's profile if they are logged in, or `null` if they are not
  */
 async function getUserProfile() {
-	const keycloak = await getKeycloak();
+ const keycloak = await getKeycloak();
 
-	if (keycloak.authenticated) {
-		const profile = await keycloak.loadUserProfile();
-		return profile;
-	}
+ if (keycloak.authenticated) {
+  const profile = await keycloak.loadUserProfile();
+  return profile;
+ }
 
-	return null;
+ return null;
 }
 ```
 
@@ -164,27 +158,27 @@ We will be protecting routes by using a `loader` function for out protected rout
 ```ts
 // File: src/lib/auth.ts
 // ...
-import { redirect } from 'react-router-dom'
+import { redirect } from "react-router-dom";
 // ...
 
 /**
  * Requires that the user is logged in. Returns the user's profile if they are and throws a redirect if they are not.
  */
 export async function requireUser() {
-	const keycloak = await getKeycloak();
+ const keycloak = await getKeycloak();
 
-	const profile = await getUserProfile();
+ const profile = await getUserProfile();
 
-	if (profile) {
-		return profile;
-	}
+ if (profile) {
+  return profile;
+ }
 
-	// user is not logged in
-	const loginUrl = keycloak.createLoginUrl({
-		redirectUri: window.location.origin + window.location.pathname,
-	});
+ // user is not logged in
+ const loginUrl = keycloak.createLoginUrl({
+  redirectUri: window.location.origin + window.location.pathname,
+ });
 
-	throw redirect(loginUrl);
+ throw redirect(loginUrl);
 }
 ```
 
@@ -192,19 +186,20 @@ Now, let's make our new protected route and add it to our router config:
 
 ```tsx
 // File: src/routes/protected.tsx
-import { requireUser } from '../lib/auth'
-import { useLoaderData } from 'react-router-dom'
+import { requireUser } from "../lib/auth";
+import { useLoaderData } from "react-router-dom";
 
 export async function loader() {
-  const profile = await requireUser()
-  return { profile }
+ const profile = await requireUser();
+ return { profile };
 }
 
 export default function ProtectedRoute() {
-  const data = useLoaderData() as Awaited<ReturnType<typeof loader>>
-  return <div>Hello, {data.profile.username}!</div>
+ const data = useLoaderData() as Awaited<ReturnType<typeof loader>>;
+ return <div>Hello, {data.profile.username}!</div>;
 }
 ```
+
 ```diff lang="tsx"
 // File: src/main.tsx
 // ...
@@ -228,7 +223,6 @@ const router = createBrowserRouter([
 
 Now if you try to access `/protected` without being logged in, you will be redirected to Keycloak's login page. If you are logged in, you will see your username.
 
-
 ### Logging users out
 
 We will be using a React Router `action` for this. But first, let's make a helper function:
@@ -240,11 +234,11 @@ We will be using a React Router `action` for this. But first, let's make a helpe
  * Logs the user out
  */
 export async function logout() {
-	const keycloak = await getKeycloak();
+ const keycloak = await getKeycloak();
 
-	if (keycloak.authenticated) {
-		await keycloak.logout();
-	}
+ if (keycloak.authenticated) {
+  await keycloak.logout();
+ }
 }
 ```
 
@@ -298,6 +292,7 @@ const router = createBrowserRouter([
 ])
 // ...
 ```
+
 Now if you click on the logout button, you will be logged out. Because React Router will call all loaders again after submitting a form, we will be kicked to the login page once more.
 
 ### Bonus: app-wide auth protection
@@ -317,8 +312,8 @@ That's it! Ideally, you would call this as soon as you can in your code. I would
 ```ts
 // File: src/lib/auth.ts
 export const keycloak = new Keycloak({
-  // ...
-})
+ // ...
+});
 
 // update all usages of `getKeycloak` to just use `keycloak` directly
 ```
@@ -326,16 +321,16 @@ export const keycloak = new Keycloak({
 ```ts
 // File: src/main.tsx
 // ...
-import { keycloak } from './lib/auth'
+import { keycloak } from "./lib/auth";
 
 await keycloak.init({
-  onLoad: "login-required",
-  // ...
+ onLoad: "login-required",
+ // ...
 });
 
 const router = createBrowserRouter([
-  // ...
-])
+ // ...
+]);
 ```
 
 You can check the full diff in the example in [this PR](https://github.com/AndresRodH/keycloak-react-router-6/pull/2).
