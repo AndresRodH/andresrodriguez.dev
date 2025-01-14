@@ -1,32 +1,33 @@
 {
-  "name": "andresrodriguez.dev",
-  "description": "Andrés Rodríguez's personal website",
-  "type": "module",
-  "version": "0.2.0",
-  "license": "MIT",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "3.0.5",
-    "@astrojs/tailwind": "5.1.0",
-    "@astrojs/vercel": "6.1.4",
-    "@catppuccin/vscode": "3.11.0",
-    "@vercel/og": "0.6.2",
-    "astro": "4.2.3",
-    "astro-expressive-code": "^0.32.2",
-    "tailwindcss": "3.4.1"
-  },
-  "devDependencies": {
-    "@astrojs/check": "0.4.1",
-    "@tailwindcss/typography": "0.5.10",
-    "prettier": "3.2.4",
-    "prettier-plugin-astro": "0.12.3",
-    "shikiji-transformers": "0.10.0",
-    "typescript": "5.3.3"
-  }
+	"name": "andresrodriguez.dev",
+	"description": "Andrés Rodríguez's personal website",
+	"type": "module",
+	"version": "0.2.0",
+	"license": "MIT",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "3.2.1",
+		"@astrojs/tailwind": "5.1.4",
+		"@astrojs/vercel": "8.0.2",
+		"@catppuccin/vscode": "3.11.0",
+		"@vercel/og": "0.6.2",
+		"astro": "5.1.6",
+		"astro-expressive-code": "0.40.0",
+		"tailwindcss": "3.4.1"
+	},
+	"devDependencies": {
+		"@astrojs/check": "0.9.4",
+		"@shikijs/transformers": "1.26.2",
+		"@tailwindcss/typography": "0.5.10",
+		"prettier": "3.2.4",
+		"prettier-plugin-astro": "0.12.3",
+		"shikiji-transformers": "0.10.0",
+		"typescript": "5.3.3"
+	}
 }
